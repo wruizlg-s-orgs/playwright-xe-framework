@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>XE Demo Application</title>
+</head>
+
+
+<body>
+
+
+<h1>Login</h1>
+
+
+<label>
+Username
+</label>
+
+<input 
+    data-testid="username"
+    id="username"
+/>
+
+
+<br><br>
+
+
+<label>
+Password
+</label>
+
+
+<input 
+    data-testid="password"
+    id="password"
+    type="password"
+/>
+
+
+<br><br>
+
+
+<button 
+    data-testid="login-button"
+    id="login">
+    Login
+</button>
+
+
+
+<script>
+
+
+document
+.getElementById('login')
+.addEventListener('click', function(){
+
+
+    const username =
+    document.getElementById('username').value;
+
+
+    const password =
+    document.getElementById('password').value;
+
+
+
+    if(username === 'admin' 
+       && password === '123456'){
+
+
+        window.location.href='/dashboard.html';
+
+
+    } else {
+
+
+        alert('Invalid credentials');
+
+
+    }
+
+
+});
+
+
+</script>
+
+
+</body>
+
+</html>
