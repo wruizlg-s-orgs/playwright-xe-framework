@@ -4,11 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-  "test": "playwright test",
-  "test:headed": "playwright test --headed",
-  "test:debug": "playwright test --debug",
-  "report": "playwright show-report"
-},
+    "start": "node app/server.js",
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:debug": "playwright test --debug",
+    "report": "playwright show-report"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -16,5 +17,8 @@
   "devDependencies": {
     "@playwright/test": "^1.61.1",
     "@types/node": "^26.1.1"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
   }
 }
