@@ -8,53 +8,37 @@ import { ENV } from './environment';
 
 export class ApiClient {
 
+
     private api!: APIRequestContext;
 
-    async initialize() {
+
+    async initialize(){
 
         this.api = await request.newContext({
 
             baseURL: ENV.apiUrl,
 
-            extraHTTPHeaders: {
-                'Content-Type': 'application/json',
-                'x-api-key': 'reqres-free-v1'
+            extraHTTPHeaders:{
+                'Content-Type':'application/json'
             }
 
         });
 
     }
 
-    async get(endpoint: string): Promise<APIResponse> {
+
+    async get(endpoint:string){
 
         return await this.api.get(endpoint);
 
     }
 
-    async post(endpoint: string, body: object): Promise<APIResponse> {
 
-        return await this.api.post(endpoint, {
+    async dispose(){
 
-            data: body
-
-        });
+        await this.api.dispose();
 
     }
 
-    async put(endpoint: string, body: object): Promise<APIResponse> {
-
-        return await this.api.put(endpoint, {
-
-            data: body
-
-        });
-
-    }
-
-    async delete(endpoint: string): Promise<APIResponse> {
-
-        return await this.api.delete(endpoint);
-
-    }
 
 }

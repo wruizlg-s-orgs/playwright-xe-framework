@@ -23,6 +23,9 @@ export const test = base.extend<ApiFixtures>({
         await use(apiClient);
 
 
+        await apiClient.dispose();
+
+
     }
 
 });
