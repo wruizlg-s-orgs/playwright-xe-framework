@@ -1,19 +1,11 @@
-import { test, expect } from '@playwright/test';
-
-import { ApiClient } from '../../helpers/ApiClient';
+import { test, expect } from '../../fixtures/api.fixture';
 import { ENDPOINTS } from '../../data/endpoints';
 
 
-test.describe('Users API', () => {
+test.describe('User Management API', () => {
 
 
-    test('Should retrieve users successfully', async () => {
-
-
-        const api = new ApiClient();
-
-
-        await api.initialize();
+    test('Should retrieve users successfully', async ({ api }) => {
 
 
         const response = await api.get(
