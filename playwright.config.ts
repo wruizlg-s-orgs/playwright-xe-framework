@@ -73,10 +73,18 @@ export default defineConfig({
   ],
 
   /* Run your local dev server before starting the tests */
-   webServer: {
-     command: 'npm run start',
-     url: 'http://localhost:3000',
-     reuseExistingServer: !process.env.CI,
-     timeout: 30000,
-   },
+webServer: [
+    {
+        command: 'npm start',
+        url: 'http://localhost:3000',
+        timeout: 30000,
+        reuseExistingServer: true,
+    },
+    {
+        command: 'npm run start:api',
+        url: 'http://localhost:4000/api/users',
+        timeout: 30000,
+        reuseExistingServer: true,
+    },
+],
 });

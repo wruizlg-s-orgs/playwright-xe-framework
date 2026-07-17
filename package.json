@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node app/server.js",
+    "start:api": "node app/api-server.js",
     "test": "playwright test",
     "test:headed": "playwright test --headed",
     "test:debug": "playwright test --debug",

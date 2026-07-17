@@ -1,24 +1,46 @@
 import { test, expect } from '@playwright/test';
 
 import { ApiClient } from '../../helpers/ApiClient';
-
 import { ENDPOINTS } from '../../data/endpoints';
 
 
-test('Should retrieve users successfully', async () => {
+test.describe('Users API', () => {
 
-    const api = new ApiClient();
 
-    await api.initialize();
+    test('Should retrieve users successfully', async () => {
 
-    const response = await api.get(
-        ENDPOINTS.USERS + '?page=2'
-    );
 
-    expect(response.status()).toBe(200);
+        const api = new ApiClient();
 
-    const body = await response.json();
 
-    expect(body.data.length).toBeGreaterThan(0);
+        await api.initialize();
+
+
+        const response = await api.get(
+            ENDPOINTS.USERS
+        );
+
+
+        expect(response.status())
+            .toBe(200);
+
+
+        const body = await response.json();
+
+
+        expect(body.length)
+            .toBeGreaterThan(0);
+
+
+        expect(body[0])
+            .toHaveProperty('id');
+
+
+        expect(body[0])
+            .toHaveProperty('email');
+
+
+    });
+
 
 });

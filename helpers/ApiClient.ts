@@ -4,6 +4,8 @@ import {
     request
 } from '@playwright/test';
 
+import { ENV } from './environment';
+
 export class ApiClient {
 
     private api!: APIRequestContext;
@@ -12,7 +14,7 @@ export class ApiClient {
 
         this.api = await request.newContext({
 
-            baseURL: 'https://reqres.in',
+            baseURL: ENV.apiUrl,
 
             extraHTTPHeaders: {
                 'Content-Type': 'application/json',
