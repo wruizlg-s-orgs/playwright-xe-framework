@@ -156,3 +156,55 @@ app.listen(PORT,()=>{
     );
 
 });
+
+app.post('/login', (req, res) => {
+
+    const { username, password } = req.body;
+
+
+    if(username === 'admin' && password === '123456') {
+
+        return res.json({
+
+            token: 'fake-token-12345'
+
+        });
+
+    }
+
+
+    return res.status(401).json({
+
+        message: 'Invalid credentials'
+
+    });
+
+});
+
+app.get('/profile', (req,res)=>{
+
+
+    const auth = req.headers.authorization;
+
+
+    if(auth !== 'Bearer fake-token-12345'){
+
+        return res.status(401).json({
+
+            message:'Unauthorized'
+
+        });
+
+    }
+
+
+    res.json({
+
+        id:1,
+        username:'admin',
+        role:'administrator'
+
+    });
+
+
+});
