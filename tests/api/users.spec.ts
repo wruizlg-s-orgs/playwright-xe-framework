@@ -29,7 +29,7 @@ test.describe('User Management API', () => {
 
 
         expect(body[0])
-            .toHaveProperty('email');
+            .toHaveProperty('emails);
 
 
     });
