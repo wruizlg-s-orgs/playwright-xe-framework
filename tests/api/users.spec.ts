@@ -2,7 +2,7 @@ import { test, expect } from '../../fixtures/api.fixture';
 import { ENDPOINTS } from '../../data/endpoints';
 
 
-test.describe('User Management API', () => {
+test.describe('User Management API Tests', () => {
 
 
     test('Should retrieve users successfully', async ({ api }) => {
@@ -29,7 +29,7 @@ test.describe('User Management API', () => {
 
 
         expect(body[0])
-            .toHaveProperty('emails);
+            .toHaveProperty('email');
 
 
     });
