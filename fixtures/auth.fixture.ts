@@ -1,5 +1,6 @@
-import { test as base } from './api.fixture';
+import { test as base, expect } from './api.fixture';
 import { ApiClient } from '../helpers/ApiClient';
+import { UserFactory } from '../data/factories/UserFactory';
 
 
 type AuthFixtures = {
@@ -14,16 +15,27 @@ export const test = base.extend<AuthFixtures>({
     authenticatedApi: async ({ api }, use) => {
 
 
+        const user = UserFactory.admin();
+
+
         const response = await api.post(
+
             '/login',
-            {
-                username:'admin',
-                password:'123456'
-            }
+
+            user
+
         );
 
 
+        expect(response.status())
+            .toBe(200);
+
+
         const body = await response.json();
+
+
+        expect(body.token)
+            .toBeDefined();
 
 
         await api.setToken(body.token);
@@ -37,4 +49,4 @@ export const test = base.extend<AuthFixtures>({
 });
 
 
-export { expect } from '@playwright/test';
+export { expect };
