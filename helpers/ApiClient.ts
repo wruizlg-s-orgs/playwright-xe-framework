@@ -4,92 +4,344 @@ import {
     request
 } from '@playwright/test';
 
+
 import { ENV } from './environment';
+
+import { Logger } from './Logger';
+
+
 
 
 export class ApiClient {
 
 
+
     private api!: APIRequestContext;
+
+
+
 
 
     async initialize(){
 
-        this.api = await request.newContext({
 
-            baseURL: ENV.apiUrl,
+        this.api =
+            await request.newContext({
 
-            extraHTTPHeaders:{
-                'Content-Type':'application/json'
-            }
 
-        });
+                baseURL:
+                    ENV.apiUrl,
+
+
+                extraHTTPHeaders:{
+
+
+                    'Content-Type':
+                        'application/json'
+
+
+                }
+
+
+            });
+
 
     }
 
 
-    async get(endpoint:string): Promise<APIResponse>{
 
-        return await this.api.get(endpoint);
+
+
+
+
+
+    private async logResponse(
+        response: APIResponse
+    ){
+
+
+        let body;
+
+
+        try {
+
+
+            body =
+                await response.json();
+
+
+        } catch {
+
+
+            body =
+                undefined;
+
+
+        }
+
+
+
+        Logger.response(
+
+            response.status(),
+
+            body
+
+        );
+
 
     }
 
 
-    async post(endpoint:string, body:object): Promise<APIResponse>{
 
-        return await this.api.post(endpoint, {
 
-            data: body
 
-        });
+
+
+
+
+    async get(
+        endpoint:string
+    ): Promise<APIResponse>{
+
+
+
+        Logger.request(
+            'GET',
+            endpoint
+        );
+
+
+
+        const response =
+            await this.api.get(
+                endpoint
+            );
+
+
+
+        await this.logResponse(
+            response
+        );
+
+
+
+        return response;
+
 
     }
 
 
-    async put(endpoint:string, body:object): Promise<APIResponse>{
 
-        return await this.api.put(endpoint, {
 
-            data: body
 
-        });
+
+
+
+
+    async post(
+        endpoint:string,
+        body:object
+    ): Promise<APIResponse>{
+
+
+
+        Logger.request(
+
+            'POST',
+
+            endpoint,
+
+            body
+
+        );
+
+
+
+        const response =
+            await this.api.post(
+
+                endpoint,
+
+                {
+                    data:body
+                }
+
+            );
+
+
+
+        await this.logResponse(
+            response
+        );
+
+
+
+        return response;
+
 
     }
 
 
-    async delete(endpoint:string): Promise<APIResponse>{
 
-        return await this.api.delete(endpoint);
+
+
+
+
+
+
+    async put(
+        endpoint:string,
+        body:object
+    ): Promise<APIResponse>{
+
+
+
+        Logger.request(
+
+            'PUT',
+
+            endpoint,
+
+            body
+
+        );
+
+
+
+        const response =
+            await this.api.put(
+
+                endpoint,
+
+                {
+                    data:body
+                }
+
+            );
+
+
+
+        await this.logResponse(
+            response
+        );
+
+
+
+        return response;
+
 
     }
 
 
-    async setToken(token:string){
+
+
+
+
+
+
+
+    async delete(
+        endpoint:string
+    ): Promise<APIResponse>{
+
+
+
+        Logger.request(
+
+            'DELETE',
+
+            endpoint
+
+        );
+
+
+
+        const response =
+            await this.api.delete(
+
+                endpoint
+
+            );
+
+
+
+        await this.logResponse(
+            response
+        );
+
+
+
+        return response;
+
+
+    }
+
+
+
+
+
+
+
+
+
+    async setToken(
+        token:string
+    ){
+
+
 
         await this.api.dispose();
 
 
-        this.api = await request.newContext({
 
-            baseURL: ENV.apiUrl,
+        this.api =
+            await request.newContext({
 
-            extraHTTPHeaders: {
 
-                'Content-Type':'application/json',
 
-                'Authorization': `Bearer ${token}`
+                baseURL:
+                    ENV.apiUrl,
 
-            }
 
-        });
+
+                extraHTTPHeaders:{
+
+
+
+                    'Content-Type':
+                        'application/json',
+
+
+
+                    'Authorization':
+                        `Bearer ${token}`
+
+
+
+                }
+
+
+            });
+
 
     }
+
+
+
+
+
+
 
 
     async dispose(){
 
+
         await this.api.dispose();
 
+
     }
+
+
 
 }
