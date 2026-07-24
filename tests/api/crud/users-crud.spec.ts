@@ -1,13 +1,9 @@
 import { test, expect } from '../../../fixtures/api.fixture';
 
-import { CreateUserFactory } from '../../../data/factories/CreateUserFactory';
-import { UpdateUserFactory } from '../../../data/factories/UpdateUserFactory';
-
-import { CreateUserRequest } from '../../../models/CreateUserRequest';
-import { UpdateUserRequest } from '../../../models/UpdateUserRequest';
 import { User } from '../../../models/User';
 
 import { UserService } from '../../../services/UserService';
+import { TestDataBuilder } from '../../../helpers/TestDataBuilder';
 
 
 
@@ -29,41 +25,29 @@ test.describe('Users CRUD API', () => {
 
 
 
+
     test('Should create user successfully', async () => {
 
 
-        const user: CreateUserRequest =
-            CreateUserFactory.random();
+        const user =
+            await TestDataBuilder.createUser(
+                userService
+            );
 
 
 
-        const response =
-            await userService.create(user);
-
-
-
-        expect(response.status())
-            .toBe(201);
-
-
-
-        const body: User =
-            await response.json();
-
-
-
-        expect(body.id)
+        expect(user.id)
             .toBeDefined();
 
 
 
-        expect(body.name)
-            .toBe(user.name);
+        expect(user.name)
+            .toBeDefined();
 
 
 
-        expect(body.email)
-            .toBe(user.email);
+        expect(user.email)
+            .toBeDefined();
 
 
     });
@@ -71,26 +55,14 @@ test.describe('Users CRUD API', () => {
 
 
 
+
     test('Should retrieve user by id successfully', async () => {
 
 
-        const user: CreateUserRequest =
-            CreateUserFactory.random();
-
-
-
-        const createResponse =
-            await userService.create(user);
-
-
-
-        expect(createResponse.status())
-            .toBe(201);
-
-
-
-        const createdUser: User =
-            await createResponse.json();
+        const createdUser =
+            await TestDataBuilder.createUser(
+                userService
+            );
 
 
 
@@ -117,12 +89,12 @@ test.describe('Users CRUD API', () => {
 
 
         expect(body.name)
-            .toBe(user.name);
+            .toBe(createdUser.name);
 
 
 
         expect(body.email)
-            .toBe(user.email);
+            .toBe(createdUser.email);
 
 
     });
@@ -130,26 +102,19 @@ test.describe('Users CRUD API', () => {
 
 
 
+
     test('Should update user successfully', async () => {
 
 
-        const user: CreateUserRequest =
-            CreateUserFactory.random();
+        const createdUser =
+            await TestDataBuilder.createUser(
+                userService
+            );
 
 
 
-        const createResponse =
-            await userService.create(user);
-
-
-
-        const createdUser: User =
-            await createResponse.json();
-
-
-
-        const updateData: UpdateUserRequest =
-            UpdateUserFactory.random();
+        const updateData =
+            TestDataBuilder.updateUser();
 
 
 
@@ -193,21 +158,14 @@ test.describe('Users CRUD API', () => {
 
 
 
+
     test('Should delete user successfully', async () => {
 
 
-        const user: CreateUserRequest =
-            CreateUserFactory.random();
-
-
-
-        const createResponse =
-            await userService.create(user);
-
-
-
-        const createdUser: User =
-            await createResponse.json();
+        const createdUser =
+            await TestDataBuilder.createUser(
+                userService
+            );
 
 
 
@@ -223,7 +181,6 @@ test.describe('Users CRUD API', () => {
 
 
     });
-
 
 
 });

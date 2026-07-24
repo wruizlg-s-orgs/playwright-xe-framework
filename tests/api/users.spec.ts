@@ -21,16 +21,13 @@ test.describe('User Management API Tests', () => {
 
         const body: User[] = await response.json();
 
-        console.log(body);
 
         expect(body.length)
             .toBeGreaterThan(0);
 
 
-
         expect(body[0].id)
             .toBeDefined();
-
 
 
         expect(body[0].email)

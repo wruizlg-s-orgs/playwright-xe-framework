@@ -2,11 +2,12 @@ export const ENDPOINTS = {
 
     USERS: '/api/users',
 
-    USER_BY_ID: (id:number) =>
-        `/api/users/${id}`,
+    USER_BY_ID: (id: number) => `/api/users/${id}`,
 
     LOGIN: '/login',
 
-    PROFILE: '/profile'
+    PROFILE: '/profile',
+
+    RESET: '/test/reset'
 
 };

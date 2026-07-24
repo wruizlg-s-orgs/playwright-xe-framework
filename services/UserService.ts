@@ -18,6 +18,7 @@ export class UserService {
         user: CreateUserRequest
     ) {
 
+
         return await this.api.post(
 
             ENDPOINTS.USERS,
@@ -34,6 +35,7 @@ export class UserService {
         id:number
     ) {
 
+
         return await this.api.get(
 
             ENDPOINTS.USER_BY_ID(id)
@@ -48,6 +50,7 @@ export class UserService {
         id:number,
         user:UpdateUserRequest
     ) {
+
 
         return await this.api.put(
 
@@ -64,6 +67,7 @@ export class UserService {
     async delete(
         id:number
     ) {
+
 
         return await this.api.delete(
 

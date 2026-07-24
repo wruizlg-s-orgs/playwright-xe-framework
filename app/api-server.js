@@ -8,71 +8,125 @@ const PORT = 4000;
 app.use(express.json());
 
 
-let users = [
+
+const INITIAL_USERS = [
 
     {
         id: 1,
-        name: "John",
-        email: "john@test.com"
+        name: 'John',
+        email: 'john@test.com'
     },
 
     {
         id: 2,
-        name: "Mary",
-        email: "mary@test.com"
+        name: 'Mary',
+        email: 'mary@test.com'
     }
 
 ];
 
 
-// GET USERS
 
-app.get('/api/users', (req, res) => {
+let users = structuredClone(INITIAL_USERS);
 
-    res.status(200).json(users);
+let nextId = 3;
+
+
+
+// ==========================
+// TEST SUPPORT
+// ==========================
+
+function resetUsers() {
+
+    users = structuredClone(INITIAL_USERS);
+
+    nextId = 3;
+
+}
+
+
+
+app.post('/test/reset', (req, res) => {
+
+
+    resetUsers();
+
+    return res.status(204).send();
+
 
 });
 
 
-// GET USER BY ID
+
+// ==========================
+// USERS
+// ==========================
+
+
+app.get('/api/users', (req, res) => {
+
+
+    res.status(200).json(users);
+
+
+});
+
+
+
+
 
 app.get('/api/users/:id', (req, res) => {
 
+
     const user = users.find(
+
         u => u.id === Number(req.params.id)
+
     );
+
 
 
     if (!user) {
 
+
         return res.status(404).json({
 
-            message: "User not found"
+            message:'User not found'
 
         });
+
 
     }
 
 
+
     res.status(200).json(user);
+
 
 });
 
 
-// CREATE USER
 
-app.post('/api/users', (req, res) => {
+
+
+app.post('/api/users', (req,res)=>{
 
 
     const user = {
 
-        id: users.length + 1,
 
-        name: req.body.name,
+        id: nextId++,
 
-        email: req.body.email
+
+        name:req.body.name,
+
+
+        email:req.body.email
+
 
     };
+
 
 
     users.push(user);
@@ -84,30 +138,42 @@ app.post('/api/users', (req, res) => {
 });
 
 
-// UPDATE USER
 
-app.put('/api/users/:id', (req,res)=>{
+
+
+
+app.put('/api/users/:id',(req,res)=>{
+
+
+    const id = Number(req.params.id);
 
 
     const user = users.find(
-        u => u.id === Number(req.params.id)
+
+        u => u.id === id
+
     );
+
 
 
     if(!user){
 
+
         return res.status(404).json({
 
-            message:"User not found"
+            message:'User not found'
 
         });
 
+
     }
+
 
 
     user.name = req.body.name;
 
     user.email = req.body.email;
+
 
 
     res.status(200).json(user);
@@ -116,78 +182,112 @@ app.put('/api/users/:id', (req,res)=>{
 });
 
 
-// DELETE USER
+
+
+
+
 
 app.delete('/api/users/:id',(req,res)=>{
 
 
+    const id = Number(req.params.id);
+
+
+
     const index = users.findIndex(
 
-        u => u.id === Number(req.params.id)
+        u => u.id === id
 
     );
 
 
+
     if(index === -1){
+
 
         return res.status(404).json({
 
-            message:"User not found"
+            message:'User not found'
 
         });
 
+
     }
+
 
 
     users.splice(index,1);
 
 
-    res.status(204).send();
+    res.sendStatus(204);
 
 
 });
 
 
 
-app.listen(PORT,()=>{
 
-    console.log(
-        `API running on http://localhost:${PORT}`
-    );
-
-});
-
-app.post('/login', (req, res) => {
-
-    const { username, password } = req.body;
+// ==========================
+// AUTH
+// ==========================
 
 
-    if(username === 'admin' && password === '123456') {
+app.post('/login',(req,res)=>{
+
+
+    const {
+
+        username,
+
+        password
+
+    } = req.body;
+
+
+
+    if(
+
+        username === 'admin' &&
+
+        password === '123456'
+
+    ){
+
 
         return res.json({
 
-            token: 'fake-token-12345'
+            token:'fake-token-12345'
 
         });
+
 
     }
 
 
+
     return res.status(401).json({
 
-        message: 'Invalid credentials'
+        message:'Invalid credentials'
 
     });
 
+
 });
 
-app.get('/profile', (req,res)=>{
+
+
+
+
+
+app.get('/profile',(req,res)=>{
 
 
     const auth = req.headers.authorization;
 
 
+
     if(auth !== 'Bearer fake-token-12345'){
+
 
         return res.status(401).json({
 
@@ -195,16 +295,37 @@ app.get('/profile', (req,res)=>{
 
         });
 
+
     }
+
 
 
     res.json({
 
         id:1,
+
         username:'admin',
+
         role:'administrator'
 
     });
+
+
+});
+
+
+
+
+
+
+app.listen(PORT,()=>{
+
+
+    console.log(
+
+        `API running on http://localhost:${PORT}`
+
+    );
 
 
 });
