@@ -54,13 +54,118 @@ export class ApiClient {
 
 
 
+    private async executeRequest(
+
+        method:string,
+
+        endpoint:string,
+
+        requestFunction:()=>Promise<APIResponse>,
+
+        body?:unknown
+
+    ):Promise<APIResponse>{
+
+
+
+        Logger.request(
+
+            method,
+
+            endpoint,
+
+            body
+
+        );
+
+
+
+        const startTime =
+            Date.now();
+
+
+
+        try {
+
+
+            const response =
+                await requestFunction();
+
+
+
+            const duration =
+                Date.now() - startTime;
+
+
+
+            await this.logResponse(
+
+                method,
+
+                endpoint,
+
+                response,
+
+                duration
+
+            );
+
+
+
+            return response;
+
+
+
+        } catch(error){
+
+
+
+            const duration =
+                Date.now() - startTime;
+
+
+
+            Logger.error(
+
+                `Request failed: ${method} ${endpoint}`,
+
+                error
+
+            );
+
+
+            throw error;
+
+
+        }
+
+
+    }
+
+
+
+
+
+
+
+
 
     private async logResponse(
-        response: APIResponse
+
+        method:string,
+
+        endpoint:string,
+
+        response:APIResponse,
+
+        duration:number
+
     ){
 
 
+
         let body;
+
 
 
         try {
@@ -68,6 +173,7 @@ export class ApiClient {
 
             body =
                 await response.json();
+
 
 
         } catch {
@@ -81,9 +187,44 @@ export class ApiClient {
 
 
 
+
+
+
+        if(
+            response.status() >= 400
+        ){
+
+
+            Logger.httpError(
+
+                method,
+
+                endpoint,
+
+                response.status(),
+
+                duration,
+
+                body
+
+            );
+
+
+            return;
+
+
+        }
+
+
+
+
+
+
         Logger.response(
 
             response.status(),
+
+            duration,
 
             body
 
@@ -101,32 +242,24 @@ export class ApiClient {
 
 
     async get(
+
         endpoint:string
-    ): Promise<APIResponse>{
+
+    ):Promise<APIResponse>{
 
 
 
-        Logger.request(
+        return this.executeRequest(
+
             'GET',
-            endpoint
+
+            endpoint,
+
+            () =>
+                this.api.get(endpoint)
+
+
         );
-
-
-
-        const response =
-            await this.api.get(
-                endpoint
-            );
-
-
-
-        await this.logResponse(
-            response
-        );
-
-
-
-        return response;
 
 
     }
@@ -140,44 +273,36 @@ export class ApiClient {
 
 
     async post(
+
         endpoint:string,
+
         body:object
-    ): Promise<APIResponse>{
+
+    ):Promise<APIResponse>{
 
 
 
-        Logger.request(
+        return this.executeRequest(
 
             'POST',
 
             endpoint,
 
+            () =>
+                this.api.post(
+
+                    endpoint,
+
+                    {
+                        data:body
+                    }
+
+                ),
+
             body
 
+
         );
-
-
-
-        const response =
-            await this.api.post(
-
-                endpoint,
-
-                {
-                    data:body
-                }
-
-            );
-
-
-
-        await this.logResponse(
-            response
-        );
-
-
-
-        return response;
 
 
     }
@@ -191,44 +316,36 @@ export class ApiClient {
 
 
     async put(
+
         endpoint:string,
+
         body:object
-    ): Promise<APIResponse>{
+
+    ):Promise<APIResponse>{
 
 
 
-        Logger.request(
+        return this.executeRequest(
 
             'PUT',
 
             endpoint,
 
+            () =>
+                this.api.put(
+
+                    endpoint,
+
+                    {
+                        data:body
+                    }
+
+                ),
+
             body
 
+
         );
-
-
-
-        const response =
-            await this.api.put(
-
-                endpoint,
-
-                {
-                    data:body
-                }
-
-            );
-
-
-
-        await this.logResponse(
-            response
-        );
-
-
-
-        return response;
 
 
     }
@@ -242,37 +359,24 @@ export class ApiClient {
 
 
     async delete(
+
         endpoint:string
-    ): Promise<APIResponse>{
+
+    ):Promise<APIResponse>{
 
 
 
-        Logger.request(
+        return this.executeRequest(
 
             'DELETE',
 
-            endpoint
+            endpoint,
+
+            () =>
+                this.api.delete(endpoint)
+
 
         );
-
-
-
-        const response =
-            await this.api.delete(
-
-                endpoint
-
-            );
-
-
-
-        await this.logResponse(
-            response
-        );
-
-
-
-        return response;
 
 
     }
@@ -286,12 +390,15 @@ export class ApiClient {
 
 
     async setToken(
+
         token:string
+
     ){
 
 
 
         await this.api.dispose();
+
 
 
 
@@ -326,6 +433,7 @@ export class ApiClient {
 
 
     }
+
 
 
 

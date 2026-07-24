@@ -12,13 +12,46 @@ export enum LogLevel {
 
 
 
+function getLogLevel(): LogLevel {
+
+
+    const envLevel =
+        process.env.LOGGER_LEVEL?.toUpperCase();
+
+
+
+    switch (envLevel) {
+
+
+        case 'ERROR':
+            return LogLevel.ERROR;
+
+
+        case 'INFO':
+            return LogLevel.INFO;
+
+
+        case 'DEBUG':
+            return LogLevel.DEBUG;
+
+
+        case 'OFF':
+            return LogLevel.OFF;
+
+
+        default:
+            return LogLevel.INFO;
+
+    }
+
+}
+
+
+
 export const LOGGER_CONFIG = {
 
 
-    level:
-        process.env.LOGGER_LEVEL
-            ? Number(process.env.LOGGER_LEVEL)
-            : LogLevel.INFO,
+    level: getLogLevel()
 
 
 };

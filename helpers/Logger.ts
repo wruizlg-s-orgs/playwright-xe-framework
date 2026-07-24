@@ -21,6 +21,7 @@ export class Logger {
 
 
 
+
     static info(
         message: string
     ) {
@@ -41,6 +42,7 @@ export class Logger {
 
 
     }
+
 
 
 
@@ -78,6 +80,8 @@ export class Logger {
 
 
     }
+
+
 
 
 
@@ -142,8 +146,9 @@ export class Logger {
 
 
     static response(
-        status: number,
-        body?: unknown
+        status:number,
+        duration:number,
+        body?:unknown
     ) {
 
 
@@ -158,7 +163,7 @@ export class Logger {
 
 
         console.log(
-            `[RESPONSE] STATUS: ${status}`
+            `[RESPONSE] STATUS: ${status} | TIME: ${duration}ms`
         );
 
 
@@ -188,6 +193,65 @@ export class Logger {
 
     }
 
+
+
+
+
+
+
+
+
+    static httpError(
+        method:string,
+        endpoint:string,
+        status:number,
+        duration:number,
+        body?:unknown
+    ){
+
+
+        if(
+            !this.enabled(LogLevel.ERROR)
+        ){
+
+            return;
+
+        }
+
+
+
+        console.error(
+            `[HTTP ERROR] ${method} ${endpoint}`
+        );
+
+
+        console.error(
+            `STATUS: ${status} | TIME: ${duration}ms`
+        );
+
+
+
+        if(body){
+
+
+            console.error(
+                'BODY:'
+            );
+
+
+            console.error(
+                JSON.stringify(
+                    body,
+                    null,
+                    2
+                )
+            );
+
+
+        }
+
+
+    }
 
 
 }
