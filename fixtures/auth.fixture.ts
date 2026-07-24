@@ -31,7 +31,7 @@ export const test = base.extend<AuthFixtures>({
             .toBe(200);
 
 
-        const body = await response.json();
+        const body: AuthResponse = await response.json();
 
 
         expect(body.token)
@@ -42,6 +42,8 @@ export const test = base.extend<AuthFixtures>({
 
 
         await use(api);
+
+        await api.dispose();
 
 
     }
