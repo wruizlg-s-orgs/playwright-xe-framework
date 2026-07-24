@@ -1,66 +1,18 @@
-# Playwright QA Automation Framework
+# 🎭 Playwright QA Automation Framework
 
-A professional QA Automation framework built with **Playwright**, **TypeScript**, and **REST API testing**, designed with scalable automation patterns commonly used in enterprise environments.
-
-The project demonstrates UI and API automation practices, including service layers, fixtures, test data factories, authentication handling, CI execution, and reporting.
+A professional QA Automation framework built with **Playwright + TypeScript**, focused on UI and REST API automation testing, following scalable automation practices such as **Service Layer Pattern**, **Test Data Builders**, **Fixtures**, and **CI/CD execution with GitHub Actions**.
 
 ---
 
 # 🚀 Tech Stack
 
-- **Playwright**
-- **TypeScript**
-- **Node.js**
-- **REST API Testing**
-- **Express Mock API Server**
-- **GitHub Actions**
-- **HTML Test Reports**
-
----
-
-# 📌 Project Features
-
-## UI Automation
-
-- Cross-browser testing:
-  - Chromium
-  - Firefox
-  - WebKit
-
-- Playwright test runner
-- Automatic screenshots on failure
-- Trace collection
-- Video recording on failures
-- HTML execution reports
-
-
-## API Automation
-
-- REST API testing
-- CRUD validation
-- API request context
-- Authentication flow testing
-- API fixtures
-- Service layer architecture
-- Test data factories
-- Model-based request/response validation
-
-
-## Framework Architecture
-
-The framework follows maintainable automation patterns:
-
-- Service Layer Pattern
-- Test Data Builder Pattern
-- Factory Pattern
-- Fixture-based dependency injection
-- Separation between:
-  - Tests
-  - Services
-  - Models
-  - Data
-  - Helpers
-
+- **Playwright** - End-to-end and API automation framework
+- **TypeScript** - Strong typing and maintainable test code
+- **Node.js** - Runtime environment
+- **REST API Testing** - Backend validation
+- **Express.js** - Mock API server for testing
+- **GitHub Actions** - Continuous Integration pipeline
+- **HTML Reports** - Test execution reports
 
 ---
 
@@ -74,27 +26,26 @@ playwright-xe-framework
 │   └── api-server.js          # Mock REST API server
 │
 ├── data
-│   ├── factories              # Test data generators
-│   └── endpoints.ts           # API endpoints definition
+│   ├── factories              # Test data generation
+│   └── endpoints.ts           # API endpoints definitions
 │
 ├── fixtures
 │   ├── api.fixture.ts         # API test fixture
-│   └── auth.fixture.ts        # Authenticated API fixture
+│   └── auth.fixture.ts        # Authentication fixture
 │
 ├── helpers
-│   ├── ApiClient.ts           # API communication layer
-│   ├── TestDataBuilder.ts     # Test data creation helper
-│   └── environment.ts         # Environment configuration
+│   ├── ApiClient.ts           # API client abstraction
+│   └── TestDataBuilder.ts     # Test data creation helper
 │
 ├── models
-│   ├── AuthResponse.ts
+│   ├── User.ts
 │   ├── CreateUserRequest.ts
 │   ├── UpdateUserRequest.ts
-│   ├── User.ts
-│   └── UserListResponse.ts
+│   ├── AuthResponse.ts
+│   └── LoginUser.ts
 │
 ├── services
-│   └── UserService.ts         # Business API operations
+│   └── UserService.ts          # API service layer
 │
 ├── tests
 │   ├── api
@@ -102,8 +53,6 @@ playwright-xe-framework
 │   │   ├── profile.spec.ts
 │   │   └── crud
 │   │       └── users-crud.spec.ts
-│   │
-│   └── web
 │
 ├── playwright.config.ts
 ├── package.json
@@ -112,35 +61,108 @@ playwright-xe-framework
 
 ---
 
-# ⚙️ Installation
+# ✨ Features
 
-Clone the repository:
+## API Automation
 
-```bash
-git clone <repository-url>
+- REST API testing with Playwright Request API
+- CRUD validation:
+  - Create User
+  - Retrieve User
+  - Update User
+  - Delete User
+- HTTP status validation
+- Response body validation
+
+
+## Test Architecture
+
+Implemented automation design patterns:
+
+### Service Layer Pattern
+
+Business actions are centralized in services.
+
+Example:
+
+```
+UserService
+ ├── create()
+ ├── getById()
+ ├── update()
+ └── delete()
 ```
 
-Navigate to the project folder:
+Benefits:
 
-```bash
-cd playwright-xe-framework
+- Less duplicated code
+- Easier maintenance
+- Better scalability
+
+
+### Fixtures
+
+Custom Playwright fixtures provide reusable test dependencies:
+
+- API client initialization
+- Authentication handling
+- Shared test setup
+
+
+### Test Data Factory
+
+Dynamic test data generation:
+
+Example:
+
+```
+User_1784912978794
+user_1784912978794@test.com
 ```
 
-Install dependencies:
+Benefits:
+
+- Independent tests
+- No dependency between executions
+- Better parallel execution
+
+
+---
+
+# 🔐 Authentication Testing
+
+The framework includes authentication validation using:
+
+- Login endpoint
+- Token generation
+- Authenticated API requests
+
+Flow:
+
+```
+Login
+  |
+  v
+Receive Token
+  |
+  v
+Configure API Client
+  |
+  v
+Execute Authenticated Requests
+```
+
+---
+
+# 🧪 Running Tests
+
+## Install dependencies
 
 ```bash
 npm install
 ```
 
-Install Playwright browsers:
-
-```bash
-npx playwright install
-```
-
 ---
-
-# ▶️ Running Tests
 
 ## Run all tests
 
@@ -148,9 +170,16 @@ npx playwright install
 npm test
 ```
 
+Runs:
+
+- UI tests
+- API tests
+- All configured Playwright projects
+
+
 ---
 
-## Run API tests
+## Run API tests only
 
 ```bash
 npx playwright test --project=api
@@ -166,7 +195,7 @@ npx playwright test tests/api/crud/users-crud.spec.ts
 
 ---
 
-## Run tests on a specific browser
+## Run specific browser
 
 Chromium:
 
@@ -188,202 +217,68 @@ npx playwright test --project=webkit
 
 ---
 
-# 🔍 TypeScript Validation
+# 🔎 TypeScript Validation
 
-Run TypeScript compiler validation:
+Validate TypeScript compilation:
 
 ```bash
 npx tsc --noEmit
 ```
 
-This ensures the framework has no TypeScript compilation errors before execution.
-
 ---
 
-# 🧪 API Testing Coverage
+# 📊 Test Reports
 
-Implemented API scenarios:
+Generate and open Playwright HTML report:
 
-## Users API
-
-### GET Users
-
-Validates:
-
-- Successful response
-- Response structure
-- User list validation
-
-
-### Create User
-
-Validates:
-
-- HTTP 201 response
-- Generated user ID
-- Created user data
-
-
-### Retrieve User By ID
-
-Validates:
-
-- HTTP 200 response
-- Correct user retrieval
-- Data consistency
-
-
-### Update User
-
-Validates:
-
-- HTTP 200 response
-- Updated fields
-- Correct user identifier
-
-
-### Delete User
-
-Validates:
-
-- HTTP 204 response
-- Successful resource removal
-
-
----
-
-# 🔐 Authentication Testing
-
-Authentication flow includes:
-
-- Login request
-- Token extraction
-- Authenticated API context
-- Protected endpoint validation
-
-
-Example flow:
-
-```
-Login
-  |
-  ↓
-Receive token
-  |
-  ↓
-Set Authorization header
-  |
-  ↓
-Access protected resources
+```bash
+npx playwright show-report
 ```
 
----
+The framework generates:
 
-# 🏗️ Framework Design
-
-## ApiClient
-
-Responsible for:
-
-- HTTP communication
-- GET requests
-- POST requests
-- PUT requests
-- DELETE requests
-- Authentication headers
-
+- Execution summary
+- Failed test details
+- Screenshots
+- Traces (when enabled)
 
 ---
 
-## UserService
+# ⚙️ CI/CD Pipeline
 
-Contains business operations:
-
-Example:
-
-```typescript
-userService.create()
-
-userService.getById()
-
-userService.update()
-
-userService.delete()
-```
-
-This keeps tests clean and focused on validation.
-
-
----
-
-## Test Data Factory
-
-Dynamic test data generation:
-
-Example:
-
-```typescript
-{
-  name: "User_123456",
-  email: "user_123456@test.com"
-}
-```
-
-Benefits:
-
-- Independent tests
-- No duplicated data
-- Better parallel execution
-
-
----
-
-# 🌐 Playwright Configuration
-
-The framework supports:
-
-## Web Tests
-
-Projects:
-
-- Chromium
-- Firefox
-- WebKit
-
-
-## API Tests
-
-Dedicated project:
-
-```
-api
-```
-
-Configuration:
-
-- Single worker execution
-- API base URL
-- API-specific fixtures
-
-
----
-
-# 🔄 CI/CD Pipeline
-
-Implemented with GitHub Actions.
+The project uses **GitHub Actions**.
 
 Pipeline steps:
 
-1. Checkout repository
-2. Install Node.js
-3. Install dependencies
-4. Install Playwright browsers
-5. Validate TypeScript
-6. Execute automated tests
-7. Upload HTML reports
+```
+Checkout repository
 
+        ↓
 
-Workflow file:
+Install Node.js
+
+        ↓
+
+Install dependencies
+
+        ↓
+
+Install Playwright browsers
+
+        ↓
+
+TypeScript validation
+
+        ↓
+
+Execute Playwright tests
+
+        ↓
+
+Upload HTML report
+```
+
+Workflow location:
 
 ```
 .github/workflows/playwright.yml
@@ -391,58 +286,76 @@ Workflow file:
 
 ---
 
-# 📊 Test Reports
+# 🏗️ API Mock Server
 
-After execution:
+The project contains a local Express API server used for automation testing.
+
+Start API server manually:
 
 ```bash
-npx playwright show-report
+npm run start:api
 ```
 
-The HTML report provides:
+API URL:
 
-- Test results
-- Execution time
-- Screenshots
-- Videos
-- Traces
+```
+http://localhost:4000
+```
 
+Available endpoints:
+
+```
+GET     /api/users
+GET     /api/users/:id
+POST    /api/users
+PUT     /api/users/:id
+DELETE  /api/users/:id
+POST    /login
+GET     /profile
+```
 
 ---
 
-# 📈 Future Improvements
+# 🧩 Environment
 
-Possible framework enhancements:
+Default configuration:
 
-- Environment profiles:
-  - QA
-  - Staging
-  - Production
+```
+Web Application:
+http://localhost:3000
 
-- Docker execution
-- Database validation layer
-- API schema validation
-- Allure reporting
-- Parallel API execution strategy
-- Test tagging
-- Automated test data cleanup
+API Server:
+http://localhost:4000
+```
 
+---
+
+# 📈 Automation Strategy
+
+This framework follows QA automation best practices:
+
+✅ Independent tests  
+✅ Maintainable architecture  
+✅ Reusable components  
+✅ API abstraction layer  
+✅ Dynamic test data  
+✅ CI/CD execution  
+✅ Cross-browser testing  
+✅ Type-safe automation  
 
 ---
 
 # 👨‍💻 Author
 
-**Wagner Ruiz**
+**Wagner Ruiz de Jesus**
 
-QA Automation Engineer
+Senior QA Automation Engineer
 
-Experience with:
+Experience in:
 
-- Software Quality Assurance
-- Test Automation
-- API Testing
-- Web Automation
-- CI/CD Practices
-- Financial Systems Testing
-
+- Web automation
+- API testing
+- Test strategy
+- Quality engineering
+- CI/CD pipelines
 ```
