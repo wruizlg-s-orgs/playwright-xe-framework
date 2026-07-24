@@ -1,7 +1,7 @@
 import { test as base, expect } from './api.fixture';
 import { ApiClient } from '../helpers/ApiClient';
 import { UserFactory } from '../data/factories/UserFactory';
-
+import { AuthResponse } from '../models/AuthResponse';
 
 type AuthFixtures = {
 
