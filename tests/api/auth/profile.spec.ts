@@ -77,7 +77,7 @@ test.describe(
 
 
     test(
-        'Should access profile with valid token',
+        '@smoke Should access profile with valid token',
         async ({
             authenticatedApi
         }) => {
@@ -124,7 +124,7 @@ test.describe(
     );
 
     test(
-        'Should reject profile access without token',
+        '@regression Should reject profile access without token',
         async ({ api }) => {
 
 

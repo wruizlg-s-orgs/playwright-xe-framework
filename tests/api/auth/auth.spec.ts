@@ -49,7 +49,7 @@ test.describe(
 
 
     test(
-        'Should login successfully with valid credentials',
+        '@smoke Should login successfully with valid credentials',
         async ({ api }) => {
 
 
@@ -95,7 +95,7 @@ test.describe(
     );
 
     test(
-        'Should reject login with invalid credentials',
+        '@regression Should reject login with invalid credentials',
         async ({ api }) => {
 
 

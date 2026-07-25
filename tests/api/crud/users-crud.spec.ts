@@ -39,7 +39,7 @@ import {
 
 
 test.describe(
-    'Users CRUD API',
+    '@regression Users CRUD API',
     () => {
 
 
@@ -70,7 +70,7 @@ test.describe(
 
 
     test(
-        'Should create user successfully',
+        '@regression Should create user successfully',
         async () => {
 
 
@@ -103,7 +103,7 @@ test.describe(
 
 
     test(
-        'Should retrieve user by id successfully',
+        '@regression Should retrieve user by id successfully',
         async () => {
 
 
@@ -159,7 +159,7 @@ test.describe(
 
 
     test(
-        'Should update user successfully',
+        '@regression Should update user successfully',
         async () => {
 
 
@@ -226,7 +226,7 @@ test.describe(
 
 
     test(
-        'Should delete user successfully',
+        '@regression Should delete user successfully',
         async () => {
 
 

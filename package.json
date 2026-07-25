@@ -19,9 +19,13 @@
 
     "test:debug": "playwright test --debug",
 
-    "test:smoke": "playwright test --grep @smoke",
+    "test:smoke": "set ENVIRONMENT=local && playwright test --grep @smoke",
 
-    "test:regression": "playwright test --grep @regression",
+    "test:regression": "set ENVIRONMENT=local && playwright test --grep @regression",
+
+    "test:smoke:qa": "set ENVIRONMENT=qa && playwright test --grep @smoke",
+
+    "test:regression:qa": "set ENVIRONMENT=qa && playwright test --grep @regression",
 
     "report": "playwright show-report"
   },

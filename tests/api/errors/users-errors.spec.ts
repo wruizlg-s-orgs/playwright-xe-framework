@@ -27,7 +27,7 @@ test.describe(
 
 
     test(
-        'Should return 404 when user does not exist',
+        '@regression Should return 404 when user does not exist',
         async ({ api }) => {
 
 

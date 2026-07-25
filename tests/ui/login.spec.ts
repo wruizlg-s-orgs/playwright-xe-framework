@@ -1,10 +1,11 @@
 import { test, expect } from '@playwright/test';
 import { LoginPage } from '../../pages/LoginPage';
+import { UserFactory } from '../../data/factories/UserFactory';
 
 test.describe('Login functionality', () => {
 
 
-    test('User can login successfully', async ({ page }) => {
+    test('@regression User can login successfully', async ({ page }) => {
 
         const loginPage = new LoginPage(page);
 
@@ -12,9 +13,14 @@ test.describe('Login functionality', () => {
         await loginPage.goto();
 
 
+        const user = UserFactory.admin();
+
         await loginPage.login(
-            'admin',
-            '123456'
+
+            user.username,
+
+            user.password
+
         );
 
 
@@ -45,9 +51,14 @@ test.describe('Login functionality', () => {
         });
 
 
+        const user = UserFactory.invalid();
+
         await loginPage.login(
-            'admin',
-            'invalidpassword'
+
+            user.username,
+
+            user.password
+
         );
 
      });

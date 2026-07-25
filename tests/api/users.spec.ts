@@ -6,7 +6,7 @@ import { User } from '../../models/User';
 test.describe('User Management API Tests', () => {
 
 
-    test('Should retrieve users successfully', async ({ api }) => {
+    test('@regression Should retrieve users successfully', async ({ api }) => {
 
 
         const response = await api.get(
