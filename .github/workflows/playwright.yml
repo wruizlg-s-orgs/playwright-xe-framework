@@ -12,9 +12,9 @@ on:
       - main
       - master
 
-  concurrency:
-    group: playwright-${{ github.workflow }}-${{ github.ref }}
-    cancel-in-progress: true
+concurrency:
+  group: playwright-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 ###############################################################
 # API TESTS
