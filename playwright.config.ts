@@ -1,5 +1,22 @@
 import { defineConfig, devices } from '@playwright/test';
 
+import { validateEnvironmentSafety } 
+from './helpers/environmentSafety';
+
+import { validateConfig } 
+from './helpers/configValidator';
+
+import { printEnvironment }
+from './helpers/environmentReporter';
+
+
+
+validateEnvironmentSafety();
+
+validateConfig();
+
+printEnvironment();
+
 export default defineConfig({
 
     testDir: './tests',

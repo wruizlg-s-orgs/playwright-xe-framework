@@ -5,7 +5,7 @@ import {
 } from '@playwright/test';
 
 
-import { ENV } from './environment';
+import { ENV } from './config';
 
 import { Logger } from './Logger';
 

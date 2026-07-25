@@ -1,19 +1,35 @@
+import { ENV } from '../helpers/environment';
+
+
 export const USERS = Object.freeze({
+
 
     ADMIN: {
 
-        username: 'admin',
 
-        password: '123456'
+        username:
+            ENV.auth.username,
+
+
+        password:
+            ENV.auth.password
+
 
     },
 
+
     INVALID: {
 
-        username: 'admin',
 
-        password: 'invalidpassword'
+        username:
+            ENV.auth.username,
+
+
+        password:
+            'invalidpassword'
+
 
     }
+
 
 });
