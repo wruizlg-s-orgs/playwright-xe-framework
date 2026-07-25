@@ -28,7 +28,14 @@ import {
     UserAssertions
 } from '../../../helpers/assertions/UserAssertions';
 
+import {
+    UserSchema
+} from '../../../schemas/UserSchema';
 
+
+import {
+    SchemaAssertions
+} from '../../../helpers/assertions/SchemaAssertions';
 
 
 test.describe(
@@ -73,7 +80,10 @@ test.describe(
                     userService
                 );
 
-
+            SchemaAssertions.validate(
+                user,
+                UserSchema
+            );
 
             UserAssertions.expectUserFields(
                 user
@@ -121,6 +131,12 @@ test.describe(
 
             const body: User =
                 await response.json();
+
+
+            SchemaAssertions.validate(
+                body,
+                UserSchema
+            );               
 
 
 
@@ -182,7 +198,10 @@ test.describe(
             const body: User =
                 await response.json();
 
-
+            SchemaAssertions.validate(
+                body,
+                UserSchema
+            );
 
 
             UserAssertions.expectUserProperties(
