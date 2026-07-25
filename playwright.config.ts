@@ -135,7 +135,7 @@ export default defineConfig({
 
         {
 
-            command: 'npm start',
+            command: 'npm run start',
 
             url: 'http://localhost:3000',
 

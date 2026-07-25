@@ -6,9 +6,23 @@
   "scripts": {
     "start": "node app/server.js",
     "start:api": "node app/api-server.js",
+
     "test": "playwright test",
+
+    "test:local": "set ENVIRONMENT=local && playwright test",
+
+    "test:qa": "set ENVIRONMENT=qa && playwright test",
+
+    "test:prod": "set ENVIRONMENT=prod && set ALLOW_PROD=true && playwright test",
+
     "test:headed": "playwright test --headed",
+
     "test:debug": "playwright test --debug",
+
+    "test:smoke": "playwright test --grep @smoke",
+
+    "test:regression": "playwright test --grep @regression",
+
     "report": "playwright show-report"
   },
   "keywords": [],
