@@ -29,7 +29,21 @@ export default defineConfig({
 
     workers: process.env.CI ? 1 : undefined,
 
-    reporter: 'html',
+    reporter: [
+
+        [
+            'html',
+            {
+                outputFolder: 'playwright-report',
+                open: 'never'
+            }
+        ],
+
+        [
+            'list'
+        ]
+
+    ],
 
     use: {
 
@@ -117,9 +131,12 @@ export default defineConfig({
 
                 baseURL: 'http://localhost:4000',
 
-                trace: 'on-first-retry',
+                trace: 'retain-on-failure',
 
                 screenshot: 'only-on-failure',
+                    
+                video: 'retain-on-failure',
+
 
             },
 
