@@ -51,8 +51,11 @@ export default defineConfig({
             process.env.BASE_URL ||
             'http://localhost:3000',
 
-        trace: 'on-first-retry',
-
+        trace:
+            process.env.CI
+                ? 'retain-on-failure'
+                : 'on-first-retry',
+                
         screenshot: 'only-on-failure',
 
         video: 'retain-on-failure',
@@ -129,9 +132,14 @@ export default defineConfig({
 
             use: {
 
-                baseURL: 'http://localhost:4000',
-
-                trace: 'retain-on-failure',
+                baseURL:
+                    process.env.API_URL ||
+                    'http://localhost:4000',
+                        
+                trace:
+                    process.env.CI
+                        ? 'retain-on-failure'
+                        : 'on-first-retry',
 
                 screenshot: 'only-on-failure',
                     
@@ -158,8 +166,8 @@ export default defineConfig({
 
             timeout: 30000,
 
-            reuseExistingServer: true,
-
+            reuseExistingServer:
+                !process.env.CI,
         },
 
         {
@@ -170,8 +178,8 @@ export default defineConfig({
 
             timeout: 30000,
 
-            reuseExistingServer: true,
-
+            reuseExistingServer:
+                !process.env.CI,
         },
 
     ],
