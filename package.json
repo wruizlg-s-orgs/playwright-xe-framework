@@ -3,31 +3,31 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
-    "start": "node app/server.js",
-    "start:api": "node app/api-server.js",
+ "scripts": {
+  "start": "node app/server.js",
+  "start:api": "node app/api-server.js",
 
-    "test": "playwright test",
+  "test": "playwright test",
 
-    "test:local": "set ENVIRONMENT=local && playwright test",
+  "test:local": "cross-env ENVIRONMENT=local playwright test",
 
-    "test:qa": "set ENVIRONMENT=qa && playwright test",
+  "test:qa": "cross-env ENVIRONMENT=qa playwright test",
 
-    "test:prod": "set ENVIRONMENT=prod && set ALLOW_PROD=true && playwright test",
+  "test:prod": "cross-env ENVIRONMENT=prod ALLOW_PROD=true playwright test",
 
-    "test:headed": "playwright test --headed",
+  "test:headed": "playwright test --headed",
 
-    "test:debug": "playwright test --debug",
+  "test:debug": "playwright test --debug",
 
-    "test:smoke": "set ENVIRONMENT=local && playwright test --grep @smoke",
+  "test:smoke": "cross-env ENVIRONMENT=local playwright test --grep @smoke",
 
-    "test:regression": "set ENVIRONMENT=local && playwright test --grep @regression",
+  "test:regression": "cross-env ENVIRONMENT=local playwright test --grep @regression",
 
-    "test:smoke:qa": "set ENVIRONMENT=qa && playwright test --grep @smoke",
+  "test:smoke:qa": "cross-env ENVIRONMENT=qa playwright test --grep @smoke",
 
-    "test:regression:qa": "set ENVIRONMENT=qa && playwright test --grep @regression",
+  "test:regression:qa": "cross-env ENVIRONMENT=qa playwright test --grep @regression",
 
-    "report": "playwright show-report"
+  "report": "playwright show-report"
   },
   "keywords": [],
   "author": "",
@@ -36,6 +36,7 @@
   "devDependencies": {
     "@playwright/test": "^1.61.1",
     "@types/node": "^26.1.1",
+    "cross-env": "^10.1.0",
     "typescript": "^7.0.2"
   },
   "dependencies": {

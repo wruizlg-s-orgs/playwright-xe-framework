@@ -40,11 +40,18 @@ export default defineConfig({
         ],
 
         [
+            'junit',
+            {
+                outputFile: 'test-results/results.xml'
+            }
+        ],
+
+        [
             'list'
         ]
 
     ],
-
+    
     use: {
 
         baseURL:
@@ -183,5 +190,6 @@ export default defineConfig({
         },
 
     ],
+    
 
 });
