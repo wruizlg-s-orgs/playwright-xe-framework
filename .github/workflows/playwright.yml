@@ -32,8 +32,11 @@ jobs:
 
         env:
             ENVIRONMENT: qa
+
             API_URL: ${{ secrets.QA_API_URL }}
+
             API_USERNAME: ${{ secrets.QA_USERNAME }}
+
             API_PASSWORD: ${{ secrets.QA_PASSWORD }}
 
         steps:
@@ -55,29 +58,18 @@ jobs:
             - name: TypeScript Validation
               run: npx tsc --noEmit
 
-            - name: Cache Playwright Browsers
-              uses: actions/cache@v4
-              with:
-                  path: ~/.cache/ms-playwright
-                  key: playwright-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
-                  restore-keys: |
-                      playwright-${{ runner.os }}-
-
             - name: Install Playwright Browsers
               run: npx playwright install --with-deps
 
             - name: Run API Tests
               run: npx playwright test --project=api
 
-            - name: Upload API Results
+            - name: Upload API Allure Results
               if: always()
               uses: actions/upload-artifact@v4
               with:
-                  name: api-results
-                  path: |
-                      playwright-report/
-                      test-results/
-                      allure-results/
+                  name: api-allure-results
+                  path: allure-results/
 
     ###############################################################
     # UI TESTS
@@ -119,27 +111,26 @@ jobs:
             - name: TypeScript Validation
               run: npx tsc --noEmit
 
-            - name: Install Playwright
+            - name: Install Playwright Browsers
               run: npx playwright install --with-deps
 
             - name: Run UI Tests
               run: npx playwright test --project=${{ matrix.browser }}
 
-            - name: Upload UI Results
+            - name: Upload UI Allure Results
               if: always()
               uses: actions/upload-artifact@v4
               with:
-                  name: ui-${{ matrix.browser }}-results
-                  path: |
-                      playwright-report/
-                      test-results/
-                      allure-results/
+                  name: ${{ matrix.browser }}-allure-results
+
+                  path: allure-results/
 
             - name: Upload Failure Evidence
               if: failure()
               uses: actions/upload-artifact@v4
               with:
                   name: evidence-${{ matrix.browser }}
+
                   path: test-results/
 
     ###############################################################
@@ -159,40 +150,50 @@ jobs:
             - name: Checkout repository
               uses: actions/checkout@v4
 
-            - name: Download API Results
+            - name: Download API Allure Results
               uses: actions/download-artifact@v4
+
               with:
-                  pattern: api-results
-                  path: artifacts
+                  pattern: api-allure-results
+
+                  path: allure-results
+
                   merge-multiple: true
 
-            - name: Download UI Results
+            - name: Download UI Allure Results
               uses: actions/download-artifact@v4
+
               with:
-                  pattern: ui-*-results
-                  path: artifacts
+                  pattern: '*-allure-results'
+
+                  path: allure-results
+
                   merge-multiple: true
 
-            - name: Prepare Allure Results
+            - name: Debug Allure Results
               run: |
 
-                  mkdir -p allure-results
+                  echo "=============================="
 
-                  find artifacts -type f -path "*/allure-results/*" -exec cp {} allure-results/ \;
+                  echo "ALLURE FILES"
 
-            - name: Validate Allure Results
-              run: |
+                  echo "=============================="
 
-                  echo "========== ALLURE RESULTS =========="
+                  find allure-results -type f | head -50
 
-                  ls -la allure-results
 
-                  echo "===================================="
+                  echo ""
+
+                  echo "RESULT JSON COUNT"
+
+                  find allure-results -name "*-result.json" | wc -l
 
             - name: Setup Java
               uses: actions/setup-java@v4
+
               with:
                   distribution: temurin
+
                   java-version: 17
 
             - name: Install Allure
@@ -205,8 +206,10 @@ jobs:
 
             - name: Upload Allure Report
               uses: actions/upload-artifact@v4
+
               with:
                   name: allure-report
+
                   path: allure-report/
 
     ###############################################################
@@ -234,10 +237,6 @@ jobs:
                   echo "API Tests executed." >> $GITHUB_STEP_SUMMARY
 
                   echo "UI Tests executed in parallel." >> $GITHUB_STEP_SUMMARY
-
-                  echo "" >> $GITHUB_STEP_SUMMARY
-
-                  echo "Allure Report generated." >> $GITHUB_STEP_SUMMARY
 
                   echo "" >> $GITHUB_STEP_SUMMARY
 
