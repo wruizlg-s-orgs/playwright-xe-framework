@@ -18,6 +18,7 @@ on:
 
 concurrency:
     group: playwright-${{ github.workflow }}-${{ github.ref }}
+
     cancel-in-progress: true
 
 ###############################################################
@@ -45,8 +46,10 @@ jobs:
 
             - name: Setup Node
               uses: actions/setup-node@v4
+
               with:
                   node-version: 22
+
                   cache: npm
 
             - name: Install dependencies
@@ -66,9 +69,12 @@ jobs:
 
             - name: Upload API Allure Results
               if: always()
+
               uses: actions/upload-artifact@v4
+
               with:
                   name: api-allure-results
+
                   path: allure-results/
 
     ###############################################################
@@ -86,7 +92,9 @@ jobs:
             matrix:
                 browser:
                     - chromium
+
                     - firefox
+
                     - webkit
 
         env:
@@ -98,8 +106,10 @@ jobs:
 
             - name: Setup Node
               uses: actions/setup-node@v4
+
               with:
                   node-version: 22
+
                   cache: npm
 
             - name: Install dependencies
@@ -119,7 +129,9 @@ jobs:
 
             - name: Upload UI Allure Results
               if: always()
+
               uses: actions/upload-artifact@v4
+
               with:
                   name: ${{ matrix.browser }}-allure-results
 
@@ -127,7 +139,9 @@ jobs:
 
             - name: Upload Failure Evidence
               if: failure()
+
               uses: actions/upload-artifact@v4
+
               with:
                   name: evidence-${{ matrix.browser }}
 
@@ -140,6 +154,7 @@ jobs:
     allure-report:
         needs:
             - api-tests
+
             - ui-tests
 
         if: always()
@@ -149,6 +164,11 @@ jobs:
         steps:
             - name: Checkout repository
               uses: actions/checkout@v4
+
+            - name: Prepare Allure Directory
+              run: |
+
+                  mkdir -p allure-results
 
             - name: Download API Allure Results
               uses: actions/download-artifact@v4
@@ -170,23 +190,81 @@ jobs:
 
                   merge-multiple: true
 
+            - name: Create Allure Metadata
+              run: |
+
+
+                  cat <<EOF > allure-results/environment.properties
+
+                  Environment=QA
+
+                  Browser=Multiple
+
+                  Framework=Playwright
+
+                  Language=TypeScript
+
+                  CI=GitHub Actions
+
+                  EOF
+
+
+
+
+                  cat <<EOF > allure-results/executor.json
+
+                  {
+                    "name": "GitHub Actions",
+                    "type": "github",
+                    "url": "https://github.com/${{ github.repository }}",
+                    "buildOrder": ${{ github.run_number }},
+                    "buildName": "${{ github.workflow }}",
+                    "buildUrl": "https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}",
+                    "reportName": "Playwright Automation Report"
+                  }
+
+                  EOF
+
             - name: Debug Allure Results
               run: |
 
-                  echo "=============================="
-
-                  echo "ALLURE FILES"
 
                   echo "=============================="
 
-                  find allure-results -type f | head -50
+                  echo "ALLURE RESULT COUNT"
+
+                  echo "=============================="
+
+
+                  find allure-results \
+                  -name "*-result.json" \
+                  | wc -l
+
 
 
                   echo ""
 
-                  echo "RESULT JSON COUNT"
+                  echo "=============================="
 
-                  find allure-results -name "*-result.json" | wc -l
+                  echo "ENVIRONMENT"
+
+                  echo "=============================="
+
+
+                  cat allure-results/environment.properties
+
+
+
+                  echo ""
+
+                  echo "=============================="
+
+                  echo "EXECUTOR"
+
+                  echo "=============================="
+
+
+                  cat allure-results/executor.json
 
             - name: Setup Java
               uses: actions/setup-java@v4
@@ -202,7 +280,10 @@ jobs:
             - name: Generate Allure Report
               run: |
 
-                  allure generate allure-results --clean -o allure-report
+
+                  allure generate allure-results \
+                  --clean \
+                  -o allure-report
 
             - name: Upload Allure Report
               uses: actions/upload-artifact@v4
@@ -219,7 +300,9 @@ jobs:
     summary:
         needs:
             - api-tests
+
             - ui-tests
+
             - allure-report
 
         if: always()
@@ -230,14 +313,20 @@ jobs:
             - name: Publish Summary
               run: |
 
+
                   echo "## Playwright Automation Pipeline" >> $GITHUB_STEP_SUMMARY
 
+
                   echo "" >> $GITHUB_STEP_SUMMARY
+
 
                   echo "API Tests executed." >> $GITHUB_STEP_SUMMARY
 
+
                   echo "UI Tests executed in parallel." >> $GITHUB_STEP_SUMMARY
 
+
                   echo "" >> $GITHUB_STEP_SUMMARY
+
 
                   echo "Environment: QA" >> $GITHUB_STEP_SUMMARY

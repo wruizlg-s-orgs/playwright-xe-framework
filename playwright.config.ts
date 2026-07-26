@@ -1,9 +1,7 @@
 import { defineConfig, devices } from '@playwright/test';
 
 import { validateEnvironmentSafety } from './helpers/environmentSafety';
-
 import { validateConfig } from './helpers/configValidator';
-
 import { printEnvironment } from './helpers/environmentReporter';
 
 validateEnvironmentSafety();
@@ -43,11 +41,25 @@ export default defineConfig({
             'allure-playwright',
             {
                 resultsDir: 'allure-results',
+
+                detail: true,
+
+                suiteTitle: true,
             },
         ],
 
         ['list'],
     ],
+
+    metadata: {
+        project: 'Playwright XE Automation Framework',
+
+        environment: process.env.ENVIRONMENT || 'local',
+
+        framework: 'Playwright',
+
+        language: 'TypeScript',
+    },
 
     use: {
         baseURL: process.env.BASE_URL || 'http://localhost:3000',
@@ -60,10 +72,6 @@ export default defineConfig({
     },
 
     projects: [
-        // =========================
-        // WEB TESTS
-        // =========================
-
         {
             name: 'chromium',
 
@@ -94,10 +102,6 @@ export default defineConfig({
             },
         },
 
-        // =========================
-        // API TESTS
-        // =========================
-
         {
             name: 'api',
 
@@ -107,19 +111,9 @@ export default defineConfig({
 
             use: {
                 baseURL: process.env.API_URL || 'http://localhost:4000',
-
-                trace: process.env.CI ? 'retain-on-failure' : 'on-first-retry',
-
-                screenshot: 'only-on-failure',
-
-                video: 'retain-on-failure',
             },
         },
     ],
-
-    // =========================
-    // SERVERS
-    // =========================
 
     webServer: [
         {

@@ -1,15 +1,22 @@
 import { test, expect } from '@playwright/test';
+
 import { LoginPage } from '../../pages/LoginPage';
+
 import { UserFactory } from '../../data/factories/UserFactory';
+
 import { addAllureMetadata } from '../../helpers/allure';
 
 test.describe('Login functionality', () => {
     test('@regression User can login successfully', async ({ page }) => {
         addAllureMetadata({
             feature: 'Authentication',
+
             story: 'User Login',
+
             severity: 'critical',
-            owner: 'QA Team',
+
+            owner: 'Wagner Ruiz',
+
             tag: 'regression',
         });
 
@@ -27,9 +34,13 @@ test.describe('Login functionality', () => {
     test('@smoke User cannot login with invalid password', async ({ page }) => {
         addAllureMetadata({
             feature: 'Authentication',
-            story: 'User Login',
+
+            story: 'Invalid Login',
+
             severity: 'normal',
-            owner: 'QA Team',
+
+            owner: 'Wagner Ruiz',
+
             tag: 'smoke',
         });
 
