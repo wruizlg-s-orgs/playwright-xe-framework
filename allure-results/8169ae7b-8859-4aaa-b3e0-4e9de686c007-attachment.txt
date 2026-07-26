@@ -1,0 +1,6 @@
+[HTTP ERROR] GET /api/users/999999
+STATUS: 404 | TIME: 3ms
+BODY:
+{
+  "message": "User not found"
+}

@@ -1,0 +1,6 @@
+[HTTP ERROR] GET /profile
+STATUS: 401 | TIME: 5ms
+BODY:
+{
+  "message": "Unauthorized"
+}

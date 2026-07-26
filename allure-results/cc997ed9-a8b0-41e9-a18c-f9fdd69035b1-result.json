@@ -1,0 +1,168 @@
+{
+    "uuid": "cc997ed9-a8b0-41e9-a18c-f9fdd69035b1",
+    "name": "@regression Should reject login with invalid credentials",
+    "historyId": "dca8e79b8dfe9585e4a88c10d4e4e596:259864bbb84e0941359ea9e4c0db04ac",
+    "status": "passed",
+    "statusDetails": {},
+    "stage": "finished",
+    "steps": [
+        {
+            "status": "passed",
+            "statusDetails": {},
+            "stage": "finished",
+            "steps": [
+                {
+                    "status": "passed",
+                    "statusDetails": {},
+                    "stage": "finished",
+                    "steps": [
+                        {
+                            "status": "passed",
+                            "statusDetails": {},
+                            "stage": "finished",
+                            "steps": [],
+                            "attachments": [],
+                            "parameters": [],
+                            "name": "Create request context",
+                            "start": 1785100014216,
+                            "uuid": "0bc74c48-7cbe-4624-b863-a3fe9351cd01",
+                            "stop": 1785100014217
+                        },
+                        {
+                            "status": "passed",
+                            "statusDetails": {},
+                            "stage": "finished",
+                            "steps": [],
+                            "attachments": [],
+                            "parameters": [],
+                            "name": "POST \"/test/reset\"",
+                            "start": 1785100014219,
+                            "uuid": "36de6a80-0e6c-4e61-82e3-f66e79cb566b",
+                            "stop": 1785100014222
+                        }
+                    ],
+                    "attachments": [],
+                    "parameters": [],
+                    "name": "Fixture \"api\"",
+                    "start": 1785100014215,
+                    "uuid": "323ea288-da4b-4876-b47c-2d2bc1725f4b",
+                    "stop": 1785100014223
+                }
+            ],
+            "attachments": [],
+            "parameters": [],
+            "name": "Before Hooks",
+            "start": 1785100014203,
+            "uuid": "307a0150-069f-4d45-9ca7-87447eb9b59a",
+            "stop": 1785100014223
+        },
+        {
+            "status": "passed",
+            "statusDetails": {},
+            "stage": "finished",
+            "steps": [],
+            "attachments": [],
+            "parameters": [],
+            "start": 1785100014226,
+            "name": "POST \"/login\"",
+            "uuid": "6d5b4898-e4de-42bb-9ce4-bb4a8f5f6465",
+            "stop": 1785100014229
+        },
+        {
+            "status": "passed",
+            "statusDetails": {},
+            "stage": "finished",
+            "steps": [],
+            "attachments": [],
+            "parameters": [],
+            "start": 1785100014232,
+            "name": "Expect \"toBe\"",
+            "uuid": "c641de6c-1095-4495-b068-5e1b7a8e22e3",
+            "stop": 1785100014228
+        },
+        {
+            "status": "passed",
+            "statusDetails": {},
+            "stage": "finished",
+            "steps": [],
+            "attachments": [],
+            "parameters": [],
+            "start": 1785100014255,
+            "name": "Expect \"toBeTruthy\"",
+            "uuid": "d3785cd1-418c-4622-949b-0ef92aee2853",
+            "stop": 1785100014251
+        },
+        {
+            "status": "passed",
+            "statusDetails": {},
+            "stage": "finished",
+            "steps": [
+                {
+                    "status": "passed",
+                    "statusDetails": {},
+                    "stage": "finished",
+                    "steps": [],
+                    "attachments": [],
+                    "parameters": [],
+                    "name": "Fixture \"api\"",
+                    "start": 1785100014256,
+                    "uuid": "68a52bbd-4996-4b3c-b18d-ef8e29e2e61c",
+                    "stop": 1785100014263
+                }
+            ],
+            "attachments": [],
+            "parameters": [],
+            "name": "After Hooks",
+            "start": 1785100014255,
+            "uuid": "7c4fd19e-404b-4de7-8923-19bbef29a368",
+            "stop": 1785100014273
+        }
+    ],
+    "attachments": [
+        {
+            "name": "stdout",
+            "source": "f9a1259e-2ca7-4b2d-bcb0-3d162575d7c9-attachment.txt",
+            "type": "text/plain"
+        },
+        {
+            "name": "stderr",
+            "source": "749e8b0a-27be-4e1a-a703-82a7a265fde2-attachment.txt",
+            "type": "text/plain"
+        }
+    ],
+    "parameters": [{ "name": "Project", "value": "api" }],
+    "labels": [
+        { "name": "language", "value": "javascript" },
+        { "name": "framework", "value": "playwright" },
+        {
+            "name": "package",
+            "value": "playwright-xe-framework.api.auth.auth.spec.ts"
+        },
+        {
+            "name": "_fallbackTestCaseId",
+            "value": "822bc7fe7e1b869b2ac253116f213dfe"
+        },
+        {
+            "name": "titlePath",
+            "value": " > api > api\\auth\\auth.spec.ts > Authentication API"
+        },
+        { "name": "tag", "value": "regression" },
+        { "name": "host", "value": "DeskWA" },
+        { "name": "thread", "value": "pid-19544-worker-2" },
+        { "name": "parentSuite", "value": "api" },
+        { "name": "suite", "value": "api\\auth\\auth.spec.ts" },
+        { "name": "subSuite", "value": "Authentication API" }
+    ],
+    "links": [],
+    "start": 1785100014200,
+    "testCaseId": "dca8e79b8dfe9585e4a88c10d4e4e596",
+    "fullName": "api/auth/auth.spec.ts:40:5",
+    "titlePath": [
+        "playwright-xe-framework",
+        "api",
+        "auth",
+        "auth.spec.ts",
+        "Authentication API"
+    ],
+    "stop": 1785100014249
+}

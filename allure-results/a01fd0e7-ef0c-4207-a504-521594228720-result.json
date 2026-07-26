@@ -1,0 +1,177 @@
+{
+    "uuid": "a01fd0e7-ef0c-4207-a504-521594228720",
+    "name": "@regression Should delete user successfully",
+    "historyId": "476856726982cf0b564677d0662a95bd:259864bbb84e0941359ea9e4c0db04ac",
+    "status": "passed",
+    "statusDetails": {},
+    "stage": "finished",
+    "steps": [
+        {
+            "status": "passed",
+            "statusDetails": {},
+            "stage": "finished",
+            "steps": [
+                {
+                    "status": "passed",
+                    "statusDetails": {},
+                    "stage": "finished",
+                    "steps": [
+                        {
+                            "status": "passed",
+                            "statusDetails": {},
+                            "stage": "finished",
+                            "steps": [
+                                {
+                                    "status": "passed",
+                                    "statusDetails": {},
+                                    "stage": "finished",
+                                    "steps": [],
+                                    "attachments": [],
+                                    "parameters": [],
+                                    "name": "Create request context",
+                                    "start": 1785100014693,
+                                    "uuid": "0ec3175e-43c6-4c1e-b160-6c766d7656b0",
+                                    "stop": 1785100014693
+                                },
+                                {
+                                    "status": "passed",
+                                    "statusDetails": {},
+                                    "stage": "finished",
+                                    "steps": [],
+                                    "attachments": [],
+                                    "parameters": [],
+                                    "name": "POST \"/test/reset\"",
+                                    "start": 1785100014695,
+                                    "uuid": "86e6517d-ddd9-472f-b408-46ef1023b1fc",
+                                    "stop": 1785100014696
+                                }
+                            ],
+                            "attachments": [],
+                            "parameters": [],
+                            "name": "Fixture \"api\"",
+                            "start": 1785100014692,
+                            "uuid": "7e8ddf45-c926-4219-a6cf-735967b46cb7",
+                            "stop": 1785100014697
+                        }
+                    ],
+                    "attachments": [],
+                    "parameters": [],
+                    "name": "beforeEach hook",
+                    "start": 1785100014684,
+                    "uuid": "6150066e-4521-43e2-a909-da8704cadc24",
+                    "stop": 1785100014697
+                }
+            ],
+            "attachments": [],
+            "parameters": [],
+            "name": "Before Hooks",
+            "start": 1785100014684,
+            "uuid": "fd6e6788-4b6a-447c-a86d-4f47b54196f0",
+            "stop": 1785100014697
+        },
+        {
+            "status": "passed",
+            "statusDetails": {},
+            "stage": "finished",
+            "steps": [],
+            "attachments": [],
+            "parameters": [],
+            "start": 1785100014699,
+            "name": "POST \"/api/users\"",
+            "uuid": "8e486b6d-ec33-41f7-a30d-9e8e9f158379",
+            "stop": 1785100014701
+        },
+        {
+            "status": "passed",
+            "statusDetails": {},
+            "stage": "finished",
+            "steps": [],
+            "attachments": [],
+            "parameters": [],
+            "start": 1785100014703,
+            "name": "DELETE \"/api/users/3\"",
+            "uuid": "5836bf11-5faa-4562-832f-bb7675f77fd3",
+            "stop": 1785100014704
+        },
+        {
+            "status": "passed",
+            "statusDetails": {},
+            "stage": "finished",
+            "steps": [],
+            "attachments": [],
+            "parameters": [],
+            "start": 1785100014706,
+            "name": "Expect \"toBe\"",
+            "uuid": "db6a055f-2bc0-445b-8b3c-03a46ba51f4c",
+            "stop": 1785100014704
+        },
+        {
+            "status": "passed",
+            "statusDetails": {},
+            "stage": "finished",
+            "steps": [
+                {
+                    "status": "passed",
+                    "statusDetails": {},
+                    "stage": "finished",
+                    "steps": [],
+                    "attachments": [],
+                    "parameters": [],
+                    "name": "Fixture \"api\"",
+                    "start": 1785100014706,
+                    "uuid": "17a22cc4-5295-40e2-9d51-20e0293e06ff",
+                    "stop": 1785100014708
+                }
+            ],
+            "attachments": [],
+            "parameters": [],
+            "name": "After Hooks",
+            "start": 1785100014706,
+            "uuid": "9c88ad79-51f3-447c-b584-6b964569068e",
+            "stop": 1785100014715
+        }
+    ],
+    "attachments": [
+        {
+            "name": "stdout",
+            "source": "3262648e-adc2-4e31-a6cc-6f6fe0c86b2b-attachment.txt",
+            "type": "text/plain"
+        }
+    ],
+    "parameters": [{ "name": "Project", "value": "api" }],
+    "labels": [
+        { "name": "language", "value": "javascript" },
+        { "name": "framework", "value": "playwright" },
+        {
+            "name": "package",
+            "value": "playwright-xe-framework.api.crud.users-crud.spec.ts"
+        },
+        {
+            "name": "_fallbackTestCaseId",
+            "value": "9f4c088fdd1e2001452e4a1a79d05985"
+        },
+        {
+            "name": "titlePath",
+            "value": " > api > api\\crud\\users-crud.spec.ts > @regression Users CRUD API"
+        },
+        { "name": "tag", "value": "regression" },
+        { "name": "tag", "value": "regression" },
+        { "name": "host", "value": "DeskWA" },
+        { "name": "thread", "value": "pid-19544-worker-2" },
+        { "name": "parentSuite", "value": "api" },
+        { "name": "suite", "value": "api\\crud\\users-crud.spec.ts" },
+        { "name": "subSuite", "value": "@regression Users CRUD API" }
+    ],
+    "links": [],
+    "start": 1785100014680,
+    "testCaseId": "476856726982cf0b564677d0662a95bd",
+    "fullName": "api/crud/users-crud.spec.ts:70:5",
+    "titlePath": [
+        "playwright-xe-framework",
+        "api",
+        "crud",
+        "users-crud.spec.ts",
+        "@regression Users CRUD API"
+    ],
+    "stop": 1785100014696
+}

@@ -1,0 +1,243 @@
+{
+    "uuid": "002a23e1-bee9-4788-99c6-cc0a7137cc8d",
+    "name": "@regression User can login successfully",
+    "historyId": "44f3ad64fbb3f452c85b328172846080:84e28e814b821ed013329cc8dbc467e0",
+    "status": "passed",
+    "statusDetails": {},
+    "stage": "finished",
+    "steps": [
+        {
+            "status": "passed",
+            "statusDetails": {},
+            "stage": "finished",
+            "steps": [
+                {
+                    "status": "passed",
+                    "statusDetails": {},
+                    "stage": "finished",
+                    "steps": [
+                        {
+                            "status": "passed",
+                            "statusDetails": {},
+                            "stage": "finished",
+                            "steps": [],
+                            "attachments": [],
+                            "parameters": [],
+                            "name": "Launch browser",
+                            "start": 1785100012021,
+                            "uuid": "4ed3d6ac-6697-486b-8807-b1a4db327aa4",
+                            "stop": 1785100012103
+                        }
+                    ],
+                    "attachments": [],
+                    "parameters": [],
+                    "name": "Fixture \"browser\"",
+                    "start": 1785100012016,
+                    "uuid": "9032d4de-d819-4466-8cfc-4eae21e01eac",
+                    "stop": 1785100012104
+                },
+                {
+                    "status": "passed",
+                    "statusDetails": {},
+                    "stage": "finished",
+                    "steps": [
+                        {
+                            "status": "passed",
+                            "statusDetails": {},
+                            "stage": "finished",
+                            "steps": [],
+                            "attachments": [],
+                            "parameters": [],
+                            "name": "Create context",
+                            "start": 1785100012109,
+                            "uuid": "112666d7-a11e-46f6-89bb-f44e369eb305",
+                            "stop": 1785100012157
+                        }
+                    ],
+                    "attachments": [],
+                    "parameters": [],
+                    "name": "Fixture \"context\"",
+                    "start": 1785100012106,
+                    "uuid": "3b33c12c-c9d9-4488-b4a5-6c75db3f57f0",
+                    "stop": 1785100012159
+                },
+                {
+                    "status": "passed",
+                    "statusDetails": {},
+                    "stage": "finished",
+                    "steps": [
+                        {
+                            "status": "passed",
+                            "statusDetails": {},
+                            "stage": "finished",
+                            "steps": [],
+                            "attachments": [],
+                            "parameters": [],
+                            "name": "Create page",
+                            "start": 1785100012162,
+                            "uuid": "315b33fb-4d46-4d54-8f22-7973d66de9a4",
+                            "stop": 1785100012576
+                        }
+                    ],
+                    "attachments": [],
+                    "parameters": [],
+                    "name": "Fixture \"page\"",
+                    "start": 1785100012160,
+                    "uuid": "0f42dcd3-f417-47c0-bc18-81e5a0d1f2ed",
+                    "stop": 1785100012576
+                }
+            ],
+            "attachments": [],
+            "parameters": [],
+            "name": "Before Hooks",
+            "start": 1785100011996,
+            "uuid": "a0130d31-cc24-4429-b9ee-7f23efe2dfae",
+            "stop": 1785100012576
+        },
+        {
+            "status": "passed",
+            "statusDetails": {},
+            "stage": "finished",
+            "steps": [],
+            "attachments": [],
+            "parameters": [],
+            "start": 1785100012583,
+            "name": "Navigate to \"/\"",
+            "uuid": "bf5c7c3d-d23b-43a1-92e4-40bd70c0e7dc",
+            "stop": 1785100012814
+        },
+        {
+            "status": "passed",
+            "statusDetails": {},
+            "stage": "finished",
+            "steps": [],
+            "attachments": [],
+            "parameters": [],
+            "start": 1785100012820,
+            "name": "Fill \"admin\" getByTestId('username')",
+            "uuid": "f6599807-25f4-4eb1-a874-04019b9ef68c",
+            "stop": 1785100013096
+        },
+        {
+            "status": "passed",
+            "statusDetails": {},
+            "stage": "finished",
+            "steps": [],
+            "attachments": [],
+            "parameters": [],
+            "start": 1785100013098,
+            "name": "Fill \"123456\" getByTestId('password')",
+            "uuid": "c85491a6-4520-46d7-ae7f-eca840d02883",
+            "stop": 1785100013226
+        },
+        {
+            "status": "passed",
+            "statusDetails": {},
+            "stage": "finished",
+            "steps": [],
+            "attachments": [],
+            "parameters": [],
+            "start": 1785100013228,
+            "name": "Click getByTestId('login-button')",
+            "uuid": "09b816e0-e8ee-41b9-b424-d3df2da1b434",
+            "stop": 1785100013613
+        },
+        {
+            "status": "passed",
+            "statusDetails": {},
+            "stage": "finished",
+            "steps": [],
+            "attachments": [],
+            "parameters": [],
+            "start": 1785100013621,
+            "name": "Expect \"toHaveURL\"",
+            "uuid": "efcb8c8b-56d2-45fb-b5fd-ade86d67d864",
+            "stop": 1785100013775
+        },
+        {
+            "status": "passed",
+            "statusDetails": {},
+            "stage": "finished",
+            "steps": [
+                {
+                    "status": "passed",
+                    "statusDetails": {},
+                    "stage": "finished",
+                    "steps": [],
+                    "attachments": [],
+                    "parameters": [],
+                    "name": "Fixture \"page\"",
+                    "start": 1785100013777,
+                    "uuid": "52492e09-00a4-42a7-9b31-246c2df268d8",
+                    "stop": 1785100013778
+                },
+                {
+                    "status": "passed",
+                    "statusDetails": {},
+                    "stage": "finished",
+                    "steps": [
+                        {
+                            "status": "passed",
+                            "statusDetails": {},
+                            "stage": "finished",
+                            "steps": [],
+                            "attachments": [],
+                            "parameters": [],
+                            "name": "Close context",
+                            "start": 1785100014215,
+                            "uuid": "8ab0838b-ec61-4365-b78e-193828ffb508",
+                            "stop": 1785100014467
+                        }
+                    ],
+                    "attachments": [],
+                    "parameters": [],
+                    "name": "Fixture \"context\"",
+                    "start": 1785100013778,
+                    "uuid": "3d2fb25a-135f-4915-8167-ca52e5871e4d",
+                    "stop": 1785100014467
+                }
+            ],
+            "attachments": [],
+            "parameters": [],
+            "name": "After Hooks",
+            "start": 1785100013776,
+            "uuid": "f45059a8-61b9-45e2-b045-28efcd38cd6e",
+            "stop": 1785100014477
+        }
+    ],
+    "attachments": [],
+    "parameters": [{ "name": "Project", "value": "webkit" }],
+    "labels": [
+        { "name": "language", "value": "javascript" },
+        { "name": "framework", "value": "playwright" },
+        {
+            "name": "package",
+            "value": "playwright-xe-framework.ui.login.spec.ts"
+        },
+        {
+            "name": "_fallbackTestCaseId",
+            "value": "c5bb5dd41d99a94ba307b0b066eb1247"
+        },
+        {
+            "name": "titlePath",
+            "value": " > webkit > ui\\login.spec.ts > Login functionality"
+        },
+        { "name": "tag", "value": "regression" },
+        { "name": "host", "value": "DeskWA" },
+        { "name": "thread", "value": "pid-19544-worker-1" },
+        { "name": "parentSuite", "value": "webkit" },
+        { "name": "suite", "value": "ui\\login.spec.ts" },
+        { "name": "subSuite", "value": "Login functionality" }
+    ],
+    "links": [],
+    "start": 1785100011955,
+    "testCaseId": "44f3ad64fbb3f452c85b328172846080",
+    "fullName": "ui/login.spec.ts:6:5",
+    "titlePath": [
+        "playwright-xe-framework",
+        "ui",
+        "login.spec.ts",
+        "Login functionality"
+    ],
+    "stop": 1785100014316
+}

@@ -1,0 +1,209 @@
+{
+    "uuid": "30ba9541-c0d1-4cbc-a7be-84d80ba5f391",
+    "name": "get started link",
+    "historyId": "f3e69e20b7a74520bf58cfd14347c3ff:84e28e814b821ed013329cc8dbc467e0",
+    "status": "passed",
+    "statusDetails": {},
+    "stage": "finished",
+    "steps": [
+        {
+            "status": "passed",
+            "statusDetails": {},
+            "stage": "finished",
+            "steps": [
+                {
+                    "status": "passed",
+                    "statusDetails": {},
+                    "stage": "finished",
+                    "steps": [
+                        {
+                            "status": "passed",
+                            "statusDetails": {},
+                            "stage": "finished",
+                            "steps": [],
+                            "attachments": [],
+                            "parameters": [],
+                            "name": "Launch browser",
+                            "start": 1785100009617,
+                            "uuid": "689ed087-2a52-46a8-b68b-84af03d04a46",
+                            "stop": 1785100009733
+                        }
+                    ],
+                    "attachments": [],
+                    "parameters": [],
+                    "name": "Fixture \"browser\"",
+                    "start": 1785100009613,
+                    "uuid": "74905543-4841-404a-84a0-2eb5d6f4dc74",
+                    "stop": 1785100009733
+                },
+                {
+                    "status": "passed",
+                    "statusDetails": {},
+                    "stage": "finished",
+                    "steps": [
+                        {
+                            "status": "passed",
+                            "statusDetails": {},
+                            "stage": "finished",
+                            "steps": [],
+                            "attachments": [],
+                            "parameters": [],
+                            "name": "Create context",
+                            "start": 1785100009738,
+                            "uuid": "224971ad-c87e-42ee-a447-41febbc9372e",
+                            "stop": 1785100009776
+                        }
+                    ],
+                    "attachments": [],
+                    "parameters": [],
+                    "name": "Fixture \"context\"",
+                    "start": 1785100009735,
+                    "uuid": "34eee7d2-86cf-4ab0-9ae4-8afce2e37d40",
+                    "stop": 1785100009778
+                },
+                {
+                    "status": "passed",
+                    "statusDetails": {},
+                    "stage": "finished",
+                    "steps": [
+                        {
+                            "status": "passed",
+                            "statusDetails": {},
+                            "stage": "finished",
+                            "steps": [],
+                            "attachments": [],
+                            "parameters": [],
+                            "name": "Create page",
+                            "start": 1785100009781,
+                            "uuid": "c0bdcb2e-bc91-46c2-8bb6-0fdbaf928c6b",
+                            "stop": 1785100010403
+                        }
+                    ],
+                    "attachments": [],
+                    "parameters": [],
+                    "name": "Fixture \"page\"",
+                    "start": 1785100009779,
+                    "uuid": "a1b1f02a-cc36-4ebb-977e-dcd29acdd95a",
+                    "stop": 1785100010403
+                }
+            ],
+            "attachments": [],
+            "parameters": [],
+            "name": "Before Hooks",
+            "start": 1785100009598,
+            "uuid": "e23e958d-207e-4fc5-ae0a-df0eabc9961a",
+            "stop": 1785100010403
+        },
+        {
+            "status": "passed",
+            "statusDetails": {},
+            "stage": "finished",
+            "steps": [],
+            "attachments": [],
+            "parameters": [],
+            "start": 1785100010406,
+            "name": "Navigate to \"/\"",
+            "uuid": "51f0c410-0565-4920-8ddf-ae65b5d93a2f",
+            "stop": 1785100011241
+        },
+        {
+            "status": "passed",
+            "statusDetails": {},
+            "stage": "finished",
+            "steps": [],
+            "attachments": [],
+            "parameters": [],
+            "start": 1785100011247,
+            "name": "Click getByRole('link', { name: 'Get started' })",
+            "uuid": "5a38b19f-9650-4cbc-b326-c6a11c2845a7",
+            "stop": 1785100012512
+        },
+        {
+            "status": "passed",
+            "statusDetails": {},
+            "stage": "finished",
+            "steps": [],
+            "attachments": [],
+            "parameters": [],
+            "start": 1785100012519,
+            "name": "Expect \"toBeVisible\" getByRole('heading', { name: 'Installation' })",
+            "uuid": "071c0df3-8945-484c-aae5-fab8d2b31dd9",
+            "stop": 1785100012764
+        },
+        {
+            "status": "passed",
+            "statusDetails": {},
+            "stage": "finished",
+            "steps": [
+                {
+                    "status": "passed",
+                    "statusDetails": {},
+                    "stage": "finished",
+                    "steps": [],
+                    "attachments": [],
+                    "parameters": [],
+                    "name": "Fixture \"page\"",
+                    "start": 1785100012767,
+                    "uuid": "f3c98253-e1a5-4fc0-9328-c423145dd425",
+                    "stop": 1785100012767
+                },
+                {
+                    "status": "passed",
+                    "statusDetails": {},
+                    "stage": "finished",
+                    "steps": [
+                        {
+                            "status": "passed",
+                            "statusDetails": {},
+                            "stage": "finished",
+                            "steps": [],
+                            "attachments": [],
+                            "parameters": [],
+                            "name": "Close context",
+                            "start": 1785100013744,
+                            "uuid": "482dbe62-c0a8-4c37-84f5-fba9f4693d1c",
+                            "stop": 1785100013977
+                        }
+                    ],
+                    "attachments": [],
+                    "parameters": [],
+                    "name": "Fixture \"context\"",
+                    "start": 1785100012768,
+                    "uuid": "e6c5d7b0-dad7-4365-badd-fab961a7245d",
+                    "stop": 1785100013977
+                }
+            ],
+            "attachments": [],
+            "parameters": [],
+            "name": "After Hooks",
+            "start": 1785100012765,
+            "uuid": "58dbd7a7-e054-4d92-a13b-af52e89ea9c6",
+            "stop": 1785100013992
+        }
+    ],
+    "attachments": [],
+    "parameters": [{ "name": "Project", "value": "webkit" }],
+    "labels": [
+        { "name": "language", "value": "javascript" },
+        { "name": "framework", "value": "playwright" },
+        {
+            "name": "package",
+            "value": "playwright-xe-framework.example.spec.ts"
+        },
+        {
+            "name": "_fallbackTestCaseId",
+            "value": "37e4aa066a5f6eac2e4d3b98a2ed98a7"
+        },
+        { "name": "titlePath", "value": " > webkit > example.spec.ts" },
+        { "name": "host", "value": "DeskWA" },
+        { "name": "thread", "value": "pid-19544-worker-0" },
+        { "name": "parentSuite", "value": "webkit" },
+        { "name": "suite", "value": "example.spec.ts" }
+    ],
+    "links": [],
+    "start": 1785100009559,
+    "testCaseId": "f3e69e20b7a74520bf58cfd14347c3ff",
+    "fullName": "example.spec.ts:10:1",
+    "titlePath": ["playwright-xe-framework", "example.spec.ts"],
+    "stop": 1785100013800
+}

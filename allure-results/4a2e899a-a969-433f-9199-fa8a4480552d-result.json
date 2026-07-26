@@ -1,0 +1,225 @@
+{
+    "uuid": "4a2e899a-a969-433f-9199-fa8a4480552d",
+    "name": "@regression Should update user successfully",
+    "historyId": "49ca57647c6acd7e11a30aa3f2ae9912:259864bbb84e0941359ea9e4c0db04ac",
+    "status": "passed",
+    "statusDetails": {},
+    "stage": "finished",
+    "steps": [
+        {
+            "status": "passed",
+            "statusDetails": {},
+            "stage": "finished",
+            "steps": [
+                {
+                    "status": "passed",
+                    "statusDetails": {},
+                    "stage": "finished",
+                    "steps": [
+                        {
+                            "status": "passed",
+                            "statusDetails": {},
+                            "stage": "finished",
+                            "steps": [
+                                {
+                                    "status": "passed",
+                                    "statusDetails": {},
+                                    "stage": "finished",
+                                    "steps": [],
+                                    "attachments": [],
+                                    "parameters": [],
+                                    "name": "Create request context",
+                                    "start": 1785100014630,
+                                    "uuid": "d34323ca-05db-4f43-bcab-64211eea6553",
+                                    "stop": 1785100014631
+                                },
+                                {
+                                    "status": "passed",
+                                    "statusDetails": {},
+                                    "stage": "finished",
+                                    "steps": [],
+                                    "attachments": [],
+                                    "parameters": [],
+                                    "name": "POST \"/test/reset\"",
+                                    "start": 1785100014632,
+                                    "uuid": "1b1af3ef-156d-45bb-91a2-807341c1cd51",
+                                    "stop": 1785100014634
+                                }
+                            ],
+                            "attachments": [],
+                            "parameters": [],
+                            "name": "Fixture \"api\"",
+                            "start": 1785100014629,
+                            "uuid": "3b8244fe-8314-48e1-8078-6950a17f790c",
+                            "stop": 1785100014634
+                        }
+                    ],
+                    "attachments": [],
+                    "parameters": [],
+                    "name": "beforeEach hook",
+                    "start": 1785100014620,
+                    "uuid": "738dc969-0edc-48f9-8104-669c13464a7a",
+                    "stop": 1785100014634
+                }
+            ],
+            "attachments": [],
+            "parameters": [],
+            "name": "Before Hooks",
+            "start": 1785100014620,
+            "uuid": "5f5d4429-21da-4344-84dc-0e97f336138f",
+            "stop": 1785100014634
+        },
+        {
+            "status": "passed",
+            "statusDetails": {},
+            "stage": "finished",
+            "steps": [],
+            "attachments": [],
+            "parameters": [],
+            "start": 1785100014637,
+            "name": "POST \"/api/users\"",
+            "uuid": "0824baaa-eec0-4551-b3d9-2002b874e404",
+            "stop": 1785100014640
+        },
+        {
+            "status": "passed",
+            "statusDetails": {},
+            "stage": "finished",
+            "steps": [],
+            "attachments": [],
+            "parameters": [],
+            "start": 1785100014644,
+            "name": "PUT \"/api/users/3\"",
+            "uuid": "fb844521-5d92-4f72-8792-13c35d6148e4",
+            "stop": 1785100014646
+        },
+        {
+            "status": "passed",
+            "statusDetails": {},
+            "stage": "finished",
+            "steps": [],
+            "attachments": [],
+            "parameters": [],
+            "start": 1785100014647,
+            "name": "Expect \"toBe\"",
+            "uuid": "8453b0c1-6413-4e9b-bfdb-3f22b5f59e11",
+            "stop": 1785100014643
+        },
+        {
+            "status": "passed",
+            "statusDetails": {},
+            "stage": "finished",
+            "steps": [],
+            "attachments": [],
+            "parameters": [],
+            "start": 1785100014662,
+            "name": "Expect \"toBeTruthy\"",
+            "uuid": "edc4aee5-6937-4ef0-bc41-9d7f833dd80a",
+            "stop": 1785100014658
+        },
+        {
+            "status": "passed",
+            "statusDetails": {},
+            "stage": "finished",
+            "steps": [],
+            "attachments": [],
+            "parameters": [],
+            "start": 1785100014663,
+            "name": "Expect \"toBe\"",
+            "uuid": "91859ad9-2c8f-4ce1-b089-49499562a551",
+            "stop": 1785100014659
+        },
+        {
+            "status": "passed",
+            "statusDetails": {},
+            "stage": "finished",
+            "steps": [],
+            "attachments": [],
+            "parameters": [],
+            "start": 1785100014663,
+            "name": "Expect \"toBe\"",
+            "uuid": "280fb9af-4239-4aa9-af63-08dc45661d58",
+            "stop": 1785100014664
+        },
+        {
+            "status": "passed",
+            "statusDetails": {},
+            "stage": "finished",
+            "steps": [],
+            "attachments": [],
+            "parameters": [],
+            "start": 1785100014664,
+            "name": "Expect \"toBe\"",
+            "uuid": "b4678e12-ee3f-43a4-a185-263ca71865bb",
+            "stop": 1785100014660
+        },
+        {
+            "status": "passed",
+            "statusDetails": {},
+            "stage": "finished",
+            "steps": [
+                {
+                    "status": "passed",
+                    "statusDetails": {},
+                    "stage": "finished",
+                    "steps": [],
+                    "attachments": [],
+                    "parameters": [],
+                    "name": "Fixture \"api\"",
+                    "start": 1785100014665,
+                    "uuid": "0ba16da6-af54-42bd-94bd-2a988c89ff09",
+                    "stop": 1785100014667
+                }
+            ],
+            "attachments": [],
+            "parameters": [],
+            "name": "After Hooks",
+            "start": 1785100014665,
+            "uuid": "e48fc0af-a21f-4c68-9233-9bc9db843329",
+            "stop": 1785100014675
+        }
+    ],
+    "attachments": [
+        {
+            "name": "stdout",
+            "source": "3667f94f-79af-4078-b390-96ff763435b4-attachment.txt",
+            "type": "text/plain"
+        }
+    ],
+    "parameters": [{ "name": "Project", "value": "api" }],
+    "labels": [
+        { "name": "language", "value": "javascript" },
+        { "name": "framework", "value": "playwright" },
+        {
+            "name": "package",
+            "value": "playwright-xe-framework.api.crud.users-crud.spec.ts"
+        },
+        {
+            "name": "_fallbackTestCaseId",
+            "value": "b3999f573a1cb34f11f988f5d05e54a9"
+        },
+        {
+            "name": "titlePath",
+            "value": " > api > api\\crud\\users-crud.spec.ts > @regression Users CRUD API"
+        },
+        { "name": "tag", "value": "regression" },
+        { "name": "tag", "value": "regression" },
+        { "name": "host", "value": "DeskWA" },
+        { "name": "thread", "value": "pid-19544-worker-2" },
+        { "name": "parentSuite", "value": "api" },
+        { "name": "suite", "value": "api\\crud\\users-crud.spec.ts" },
+        { "name": "subSuite", "value": "@regression Users CRUD API" }
+    ],
+    "links": [],
+    "start": 1785100014616,
+    "testCaseId": "49ca57647c6acd7e11a30aa3f2ae9912",
+    "fullName": "api/crud/users-crud.spec.ts:46:5",
+    "titlePath": [
+        "playwright-xe-framework",
+        "api",
+        "crud",
+        "users-crud.spec.ts",
+        "@regression Users CRUD API"
+    ],
+    "stop": 1785100014654
+}
