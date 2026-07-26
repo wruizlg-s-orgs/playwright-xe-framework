@@ -42,8 +42,10 @@
     ],
     "author": "Wagner Ruiz",
     "license": "ISC",
-    "type": "commonjs",
+    "type": "module",
     "devDependencies": {
+        "@commitlint/cli": "^21.2.1",
+        "@commitlint/config-conventional": "^21.2.0",
         "@eslint/js": "^10.0.1",
         "@playwright/test": "^1.61.1",
         "@types/node": "^26.1.1",
