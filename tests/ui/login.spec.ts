@@ -44,6 +44,8 @@ test.describe('Login functionality', () => {
             tag: 'smoke',
         });
 
+        expect(true).toBe(false);
+
         const loginPage = new LoginPage(page);
 
         await loginPage.goto();
