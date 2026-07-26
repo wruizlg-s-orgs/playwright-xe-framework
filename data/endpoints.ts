@@ -1,5 +1,4 @@
 export const ENDPOINTS = {
-
     USERS: '/api/users',
 
     USER_BY_ID: (id: number) => `/api/users/${id}`,
@@ -8,6 +7,5 @@ export const ENDPOINTS = {
 
     PROFILE: '/profile',
 
-    RESET: '/test/reset'
-
+    RESET: '/test/reset',
 };

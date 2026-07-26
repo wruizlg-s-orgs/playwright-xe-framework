@@ -1,43 +1,35 @@
 {
-  "compilerOptions": {
+    "compilerOptions": {
+        "target": "ES2022",
 
-    "target": "ES2022",
+        "module": "NodeNext",
 
-    "module": "NodeNext",
+        "moduleResolution": "NodeNext",
 
-    "moduleResolution": "NodeNext",
+        "strict": true,
 
-    "strict": true,
+        "esModuleInterop": true,
 
-    "esModuleInterop": true,
+        "skipLibCheck": true,
 
-    "skipLibCheck": true,
+        "forceConsistentCasingInFileNames": true,
 
-    "forceConsistentCasingInFileNames": true,
+        "types": ["node", "@playwright/test"]
+    },
 
-    "types": [
-      "node",
-      "@playwright/test"
+    "include": [
+        "tests",
+
+        "fixtures",
+
+        "helpers",
+
+        "models",
+
+        "services",
+
+        "data",
+
+        "playwright.config.ts"
     ]
-
-  },
-
-  "include": [
-
-    "tests",
-
-    "fixtures",
-
-    "helpers",
-
-    "models",
-
-    "services",
-
-    "data",
-
-    "playwright.config.ts"
-
-  ]
-
 }

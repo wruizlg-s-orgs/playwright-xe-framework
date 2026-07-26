@@ -1,160 +1,69 @@
-import {
-    test
-} from '../../../fixtures/api.fixture';
+import { test } from '../../../fixtures/api.fixture';
 
+import { ResponseAssertions } from '../../../helpers/assertions/ResponseAssertions';
 
-import {
-    ResponseAssertions
-} from '../../../helpers/assertions/ResponseAssertions';
-
-
-import {
-    SchemaAssertions
-} from '../../../helpers/assertions/SchemaAssertions';
-
-
+import { SchemaAssertions } from '../../../helpers/assertions/SchemaAssertions';
 
 const LoginSchema = {
+    type: 'object',
 
-
-    type:'object',
-
-
-    properties:{
-
-
-        token:{
-            type:'string'
-        }
-
-
+    properties: {
+        token: {
+            type: 'string',
+        },
     },
 
-
-    required:[
-
-        'token'
-
-    ]
-
+    required: ['token'],
 };
 
+test.describe('Authentication API', () => {
+    test('@smoke Should login successfully with valid credentials', async ({
+        api,
+    }) => {
+        const response = await api.post(
+            '/login',
 
+            {
+                username: 'admin',
 
+                password: '123456',
+            }
+        );
 
-test.describe(
-    'Authentication API',
-    () => {
+        await ResponseAssertions.expectStatus(response, 200);
 
+        const body = await response.json();
 
+        SchemaAssertions.validate(body, LoginSchema);
+    });
 
-    test(
-        '@smoke Should login successfully with valid credentials',
-        async ({ api }) => {
+    test('@regression Should reject login with invalid credentials', async ({
+        api,
+    }) => {
+        const response = await api.post(
+            '/login',
 
+            {
+                username: 'admin',
 
+                password: 'wrong-password',
+            }
+        );
 
-            const response =
-                await api.post(
+        await ResponseAssertions.expectStatus(response, 401);
 
-                    '/login',
+        const body = await response.json();
 
-                    {
+        SchemaAssertions.validate(body, {
+            type: 'object',
 
-                        username:'admin',
+            properties: {
+                message: {
+                    type: 'string',
+                },
+            },
 
-                        password:'123456'
-
-                    }
-
-                );
-
-
-
-            await ResponseAssertions.expectStatus(
-                response,
-                200
-            );
-
-
-
-            const body =
-                await response.json();
-
-
-
-            SchemaAssertions.validate(
-                body,
-                LoginSchema
-            );
-
-
-
-        }
-
-    );
-
-    test(
-        '@regression Should reject login with invalid credentials',
-        async ({ api }) => {
-
-
-            const response =
-                await api.post(
-
-                    '/login',
-
-                    {
-
-                        username:'admin',
-
-                        password:'wrong-password'
-
-                    }
-
-                );
-
-
-
-            await ResponseAssertions.expectStatus(
-                response,
-                401
-            );
-
-
-
-            const body =
-                await response.json();
-
-
-
-            SchemaAssertions.validate(
-                body,
-                {
-
-                    type:'object',
-
-                    properties:{
-
-                        message:{
-                            type:'string'
-                        }
-
-                    },
-
-
-                    required:[
-
-                        'message'
-
-                    ]
-
-                }
-
-            );
-
-
-        }
-    );
-
+            required: ['message'],
+        });
+    });
 });

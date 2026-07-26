@@ -1,66 +1,21 @@
-import {
-    test,
-    expect
-} from '../../../fixtures/api.fixture';
+import { test } from '../../../fixtures/api.fixture';
 
+import { ResponseAssertions } from '../../../helpers/assertions/ResponseAssertions';
 
-import {
-    ResponseAssertions
-} from '../../../helpers/assertions/ResponseAssertions';
+import { SchemaAssertions } from '../../../helpers/assertions/SchemaAssertions';
 
+import { ErrorSchema } from '../../../schemas/ErrorSchema';
 
-import {
-    SchemaAssertions
-} from '../../../helpers/assertions/SchemaAssertions';
+test.describe('Users API Negative Tests', () => {
+    test('@regression Should return 404 when user does not exist', async ({
+        api,
+    }) => {
+        const response = await api.get('/api/users/999999');
 
-import {
-    ErrorSchema
-} from '../../../schemas/ErrorSchema';
+        await ResponseAssertions.expectStatus(response, 404);
 
+        const body = await response.json();
 
-
-
-test.describe(
-    'Users API Negative Tests',
-    () => {
-
-
-
-    test(
-        '@regression Should return 404 when user does not exist',
-        async ({ api }) => {
-
-
-
-            const response =
-                await api.get(
-                    '/api/users/999999'
-                );
-
-
-
-            await ResponseAssertions.expectStatus(
-                response,
-                404
-            );
-
-
-
-            const body =
-                await response.json();
-
-
-
-            SchemaAssertions.validate(
-                body,
-                ErrorSchema
-            );
-
-
-
-        }
-    );
-
-
-
+        SchemaAssertions.validate(body, ErrorSchema);
+    });
 });

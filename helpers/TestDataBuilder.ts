@@ -7,25 +7,15 @@ import { User } from '../models/User';
 import { UpdateUserRequest } from '../models/UpdateUserRequest';
 
 export class TestDataBuilder {
+    static async createUser(userService: UserService): Promise<User> {
+        const user = CreateUserFactory.random();
 
-    static async createUser(
-        userService: UserService
-    ): Promise<User> {
-
-        const user =
-            CreateUserFactory.random();
-
-        const response =
-            await userService.create(user);
+        const response = await userService.create(user);
 
         return await response.json();
-
     }
 
     static updateUser(): UpdateUserRequest {
-
         return UpdateUserFactory.random();
-
     }
-
 }

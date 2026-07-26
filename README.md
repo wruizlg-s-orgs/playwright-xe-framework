@@ -67,13 +67,12 @@ playwright-xe-framework
 
 - REST API testing with Playwright Request API
 - CRUD validation:
-  - Create User
-  - Retrieve User
-  - Update User
-  - Delete User
+    - Create User
+    - Retrieve User
+    - Update User
+    - Delete User
 - HTTP status validation
 - Response body validation
-
 
 ## Test Architecture
 
@@ -99,7 +98,6 @@ Benefits:
 - Easier maintenance
 - Better scalability
 
-
 ### Fixtures
 
 Custom Playwright fixtures provide reusable test dependencies:
@@ -107,7 +105,6 @@ Custom Playwright fixtures provide reusable test dependencies:
 - API client initialization
 - Authentication handling
 - Shared test setup
-
 
 ### Test Data Factory
 
@@ -125,7 +122,6 @@ Benefits:
 - Independent tests
 - No dependency between executions
 - Better parallel execution
-
 
 ---
 
@@ -175,7 +171,6 @@ Runs:
 - UI tests
 - API tests
 - All configured Playwright projects
-
 
 ---
 
@@ -341,7 +336,7 @@ This framework follows QA automation best practices:
 ✅ Dynamic test data  
 ✅ CI/CD execution  
 ✅ Cross-browser testing  
-✅ Type-safe automation  
+✅ Type-safe automation
 
 ---
 
@@ -358,4 +353,7 @@ Experience in:
 - Test strategy
 - Quality engineering
 - CI/CD pipelines
+
+```
+
 ```

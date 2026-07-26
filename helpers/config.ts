@@ -1,8 +1,3 @@
 import { ENV } from './environment';
 
-
-export {
-
-    ENV
-
-};
+export { ENV };

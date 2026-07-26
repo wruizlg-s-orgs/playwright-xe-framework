@@ -1,30 +1,13 @@
 export const ErrorSchema = {
-
-
     type: 'object',
 
-
     properties: {
-
-
         message: {
-
-            type: 'string'
-
-        }
-
-
+            type: 'string',
+        },
     },
 
+    required: ['message'],
 
-    required: [
-
-        'message'
-
-    ],
-
-
-    additionalProperties: true
-
-
+    additionalProperties: true,
 };

@@ -1,7 +1,5 @@
 export interface CreateUserRequest {
+    name: string;
 
-    name:string;
-
-    email:string;
-
+    email: string;
 }

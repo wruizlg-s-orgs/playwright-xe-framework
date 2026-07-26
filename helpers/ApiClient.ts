@@ -1,105 +1,47 @@
-import {
-    APIRequestContext,
-    APIResponse,
-    request
-} from '@playwright/test';
-
+import { APIRequestContext, APIResponse, request } from '@playwright/test';
 
 import { ENV } from './config';
 
 import { Logger } from './Logger';
 
-
-
-
 export class ApiClient {
-
-
-
     private api!: APIRequestContext;
 
+    async initialize() {
+        this.api = await request.newContext({
+            baseURL: ENV.apiUrl,
 
-
-
-
-    async initialize(){
-
-
-        this.api =
-            await request.newContext({
-
-
-                baseURL:
-                    ENV.apiUrl,
-
-
-                extraHTTPHeaders:{
-
-
-                    'Content-Type':
-                        'application/json'
-
-
-                }
-
-
-            });
-
-
+            extraHTTPHeaders: {
+                'Content-Type': 'application/json',
+            },
+        });
     }
 
-
-
-
-
-
-
     private async executeRequest(
+        method: string,
 
-        method:string,
+        endpoint: string,
 
-        endpoint:string,
+        requestFunction: () => Promise<APIResponse>,
 
-        requestFunction:()=>Promise<APIResponse>,
-
-        body?:unknown
-
-    ):Promise<APIResponse>{
-
-
-
+        body?: unknown
+    ): Promise<APIResponse> {
         Logger.request(
-
             method,
 
             endpoint,
 
             body
-
         );
 
-
-
-        const startTime =
-            Date.now();
-
-
+        const startTime = Date.now();
 
         try {
+            const response = await requestFunction();
 
-
-            const response =
-                await requestFunction();
-
-
-
-            const duration =
-                Date.now() - startTime;
-
-
+            const duration = Date.now() - startTime;
 
             await this.logResponse(
-
                 method,
 
                 endpoint,
@@ -107,96 +49,43 @@ export class ApiClient {
                 response,
 
                 duration
-
             );
 
-
-
             return response;
-
-
-
-        } catch(error){
-
-
-
-            const duration =
-                Date.now() - startTime;
-
-
+        } catch (error) {
+            // remover completamente
+            //            const duration =
+            //                Date.now() - startTime;
 
             Logger.error(
-
                 `Request failed: ${method} ${endpoint}`,
 
                 error
-
             );
 
-
             throw error;
-
-
         }
-
-
     }
 
-
-
-
-
-
-
-
-
     private async logResponse(
+        method: string,
 
-        method:string,
+        endpoint: string,
 
-        endpoint:string,
+        response: APIResponse,
 
-        response:APIResponse,
-
-        duration:number
-
-    ){
-
-
-
+        duration: number
+    ) {
         let body;
 
-
-
         try {
-
-
-            body =
-                await response.json();
-
-
-
+            body = await response.json();
         } catch {
-
-
-            body =
-                undefined;
-
-
+            body = undefined;
         }
 
-
-
-
-
-
-        if(
-            response.status() >= 400
-        ){
-
-
+        if (response.status() >= 400) {
             Logger.httpError(
-
                 method,
 
                 endpoint,
@@ -206,250 +95,101 @@ export class ApiClient {
                 duration,
 
                 body
-
             );
 
-
             return;
-
-
         }
 
-
-
-
-
-
         Logger.response(
-
             response.status(),
 
             duration,
 
             body
-
         );
-
-
     }
 
-
-
-
-
-
-
-
-
-    async get(
-
-        endpoint:string
-
-    ):Promise<APIResponse>{
-
-
-
+    async get(endpoint: string): Promise<APIResponse> {
         return this.executeRequest(
-
             'GET',
 
             endpoint,
 
-            () =>
-                this.api.get(endpoint)
-
-
+            () => this.api.get(endpoint)
         );
-
-
     }
 
-
-
-
-
-
-
-
-
     async post(
+        endpoint: string,
 
-        endpoint:string,
-
-        body:object
-
-    ):Promise<APIResponse>{
-
-
-
+        body: object
+    ): Promise<APIResponse> {
         return this.executeRequest(
-
             'POST',
 
             endpoint,
 
             () =>
                 this.api.post(
-
                     endpoint,
 
                     {
-                        data:body
+                        data: body,
                     }
-
                 ),
 
             body
-
-
         );
-
-
     }
 
-
-
-
-
-
-
-
-
     async put(
+        endpoint: string,
 
-        endpoint:string,
-
-        body:object
-
-    ):Promise<APIResponse>{
-
-
-
+        body: object
+    ): Promise<APIResponse> {
         return this.executeRequest(
-
             'PUT',
 
             endpoint,
 
             () =>
                 this.api.put(
-
                     endpoint,
 
                     {
-                        data:body
+                        data: body,
                     }
-
                 ),
 
             body
-
-
         );
-
-
     }
 
-
-
-
-
-
-
-
-
-    async delete(
-
-        endpoint:string
-
-    ):Promise<APIResponse>{
-
-
-
+    async delete(endpoint: string): Promise<APIResponse> {
         return this.executeRequest(
-
             'DELETE',
 
             endpoint,
 
-            () =>
-                this.api.delete(endpoint)
-
-
+            () => this.api.delete(endpoint)
         );
-
-
     }
 
-
-
-
-
-
-
-
-
-    async setToken(
-
-        token:string
-
-    ){
-
-
-
+    async setToken(token: string) {
         await this.api.dispose();
 
+        this.api = await request.newContext({
+            baseURL: ENV.apiUrl,
 
+            extraHTTPHeaders: {
+                'Content-Type': 'application/json',
 
-
-        this.api =
-            await request.newContext({
-
-
-
-                baseURL:
-                    ENV.apiUrl,
-
-
-
-                extraHTTPHeaders:{
-
-
-
-                    'Content-Type':
-                        'application/json',
-
-
-
-                    'Authorization':
-                        `Bearer ${token}`
-
-
-
-                }
-
-
-            });
-
-
+                Authorization: `Bearer ${token}`,
+            },
+        });
     }
 
-
-
-
-
-
-
-
-
-    async dispose(){
-
-
+    async dispose() {
         await this.api.dispose();
-
-
     }
-
-
-
 }

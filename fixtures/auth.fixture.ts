@@ -4,51 +4,31 @@ import { UserFactory } from '../data/factories/UserFactory';
 import { AuthResponse } from '../models/AuthResponse';
 
 type AuthFixtures = {
-
     authenticatedApi: ApiClient;
-
 };
 
-
 export const test = base.extend<AuthFixtures>({
-
     authenticatedApi: async ({ api }, use) => {
-
-
         const user = UserFactory.admin();
 
-
         const response = await api.post(
-
             '/login',
 
             user
-
         );
 
-
-        expect(response.status())
-            .toBe(200);
-
+        expect(response.status()).toBe(200);
 
         const body: AuthResponse = await response.json();
 
-
-        expect(body.token)
-            .toBeDefined();
-
+        expect(body.token).toBeDefined();
 
         await api.setToken(body.token);
-
 
         await use(api);
 
         await api.dispose();
-
-
-    }
-
+    },
 });
-
 
 export { expect };

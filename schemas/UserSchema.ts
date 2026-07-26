@@ -1,33 +1,21 @@
 export const UserSchema = {
-
     type: 'object',
 
     properties: {
-
         id: {
-            type: 'number'
+            type: 'number',
         },
 
         name: {
-            type: 'string'
+            type: 'string',
         },
 
         email: {
-            type: 'string'
-        }
-
+            type: 'string',
+        },
     },
 
+    required: ['id', 'name', 'email'],
 
-    required: [
-
-        'id',
-        'name',
-        'email'
-
-    ],
-
-
-    additionalProperties: true
-
+    additionalProperties: true,
 };

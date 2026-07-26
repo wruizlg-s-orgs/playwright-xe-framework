@@ -1,16 +1,13 @@
 import { User } from './User';
 
-
 export interface UserListResponse {
+    page: number;
 
-    page:number;
+    per_page: number;
 
-    per_page:number;
+    total: number;
 
-    total:number;
+    total_pages: number;
 
-    total_pages:number;
-
-    data:User[];
-
+    data: User[];
 }

@@ -1,7 +1,5 @@
 export interface UpdateUserRequest {
+    name: string;
 
-    name:string;
-
-    email:string;
-
+    email: string;
 }
