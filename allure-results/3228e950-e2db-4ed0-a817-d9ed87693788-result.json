@@ -1,0 +1,163 @@
+{
+    "uuid": "3228e950-e2db-4ed0-a817-d9ed87693788",
+    "name": "@smoke Should login successfully with valid credentials",
+    "historyId": "05342bd7363c78d20a3d56c51d435e1a:259864bbb84e0941359ea9e4c0db04ac",
+    "status": "passed",
+    "statusDetails": {},
+    "stage": "finished",
+    "steps": [
+        {
+            "status": "passed",
+            "statusDetails": {},
+            "stage": "finished",
+            "steps": [
+                {
+                    "status": "passed",
+                    "statusDetails": {},
+                    "stage": "finished",
+                    "steps": [
+                        {
+                            "status": "passed",
+                            "statusDetails": {},
+                            "stage": "finished",
+                            "steps": [],
+                            "attachments": [],
+                            "parameters": [],
+                            "name": "Create request context",
+                            "start": 1785098017289,
+                            "uuid": "b86cb82d-bf56-4453-8395-18e6272237b6",
+                            "stop": 1785098017291
+                        },
+                        {
+                            "status": "passed",
+                            "statusDetails": {},
+                            "stage": "finished",
+                            "steps": [],
+                            "attachments": [],
+                            "parameters": [],
+                            "name": "POST \"/test/reset\"",
+                            "start": 1785098017293,
+                            "uuid": "278604c0-3204-447d-9713-1643dac09ff0",
+                            "stop": 1785098017315
+                        }
+                    ],
+                    "attachments": [],
+                    "parameters": [],
+                    "name": "Fixture \"api\"",
+                    "start": 1785098017285,
+                    "uuid": "08710adc-9f82-4186-ade2-4ec09b14b448",
+                    "stop": 1785098017316
+                }
+            ],
+            "attachments": [],
+            "parameters": [],
+            "name": "Before Hooks",
+            "start": 1785098017278,
+            "uuid": "21d08e92-85eb-4d7a-8d27-86a43a7566a8",
+            "stop": 1785098017316
+        },
+        {
+            "status": "passed",
+            "statusDetails": {},
+            "stage": "finished",
+            "steps": [],
+            "attachments": [],
+            "parameters": [],
+            "start": 1785098017317,
+            "name": "POST \"/login\"",
+            "uuid": "f192c9b7-6b77-4068-88db-5b4e7aced114",
+            "stop": 1785098017319
+        },
+        {
+            "status": "passed",
+            "statusDetails": {},
+            "stage": "finished",
+            "steps": [],
+            "attachments": [],
+            "parameters": [],
+            "start": 1785098017324,
+            "name": "Expect \"toBe\"",
+            "uuid": "472fddef-b517-448b-9032-12e36a84e6c2",
+            "stop": 1785098017325
+        },
+        {
+            "status": "passed",
+            "statusDetails": {},
+            "stage": "finished",
+            "steps": [],
+            "attachments": [],
+            "parameters": [],
+            "start": 1785098017346,
+            "name": "Expect \"toBeTruthy\"",
+            "uuid": "d3acb7de-777e-455e-8879-187769eb6f7c",
+            "stop": 1785098017347
+        },
+        {
+            "status": "passed",
+            "statusDetails": {},
+            "stage": "finished",
+            "steps": [
+                {
+                    "status": "passed",
+                    "statusDetails": {},
+                    "stage": "finished",
+                    "steps": [],
+                    "attachments": [],
+                    "parameters": [],
+                    "name": "Fixture \"api\"",
+                    "start": 1785098017347,
+                    "uuid": "331c955b-8f49-4503-a8fb-ddd4cbf3be05",
+                    "stop": 1785098017349
+                }
+            ],
+            "attachments": [],
+            "parameters": [],
+            "name": "After Hooks",
+            "start": 1785098017347,
+            "uuid": "fc9a9128-9f9d-45aa-96f8-ae33c6f5d996",
+            "stop": 1785098017353
+        }
+    ],
+    "attachments": [
+        {
+            "name": "stdout",
+            "source": "ce820ff2-414f-46d5-bff9-21e6ce54a486-attachment.txt",
+            "type": "text/plain"
+        }
+    ],
+    "parameters": [{ "name": "Project", "value": "api" }],
+    "labels": [
+        { "name": "language", "value": "javascript" },
+        { "name": "framework", "value": "playwright" },
+        {
+            "name": "package",
+            "value": "playwright-xe-framework.api.auth.auth.spec.ts"
+        },
+        {
+            "name": "_fallbackTestCaseId",
+            "value": "0da4b6a385a1ee0422af0b5d0d8cd4e3"
+        },
+        {
+            "name": "titlePath",
+            "value": " > api > api\\auth\\auth.spec.ts > Authentication API"
+        },
+        { "name": "tag", "value": "smoke" },
+        { "name": "host", "value": "DeskWA" },
+        { "name": "thread", "value": "pid-14168-worker-0" },
+        { "name": "parentSuite", "value": "api" },
+        { "name": "suite", "value": "api\\auth\\auth.spec.ts" },
+        { "name": "subSuite", "value": "Authentication API" }
+    ],
+    "links": [],
+    "start": 1785098017266,
+    "testCaseId": "05342bd7363c78d20a3d56c51d435e1a",
+    "fullName": "api/auth/auth.spec.ts:20:5",
+    "titlePath": [
+        "playwright-xe-framework",
+        "api",
+        "auth",
+        "auth.spec.ts",
+        "Authentication API"
+    ],
+    "stop": 1785098017330
+}

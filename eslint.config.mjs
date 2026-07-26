@@ -5,6 +5,19 @@ import eslintPluginPrettier from 'eslint-plugin-prettier';
 import eslintConfigPrettier from 'eslint-config-prettier';
 
 export default [
+
+    {
+        ignores: [
+            'node_modules/**',
+            'playwright-report/**',
+            'test-results/**',
+            'allure-results/**',
+            'allure-report/**',
+            'coverage/**',
+            'dist/**',
+        ],
+    },
+
     js.configs.recommended,
 
     ...tseslint.configs.recommended,
