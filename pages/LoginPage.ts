@@ -30,4 +30,6 @@ export class LoginPage {
 
         await this.loginButton.click();
     }
+
+    test = 'lint staged';
 }
