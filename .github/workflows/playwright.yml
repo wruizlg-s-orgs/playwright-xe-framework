@@ -1,5 +1,8 @@
 name: Playwright Tests
 
+permissions:
+    contents: read
+
 on:
     push:
         branches:
@@ -10,6 +13,8 @@ on:
         branches:
             - main
             - master
+
+    workflow_dispatch:
 
 concurrency:
     group: playwright-${{ github.workflow }}-${{ github.ref }}
@@ -47,17 +52,22 @@ jobs:
             - name: Install dependencies
               run: npm ci
 
+            - name: ESLint Validation
+              run: npm run lint
+
+            - name: TypeScript Validation
+              run: npx tsc --noEmit
+
             - name: Cache Playwright Browsers
               uses: actions/cache@v4
               with:
                   path: ~/.cache/ms-playwright
                   key: playwright-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
+                  restore-keys: |
+                      playwright-${{ runner.os }}-
 
             - name: Install Playwright Browsers
               run: npx playwright install --with-deps
-
-            - name: TypeScript Validation
-              run: npx tsc --noEmit
 
             - name: Run API Tests
               run: npx playwright test --project=api
@@ -105,11 +115,14 @@ jobs:
             - name: Install dependencies
               run: npm ci
 
-            - name: Install Playwright
-              run: npx playwright install --with-deps
+            - name: ESLint Validation
+              run: npm run lint
 
             - name: TypeScript Validation
               run: npx tsc --noEmit
+
+            - name: Install Playwright
+              run: npx playwright install --with-deps
 
             - name: Run UI Tests
               run: npx playwright test --project=${{ matrix.browser }}
