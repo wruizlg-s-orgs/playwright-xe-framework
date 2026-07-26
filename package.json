@@ -1,46 +1,66 @@
 {
-    "name": "playwright-xe-framework",
-    "version": "1.0.0",
-    "description": "",
-    "main": "index.js",
-    "scripts": {
-        "start": "node app/server.js",
-        "start:api": "node app/api-server.js",
-        "test": "playwright test",
-        "test:local": "cross-env ENVIRONMENT=local playwright test",
-        "test:qa": "cross-env ENVIRONMENT=qa playwright test",
-        "test:prod": "cross-env ENVIRONMENT=prod ALLOW_PROD=true playwright test",
-        "test:headed": "playwright test --headed",
-        "test:debug": "playwright test --debug",
-        "test:smoke": "cross-env ENVIRONMENT=local playwright test --grep @smoke",
-        "test:regression": "cross-env ENVIRONMENT=local playwright test --grep @regression",
-        "test:smoke:qa": "cross-env ENVIRONMENT=qa playwright test --grep @smoke",
-        "test:regression:qa": "cross-env ENVIRONMENT=qa playwright test --grep @regression",
-        "report": "playwright show-report",
-        "format": "prettier . --write",
-        "lint": "eslint .",
-        "lint:fix": "eslint . --fix"
-    },
-    "keywords": [],
-    "author": "",
-    "license": "ISC",
-    "type": "commonjs",
-    "devDependencies": {
-        "@eslint/js": "^10.0.1",
-        "@playwright/test": "^1.61.1",
-        "@types/node": "^26.1.1",
-        "cross-env": "^10.1.0",
-        "eslint": "^10.8.0",
-        "eslint-config-prettier": "^10.1.8",
-        "eslint-plugin-prettier": "^5.5.6",
-        "globals": "^17.8.0",
-        "prettier": "^3.9.6",
-        "typescript": "^5.9.2",
-        "typescript-eslint": "^8.65.0"
-    },
-    "dependencies": {
-        "ajv": "^8.20.0",
-        "dotenv": "^17.4.2",
-        "express": "^5.2.1"
-    }
+  "name": "playwright-xe-framework",
+  "version": "1.0.0",
+  "description": "Playwright automation framework for XE project",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app/server.js",
+    "start:api": "node app/api-server.js",
+    "test": "playwright test",
+    "test:local": "cross-env ENVIRONMENT=local playwright test",
+    "test:qa": "cross-env ENVIRONMENT=qa playwright test",
+    "test:prod": "cross-env ENVIRONMENT=prod ALLOW_PROD=true playwright test",
+    "test:headed": "playwright test --headed",
+    "test:debug": "playwright test --debug",
+    "test:ui": "playwright test --ui",
+    "test:chromium": "playwright test --project=chromium",
+    "test:smoke": "cross-env ENVIRONMENT=local playwright test --grep @smoke",
+    "test:regression": "cross-env ENVIRONMENT=local playwright test --grep @regression",
+    "test:smoke:qa": "cross-env ENVIRONMENT=qa playwright test --grep @smoke",
+    "test:regression:qa": "cross-env ENVIRONMENT=qa playwright test --grep @regression",
+    "report": "playwright show-report",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write .",
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "*.ts": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json,md,yml,yaml}": [
+      "prettier --write"
+    ]
+  },
+  "keywords": [
+    "playwright",
+    "automation",
+    "testing",
+    "qa",
+    "e2e"
+  ],
+  "author": "Wagner Ruiz",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@playwright/test": "^1.61.1",
+    "@types/node": "^26.1.1",
+    "cross-env": "^10.1.0",
+    "eslint": "^10.8.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.6",
+    "globals": "^17.8.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.1.2",
+    "prettier": "^3.9.6",
+    "typescript": "^5.9.2",
+    "typescript-eslint": "^8.65.0"
+  },
+  "dependencies": {
+    "ajv": "^8.20.0",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1"
+  }
 }
