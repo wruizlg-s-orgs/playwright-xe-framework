@@ -39,6 +39,13 @@ export default defineConfig({
             },
         ],
 
+        [
+            'allure-playwright',
+            {
+                outputFolder: 'allure-results',
+            },
+        ],
+
         ['list'],
     ],
 

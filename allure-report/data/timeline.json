@@ -1,0 +1,266 @@
+{
+    "name": "timeline",
+    "children": [
+        {
+            "name": "DeskWA",
+            "children": [
+                {
+                    "name": "pid-19792-worker-2",
+                    "children": [
+                        {
+                            "name": "@regression Should reject profile access without token",
+                            "uid": "75aae47aec79b253",
+                            "status": "passed",
+                            "time": {
+                                "start": 1785097305621,
+                                "stop": 1785097305647,
+                                "duration": 26
+                            }
+                        },
+                        {
+                            "name": "@smoke Should access profile with valid token",
+                            "uid": "66331704050f892b",
+                            "status": "passed",
+                            "time": {
+                                "start": 1785097305549,
+                                "stop": 1785097305594,
+                                "duration": 45
+                            }
+                        },
+                        {
+                            "name": "Should retrieve user profile",
+                            "uid": "5fc6cc7f82e6825d",
+                            "status": "passed",
+                            "time": {
+                                "start": 1785097305992,
+                                "stop": 1785097306012,
+                                "duration": 20
+                            }
+                        },
+                        {
+                            "name": "@regression Should reject login with invalid credentials",
+                            "uid": "edcf8b37638c18df",
+                            "status": "passed",
+                            "time": {
+                                "start": 1785097305462,
+                                "stop": 1785097305501,
+                                "duration": 39
+                            }
+                        },
+                        {
+                            "name": "@regression Should update user successfully",
+                            "uid": "79f5d6bc0bbbcf4d",
+                            "status": "passed",
+                            "time": {
+                                "start": 1785097305818,
+                                "stop": 1785097305849,
+                                "duration": 31
+                            }
+                        },
+                        {
+                            "name": "@regression Should retrieve user by id successfully",
+                            "uid": "df5384fe14f86da0",
+                            "status": "passed",
+                            "time": {
+                                "start": 1785097305766,
+                                "stop": 1785097305796,
+                                "duration": 30
+                            }
+                        },
+                        {
+                            "name": "has title",
+                            "uid": "e16b15e5c23fd377",
+                            "status": "passed",
+                            "time": {
+                                "start": 1785097299645,
+                                "stop": 1785097301289,
+                                "duration": 1644
+                            }
+                        },
+                        {
+                            "name": "has title",
+                            "uid": "54c466112bb9c0a",
+                            "status": "passed",
+                            "time": {
+                                "start": 1785097294402,
+                                "stop": 1785097297104,
+                                "duration": 2702
+                            }
+                        },
+                        {
+                            "name": "@regression User can login successfully",
+                            "uid": "e96065abc127964b",
+                            "status": "passed",
+                            "time": {
+                                "start": 1785097293203,
+                                "stop": 1785097293716,
+                                "duration": 513
+                            }
+                        },
+                        {
+                            "name": "@regression Should retrieve users successfully",
+                            "uid": "3446c75fa52c0dc0",
+                            "status": "passed",
+                            "time": {
+                                "start": 1785097306041,
+                                "stop": 1785097306056,
+                                "duration": 15
+                            }
+                        },
+                        {
+                            "name": "@regression Should delete user successfully",
+                            "uid": "d294cbe478c6e097",
+                            "status": "passed",
+                            "time": {
+                                "start": 1785097305876,
+                                "stop": 1785097305893,
+                                "duration": 17
+                            }
+                        },
+                        {
+                            "name": "@regression Should return 404 when user does not exist",
+                            "uid": "4086812a49bcdfe9",
+                            "status": "passed",
+                            "time": {
+                                "start": 1785097305931,
+                                "stop": 1785097305964,
+                                "duration": 33
+                            }
+                        },
+                        {
+                            "name": "@regression Should create user successfully",
+                            "uid": "e2a14dedc5eac472",
+                            "status": "passed",
+                            "time": {
+                                "start": 1785097305694,
+                                "stop": 1785097305738,
+                                "duration": 44
+                            }
+                        },
+                        {
+                            "name": "@smoke Should login successfully with valid credentials",
+                            "uid": "44a9ad91e02c812c",
+                            "status": "passed",
+                            "time": {
+                                "start": 1785097305252,
+                                "stop": 1785097305401,
+                                "duration": 149
+                            }
+                        },
+                        {
+                            "name": "@regression User can login successfully",
+                            "uid": "68b7b2f93e8f7ae5",
+                            "status": "passed",
+                            "time": {
+                                "start": 1785097301441,
+                                "stop": 1785097303746,
+                                "duration": 2305
+                            }
+                        }
+                    ],
+                    "uid": "186314986a0f251ab94a7f21ea20eadb"
+                },
+                {
+                    "name": "pid-19792-worker-0",
+                    "children": [
+                        {
+                            "name": "User cannot login with invalid password",
+                            "uid": "fc7d7851dab174c3",
+                            "status": "passed",
+                            "time": {
+                                "start": 1785097299199,
+                                "stop": 1785097302797,
+                                "duration": 3598
+                            }
+                        },
+                        {
+                            "name": "has title",
+                            "uid": "5a4b4f08abe762d1",
+                            "status": "passed",
+                            "time": {
+                                "start": 1785097293190,
+                                "stop": 1785097297532,
+                                "duration": 4342
+                            }
+                        }
+                    ],
+                    "uid": "83b3ff512274c1de78f1f6726f67f975"
+                },
+                {
+                    "name": "pid-19792-worker-3",
+                    "children": [
+                        {
+                            "name": "get started link",
+                            "uid": "27c7177accb0c935",
+                            "status": "passed",
+                            "time": {
+                                "start": 1785097301214,
+                                "stop": 1785097305088,
+                                "duration": 3874
+                            }
+                        },
+                        {
+                            "name": "User cannot login with invalid password",
+                            "uid": "4945f4b8dba6fcd9",
+                            "status": "passed",
+                            "time": {
+                                "start": 1785097293219,
+                                "stop": 1785097293793,
+                                "duration": 574
+                            }
+                        },
+                        {
+                            "name": "get started link",
+                            "uid": "c91438b222b794ff",
+                            "status": "passed",
+                            "time": {
+                                "start": 1785097294476,
+                                "stop": 1785097298508,
+                                "duration": 4032
+                            }
+                        }
+                    ],
+                    "uid": "ba9fe815e2d8e3369a01092560235fcd"
+                },
+                {
+                    "name": "pid-19792-worker-1",
+                    "children": [
+                        {
+                            "name": "@regression User can login successfully",
+                            "uid": "c354098f9817bc83",
+                            "status": "passed",
+                            "time": {
+                                "start": 1785097299225,
+                                "stop": 1785097302185,
+                                "duration": 2960
+                            }
+                        },
+                        {
+                            "name": "get started link",
+                            "uid": "8927e2d766a81bce",
+                            "status": "passed",
+                            "time": {
+                                "start": 1785097293218,
+                                "stop": 1785097297212,
+                                "duration": 3994
+                            }
+                        },
+                        {
+                            "name": "User cannot login with invalid password",
+                            "uid": "1001eae327ec223",
+                            "status": "passed",
+                            "time": {
+                                "start": 1785097305029,
+                                "stop": 1785097306136,
+                                "duration": 1107
+                            }
+                        }
+                    ],
+                    "uid": "e567f3b03767447be140fe35f7e8854b"
+                }
+            ],
+            "uid": "693ed9eecae6fa158bfbba4a9c2a1e70"
+        }
+    ],
+    "uid": "ab17fc5a4eb3bca4b216b548c7f9fcbc"
+}

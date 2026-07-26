@@ -1,0 +1,246 @@
+{
+    "uid": "d294cbe478c6e097",
+    "name": "@regression Should delete user successfully",
+    "fullName": "api/crud/users-crud.spec.ts:70:5",
+    "historyId": "476856726982cf0b564677d0662a95bd:259864bbb84e0941359ea9e4c0db04ac",
+    "time": { "start": 1785097305876, "stop": 1785097305893, "duration": 17 },
+    "status": "passed",
+    "flaky": false,
+    "newFailed": false,
+    "newBroken": false,
+    "newPassed": false,
+    "retriesCount": 0,
+    "retriesStatusChange": false,
+    "beforeStages": [],
+    "testStage": {
+        "status": "passed",
+        "steps": [
+            {
+                "name": "Before Hooks",
+                "time": {
+                    "start": 1785097305879,
+                    "stop": 1785097305893,
+                    "duration": 14
+                },
+                "status": "passed",
+                "steps": [
+                    {
+                        "name": "beforeEach hook",
+                        "time": {
+                            "start": 1785097305879,
+                            "stop": 1785097305893,
+                            "duration": 14
+                        },
+                        "status": "passed",
+                        "steps": [
+                            {
+                                "name": "Fixture \"api\"",
+                                "time": {
+                                    "start": 1785097305887,
+                                    "stop": 1785097305893,
+                                    "duration": 6
+                                },
+                                "status": "passed",
+                                "steps": [
+                                    {
+                                        "name": "Create request context",
+                                        "time": {
+                                            "start": 1785097305888,
+                                            "stop": 1785097305888,
+                                            "duration": 0
+                                        },
+                                        "status": "passed",
+                                        "steps": [],
+                                        "attachments": [],
+                                        "parameters": [],
+                                        "shouldDisplayMessage": false,
+                                        "attachmentsCount": 0,
+                                        "hasContent": false,
+                                        "attachmentStep": false,
+                                        "stepsCount": 0
+                                    },
+                                    {
+                                        "name": "POST \"/test/reset\"",
+                                        "time": {
+                                            "start": 1785097305890,
+                                            "stop": 1785097305892,
+                                            "duration": 2
+                                        },
+                                        "status": "passed",
+                                        "steps": [],
+                                        "attachments": [],
+                                        "parameters": [],
+                                        "shouldDisplayMessage": false,
+                                        "attachmentsCount": 0,
+                                        "hasContent": false,
+                                        "attachmentStep": false,
+                                        "stepsCount": 0
+                                    }
+                                ],
+                                "attachments": [],
+                                "parameters": [],
+                                "shouldDisplayMessage": false,
+                                "attachmentsCount": 0,
+                                "hasContent": true,
+                                "attachmentStep": false,
+                                "stepsCount": 2
+                            }
+                        ],
+                        "attachments": [],
+                        "parameters": [],
+                        "shouldDisplayMessage": false,
+                        "attachmentsCount": 0,
+                        "hasContent": true,
+                        "attachmentStep": false,
+                        "stepsCount": 3
+                    }
+                ],
+                "attachments": [],
+                "parameters": [],
+                "shouldDisplayMessage": false,
+                "attachmentsCount": 0,
+                "hasContent": true,
+                "attachmentStep": false,
+                "stepsCount": 4
+            },
+            {
+                "name": "POST \"/api/users\"",
+                "time": {
+                    "start": 1785097305895,
+                    "stop": 1785097305896,
+                    "duration": 1
+                },
+                "status": "passed",
+                "steps": [],
+                "attachments": [],
+                "parameters": [],
+                "shouldDisplayMessage": false,
+                "attachmentsCount": 0,
+                "hasContent": false,
+                "attachmentStep": false,
+                "stepsCount": 0
+            },
+            {
+                "name": "DELETE \"/api/users/3\"",
+                "time": {
+                    "start": 1785097305899,
+                    "stop": 1785097305900,
+                    "duration": 1
+                },
+                "status": "passed",
+                "steps": [],
+                "attachments": [],
+                "parameters": [],
+                "shouldDisplayMessage": false,
+                "attachmentsCount": 0,
+                "hasContent": false,
+                "attachmentStep": false,
+                "stepsCount": 0
+            },
+            {
+                "name": "Expect \"toBe\"",
+                "time": {
+                    "start": 1785097305901,
+                    "stop": 1785097305899,
+                    "duration": -2
+                },
+                "status": "passed",
+                "steps": [],
+                "attachments": [],
+                "parameters": [],
+                "shouldDisplayMessage": false,
+                "attachmentsCount": 0,
+                "hasContent": false,
+                "attachmentStep": false,
+                "stepsCount": 0
+            },
+            {
+                "name": "After Hooks",
+                "time": {
+                    "start": 1785097305902,
+                    "stop": 1785097305910,
+                    "duration": 8
+                },
+                "status": "passed",
+                "steps": [
+                    {
+                        "name": "Fixture \"api\"",
+                        "time": {
+                            "start": 1785097305902,
+                            "stop": 1785097305904,
+                            "duration": 2
+                        },
+                        "status": "passed",
+                        "steps": [],
+                        "attachments": [],
+                        "parameters": [],
+                        "shouldDisplayMessage": false,
+                        "attachmentsCount": 0,
+                        "hasContent": false,
+                        "attachmentStep": false,
+                        "stepsCount": 0
+                    }
+                ],
+                "attachments": [],
+                "parameters": [],
+                "shouldDisplayMessage": false,
+                "attachmentsCount": 0,
+                "hasContent": true,
+                "attachmentStep": false,
+                "stepsCount": 1
+            }
+        ],
+        "attachments": [
+            {
+                "uid": "cd1307e0b544ae6d",
+                "name": "stdout",
+                "source": "cd1307e0b544ae6d.txt",
+                "type": "text/plain",
+                "size": 188
+            }
+        ],
+        "parameters": [],
+        "shouldDisplayMessage": false,
+        "attachmentsCount": 1,
+        "hasContent": true,
+        "attachmentStep": false,
+        "stepsCount": 10
+    },
+    "afterStages": [],
+    "labels": [
+        { "name": "language", "value": "javascript" },
+        { "name": "framework", "value": "playwright" },
+        {
+            "name": "package",
+            "value": "playwright-xe-framework.api.crud.users-crud.spec.ts"
+        },
+        {
+            "name": "_fallbackTestCaseId",
+            "value": "9f4c088fdd1e2001452e4a1a79d05985"
+        },
+        {
+            "name": "titlePath",
+            "value": " > api > api\\crud\\users-crud.spec.ts > @regression Users CRUD API"
+        },
+        { "name": "tag", "value": "regression" },
+        { "name": "tag", "value": "regression" },
+        { "name": "host", "value": "DeskWA" },
+        { "name": "thread", "value": "pid-19792-worker-2" },
+        { "name": "parentSuite", "value": "api" },
+        { "name": "suite", "value": "api\\crud\\users-crud.spec.ts" },
+        { "name": "subSuite", "value": "@regression Users CRUD API" },
+        { "name": "resultFormat", "value": "allure2" }
+    ],
+    "parameters": [{ "name": "Project", "value": "api" }],
+    "links": [],
+    "hidden": false,
+    "retry": false,
+    "extra": {
+        "severity": "normal",
+        "retries": [],
+        "categories": [],
+        "tags": ["regression"]
+    },
+    "source": "d294cbe478c6e097.json",
+    "parameterValues": ["api"]
+}

@@ -1,0 +1,225 @@
+{
+    "uuid": "2507b00f-368d-42a8-8128-51344b68a8cb",
+    "name": "Should retrieve user profile",
+    "historyId": "44beffe199ef61e0d6000c53eb75394f:259864bbb84e0941359ea9e4c0db04ac",
+    "status": "passed",
+    "statusDetails": {},
+    "stage": "finished",
+    "steps": [
+        {
+            "status": "passed",
+            "statusDetails": {},
+            "stage": "finished",
+            "steps": [
+                {
+                    "status": "passed",
+                    "statusDetails": {},
+                    "stage": "finished",
+                    "steps": [
+                        {
+                            "status": "passed",
+                            "statusDetails": {},
+                            "stage": "finished",
+                            "steps": [],
+                            "attachments": [],
+                            "parameters": [],
+                            "name": "Create request context",
+                            "start": 1785097306000,
+                            "uuid": "c14c97b5-7873-4a46-bb67-3ab554e672b3",
+                            "stop": 1785097306001
+                        },
+                        {
+                            "status": "passed",
+                            "statusDetails": {},
+                            "stage": "finished",
+                            "steps": [],
+                            "attachments": [],
+                            "parameters": [],
+                            "name": "POST \"/test/reset\"",
+                            "start": 1785097306002,
+                            "uuid": "4e9ea313-8657-4311-b77f-71388e34510f",
+                            "stop": 1785097306004
+                        }
+                    ],
+                    "attachments": [],
+                    "parameters": [],
+                    "name": "Fixture \"api\"",
+                    "start": 1785097306000,
+                    "uuid": "b78366de-9dd1-4e34-a51d-b54085c89b08",
+                    "stop": 1785097306004
+                },
+                {
+                    "status": "passed",
+                    "statusDetails": {},
+                    "stage": "finished",
+                    "steps": [
+                        {
+                            "status": "passed",
+                            "statusDetails": {},
+                            "stage": "finished",
+                            "steps": [],
+                            "attachments": [],
+                            "parameters": [],
+                            "name": "POST \"/login\"",
+                            "start": 1785097306005,
+                            "uuid": "b100f606-c33f-4ed4-9111-b156b5d96686",
+                            "stop": 1785097306007
+                        },
+                        {
+                            "status": "passed",
+                            "statusDetails": {},
+                            "stage": "finished",
+                            "steps": [],
+                            "attachments": [],
+                            "parameters": [],
+                            "name": "Expect \"toBe\"",
+                            "start": 1785097306008,
+                            "uuid": "5f96aecc-debc-45a7-bfc0-510ac62f0663",
+                            "stop": 1785097306008
+                        },
+                        {
+                            "status": "passed",
+                            "statusDetails": {},
+                            "stage": "finished",
+                            "steps": [],
+                            "attachments": [],
+                            "parameters": [],
+                            "name": "Expect \"toBeDefined\"",
+                            "start": 1785097306009,
+                            "uuid": "70c0427e-ca5e-4709-ae10-4cb56726b0c0",
+                            "stop": 1785097306009
+                        },
+                        {
+                            "status": "passed",
+                            "statusDetails": {},
+                            "stage": "finished",
+                            "steps": [],
+                            "attachments": [],
+                            "parameters": [],
+                            "name": "Create request context",
+                            "start": 1785097306011,
+                            "uuid": "3432220b-ca96-4c87-b573-971e9b5672be",
+                            "stop": 1785097306011
+                        }
+                    ],
+                    "attachments": [],
+                    "parameters": [],
+                    "name": "Fixture \"authenticatedApi\"",
+                    "start": 1785097306004,
+                    "uuid": "dcd70b5f-6e45-414e-a809-22e50f69755d",
+                    "stop": 1785097306011
+                }
+            ],
+            "attachments": [],
+            "parameters": [],
+            "name": "Before Hooks",
+            "start": 1785097305995,
+            "uuid": "d273ec1f-8634-496d-87ae-6fffeaa0c02c",
+            "stop": 1785097306011
+        },
+        {
+            "status": "passed",
+            "statusDetails": {},
+            "stage": "finished",
+            "steps": [],
+            "attachments": [],
+            "parameters": [],
+            "start": 1785097306013,
+            "name": "GET \"/profile\"",
+            "uuid": "61c885d4-9d3d-445d-8aef-cb7dbabaa103",
+            "stop": 1785097306015
+        },
+        {
+            "status": "passed",
+            "statusDetails": {},
+            "stage": "finished",
+            "steps": [],
+            "attachments": [],
+            "parameters": [],
+            "start": 1785097306016,
+            "name": "Expect \"toBe\"",
+            "uuid": "97490dca-9ef2-4b97-91cb-0b9e00ee723e",
+            "stop": 1785097306014
+        },
+        {
+            "status": "passed",
+            "statusDetails": {},
+            "stage": "finished",
+            "steps": [],
+            "attachments": [],
+            "parameters": [],
+            "start": 1785097306017,
+            "name": "Expect \"toBe\"",
+            "uuid": "fc270c79-3b14-47d4-ae50-2f1c0240d549",
+            "stop": 1785097306015
+        },
+        {
+            "status": "passed",
+            "statusDetails": {},
+            "stage": "finished",
+            "steps": [
+                {
+                    "status": "passed",
+                    "statusDetails": {},
+                    "stage": "finished",
+                    "steps": [],
+                    "attachments": [],
+                    "parameters": [],
+                    "name": "Fixture \"authenticatedApi\"",
+                    "start": 1785097306017,
+                    "uuid": "1db25bbe-5a59-4ef1-99f3-6b54f504fcef",
+                    "stop": 1785097306019
+                },
+                {
+                    "status": "passed",
+                    "statusDetails": {},
+                    "stage": "finished",
+                    "steps": [],
+                    "attachments": [],
+                    "parameters": [],
+                    "name": "Fixture \"api\"",
+                    "start": 1785097306019,
+                    "uuid": "4955e77e-e776-43d3-8826-baac6239b59b",
+                    "stop": 1785097306020
+                }
+            ],
+            "attachments": [],
+            "parameters": [],
+            "name": "After Hooks",
+            "start": 1785097306017,
+            "uuid": "2944237f-46ce-489e-8d4b-39bc0f07146c",
+            "stop": 1785097306026
+        }
+    ],
+    "attachments": [
+        {
+            "name": "stdout",
+            "source": "52cd3db4-b1b5-45c7-b17e-14519417b839-attachment.txt",
+            "type": "text/plain"
+        }
+    ],
+    "parameters": [{ "name": "Project", "value": "api" }],
+    "labels": [
+        { "name": "language", "value": "javascript" },
+        { "name": "framework", "value": "playwright" },
+        {
+            "name": "package",
+            "value": "playwright-xe-framework.api.profile.spec.ts"
+        },
+        {
+            "name": "_fallbackTestCaseId",
+            "value": "ed7c5e421477d1cf33114507232226e6"
+        },
+        { "name": "titlePath", "value": " > api > api\\profile.spec.ts" },
+        { "name": "host", "value": "DeskWA" },
+        { "name": "thread", "value": "pid-19792-worker-2" },
+        { "name": "parentSuite", "value": "api" },
+        { "name": "suite", "value": "api\\profile.spec.ts" }
+    ],
+    "links": [],
+    "start": 1785097305992,
+    "testCaseId": "44beffe199ef61e0d6000c53eb75394f",
+    "fullName": "api/profile.spec.ts:3:1",
+    "titlePath": ["playwright-xe-framework", "api", "profile.spec.ts"],
+    "stop": 1785097306012
+}

@@ -1,0 +1,186 @@
+{
+    "uuid": "590a1c15-2ef3-4f4c-b7fa-e205c5660a8e",
+    "name": "@regression Should retrieve users successfully",
+    "historyId": "33cb69289aaf1b5b1bacc6299ba7e449:259864bbb84e0941359ea9e4c0db04ac",
+    "status": "passed",
+    "statusDetails": {},
+    "stage": "finished",
+    "steps": [
+        {
+            "status": "passed",
+            "statusDetails": {},
+            "stage": "finished",
+            "steps": [
+                {
+                    "status": "passed",
+                    "statusDetails": {},
+                    "stage": "finished",
+                    "steps": [
+                        {
+                            "status": "passed",
+                            "statusDetails": {},
+                            "stage": "finished",
+                            "steps": [],
+                            "attachments": [],
+                            "parameters": [],
+                            "name": "Create request context",
+                            "start": 1785097306052,
+                            "uuid": "1d5e8ca6-8e83-42d0-ab98-04a5c65f1aa2",
+                            "stop": 1785097306052
+                        },
+                        {
+                            "status": "passed",
+                            "statusDetails": {},
+                            "stage": "finished",
+                            "steps": [],
+                            "attachments": [],
+                            "parameters": [],
+                            "name": "POST \"/test/reset\"",
+                            "start": 1785097306054,
+                            "uuid": "2b77a541-6aac-4172-916e-58f70dce5ea7",
+                            "stop": 1785097306055
+                        }
+                    ],
+                    "attachments": [],
+                    "parameters": [],
+                    "name": "Fixture \"api\"",
+                    "start": 1785097306051,
+                    "uuid": "0790882c-29c5-4a34-a65d-713c8942170e",
+                    "stop": 1785097306056
+                }
+            ],
+            "attachments": [],
+            "parameters": [],
+            "name": "Before Hooks",
+            "start": 1785097306043,
+            "uuid": "dc163224-bd50-4938-9599-7c6271d36750",
+            "stop": 1785097306056
+        },
+        {
+            "status": "passed",
+            "statusDetails": {},
+            "stage": "finished",
+            "steps": [],
+            "attachments": [],
+            "parameters": [],
+            "start": 1785097306057,
+            "name": "GET \"/api/users\"",
+            "uuid": "b858be11-1c91-4cb3-8dc6-425e2d5f2b64",
+            "stop": 1785097306059
+        },
+        {
+            "status": "passed",
+            "statusDetails": {},
+            "stage": "finished",
+            "steps": [],
+            "attachments": [],
+            "parameters": [],
+            "start": 1785097306061,
+            "name": "Expect \"toBe\"",
+            "uuid": "0e1ab6d5-339d-41e2-9933-ce8c2ae8b460",
+            "stop": 1785097306059
+        },
+        {
+            "status": "passed",
+            "statusDetails": {},
+            "stage": "finished",
+            "steps": [],
+            "attachments": [],
+            "parameters": [],
+            "start": 1785097306062,
+            "name": "Expect \"toBeGreaterThan\"",
+            "uuid": "29d3acb4-5dcf-401a-94c2-164ec0e23f99",
+            "stop": 1785097306060
+        },
+        {
+            "status": "passed",
+            "statusDetails": {},
+            "stage": "finished",
+            "steps": [],
+            "attachments": [],
+            "parameters": [],
+            "start": 1785097306063,
+            "name": "Expect \"toBeDefined\"",
+            "uuid": "c34ccd1b-7665-452b-8dd8-571e31c30e54",
+            "stop": 1785097306061
+        },
+        {
+            "status": "passed",
+            "statusDetails": {},
+            "stage": "finished",
+            "steps": [],
+            "attachments": [],
+            "parameters": [],
+            "start": 1785097306064,
+            "name": "Expect \"toBeDefined\"",
+            "uuid": "8b450316-b8c8-4b97-84ff-27753df97e10",
+            "stop": 1785097306062
+        },
+        {
+            "status": "passed",
+            "statusDetails": {},
+            "stage": "finished",
+            "steps": [
+                {
+                    "status": "passed",
+                    "statusDetails": {},
+                    "stage": "finished",
+                    "steps": [],
+                    "attachments": [],
+                    "parameters": [],
+                    "name": "Fixture \"api\"",
+                    "start": 1785097306065,
+                    "uuid": "5acaacb9-8b74-4cc4-8d9d-014b5c7dc986",
+                    "stop": 1785097306066
+                }
+            ],
+            "attachments": [],
+            "parameters": [],
+            "name": "After Hooks",
+            "start": 1785097306064,
+            "uuid": "93f89f02-1cce-4542-ba86-ea26fc9c82da",
+            "stop": 1785097306072
+        }
+    ],
+    "attachments": [
+        {
+            "name": "stdout",
+            "source": "b4e1641b-c509-4e73-bedf-0404c819c884-attachment.txt",
+            "type": "text/plain"
+        }
+    ],
+    "parameters": [{ "name": "Project", "value": "api" }],
+    "labels": [
+        { "name": "language", "value": "javascript" },
+        { "name": "framework", "value": "playwright" },
+        {
+            "name": "package",
+            "value": "playwright-xe-framework.api.users.spec.ts"
+        },
+        {
+            "name": "_fallbackTestCaseId",
+            "value": "ce1757a8463b00470a223bb0232b2e40"
+        },
+        {
+            "name": "titlePath",
+            "value": " > api > api\\users.spec.ts > User Management API Tests"
+        },
+        { "name": "tag", "value": "regression" },
+        { "name": "host", "value": "DeskWA" },
+        { "name": "thread", "value": "pid-19792-worker-2" },
+        { "name": "parentSuite", "value": "api" },
+        { "name": "suite", "value": "api\\users.spec.ts" },
+        { "name": "subSuite", "value": "User Management API Tests" }
+    ],
+    "links": [],
+    "start": 1785097306041,
+    "testCaseId": "33cb69289aaf1b5b1bacc6299ba7e449",
+    "fullName": "api/users.spec.ts:6:5",
+    "titlePath": [
+        "playwright-xe-framework",
+        "api",
+        "users.spec.ts",
+        "User Management API Tests"
+    ],
+    "stop": 1785097306056
+}

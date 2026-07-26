@@ -1,0 +1,168 @@
+{
+    "uuid": "561cc36f-07f7-41c3-97a3-77d4e1ad0cbb",
+    "name": "@regression Should return 404 when user does not exist",
+    "historyId": "d6178768a29787e71b2a6d78e3c68917:259864bbb84e0941359ea9e4c0db04ac",
+    "status": "passed",
+    "statusDetails": {},
+    "stage": "finished",
+    "steps": [
+        {
+            "status": "passed",
+            "statusDetails": {},
+            "stage": "finished",
+            "steps": [
+                {
+                    "status": "passed",
+                    "statusDetails": {},
+                    "stage": "finished",
+                    "steps": [
+                        {
+                            "status": "passed",
+                            "statusDetails": {},
+                            "stage": "finished",
+                            "steps": [],
+                            "attachments": [],
+                            "parameters": [],
+                            "name": "Create request context",
+                            "start": 1785097305940,
+                            "uuid": "106d31ac-138b-454b-93b0-3c73d49d40d3",
+                            "stop": 1785097305950
+                        },
+                        {
+                            "status": "passed",
+                            "statusDetails": {},
+                            "stage": "finished",
+                            "steps": [],
+                            "attachments": [],
+                            "parameters": [],
+                            "name": "POST \"/test/reset\"",
+                            "start": 1785097305952,
+                            "uuid": "73276174-d7f8-453d-b5e0-413cdf801c3a",
+                            "stop": 1785097305953
+                        }
+                    ],
+                    "attachments": [],
+                    "parameters": [],
+                    "name": "Fixture \"api\"",
+                    "start": 1785097305939,
+                    "uuid": "9c546128-1fee-4a50-aceb-154eb0916847",
+                    "stop": 1785097305954
+                }
+            ],
+            "attachments": [],
+            "parameters": [],
+            "name": "Before Hooks",
+            "start": 1785097305933,
+            "uuid": "7a02f821-1c4a-425d-a007-7355c6ea19bd",
+            "stop": 1785097305954
+        },
+        {
+            "status": "passed",
+            "statusDetails": {},
+            "stage": "finished",
+            "steps": [],
+            "attachments": [],
+            "parameters": [],
+            "start": 1785097305955,
+            "name": "GET \"/api/users/999999\"",
+            "uuid": "7571ddb7-d92c-4f69-af00-0b843608b08a",
+            "stop": 1785097305956
+        },
+        {
+            "status": "passed",
+            "statusDetails": {},
+            "stage": "finished",
+            "steps": [],
+            "attachments": [],
+            "parameters": [],
+            "start": 1785097305957,
+            "name": "Expect \"toBe\"",
+            "uuid": "aba9f0a7-5238-4fca-93c6-f3aac3b70441",
+            "stop": 1785097305955
+        },
+        {
+            "status": "passed",
+            "statusDetails": {},
+            "stage": "finished",
+            "steps": [],
+            "attachments": [],
+            "parameters": [],
+            "start": 1785097305969,
+            "name": "Expect \"toBeTruthy\"",
+            "uuid": "9aaf4eca-f14d-4bbd-a355-b3a63148db65",
+            "stop": 1785097305968
+        },
+        {
+            "status": "passed",
+            "statusDetails": {},
+            "stage": "finished",
+            "steps": [
+                {
+                    "status": "passed",
+                    "statusDetails": {},
+                    "stage": "finished",
+                    "steps": [],
+                    "attachments": [],
+                    "parameters": [],
+                    "name": "Fixture \"api\"",
+                    "start": 1785097305970,
+                    "uuid": "d838988b-90b9-45fa-b3eb-1a477a2c458a",
+                    "stop": 1785097305972
+                }
+            ],
+            "attachments": [],
+            "parameters": [],
+            "name": "After Hooks",
+            "start": 1785097305969,
+            "uuid": "403add42-665f-48aa-b864-537fabc4a2ab",
+            "stop": 1785097305980
+        }
+    ],
+    "attachments": [
+        {
+            "name": "stdout",
+            "source": "06e27ae2-5215-44b0-b46d-43a45f64f922-attachment.txt",
+            "type": "text/plain"
+        },
+        {
+            "name": "stderr",
+            "source": "1f03a18b-ef63-4493-bca0-8f74b5790679-attachment.txt",
+            "type": "text/plain"
+        }
+    ],
+    "parameters": [{ "name": "Project", "value": "api" }],
+    "labels": [
+        { "name": "language", "value": "javascript" },
+        { "name": "framework", "value": "playwright" },
+        {
+            "name": "package",
+            "value": "playwright-xe-framework.api.errors.users-errors.spec.ts"
+        },
+        {
+            "name": "_fallbackTestCaseId",
+            "value": "b07ccb23b79ee42e85aaee8b4ecf088c"
+        },
+        {
+            "name": "titlePath",
+            "value": " > api > api\\errors\\users-errors.spec.ts > Users API Negative Tests"
+        },
+        { "name": "tag", "value": "regression" },
+        { "name": "host", "value": "DeskWA" },
+        { "name": "thread", "value": "pid-19792-worker-2" },
+        { "name": "parentSuite", "value": "api" },
+        { "name": "suite", "value": "api\\errors\\users-errors.spec.ts" },
+        { "name": "subSuite", "value": "Users API Negative Tests" }
+    ],
+    "links": [],
+    "start": 1785097305931,
+    "testCaseId": "d6178768a29787e71b2a6d78e3c68917",
+    "fullName": "api/errors/users-errors.spec.ts:10:5",
+    "titlePath": [
+        "playwright-xe-framework",
+        "api",
+        "errors",
+        "users-errors.spec.ts",
+        "Users API Negative Tests"
+    ],
+    "stop": 1785097305964
+}
