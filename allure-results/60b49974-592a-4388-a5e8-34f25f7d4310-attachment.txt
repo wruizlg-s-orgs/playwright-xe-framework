@@ -1,6 +1,0 @@
-[HTTP ERROR] POST /login
-STATUS: 401 | TIME: 4ms
-BODY:
-{
-  "message": "Invalid credentials"
-}

@@ -1,3 +1,0 @@
-[REQUEST] POST /test/reset
-[RESPONSE] STATUS: 204 | TIME: 3ms
-[REQUEST] GET /profile

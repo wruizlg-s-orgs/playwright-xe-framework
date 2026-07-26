@@ -7,6 +7,10 @@ playwright-report/
 blob-report/
 playwright/.cache/
 
+# Allure
+allure-results/
+allure-report/
+
 # Environment
 .env
 .env.*
@@ -20,3 +24,6 @@ Thumbs.db
 
 # Logs
 *.log
+
+# Coverage
+coverage/
