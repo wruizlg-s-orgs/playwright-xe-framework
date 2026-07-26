@@ -32,11 +32,8 @@ jobs:
 
         env:
             ENVIRONMENT: qa
-
             API_URL: ${{ secrets.QA_API_URL }}
-
             API_USERNAME: ${{ secrets.QA_USERNAME }}
-
             API_PASSWORD: ${{ secrets.QA_PASSWORD }}
 
         steps:
@@ -72,11 +69,11 @@ jobs:
             - name: Run API Tests
               run: npx playwright test --project=api
 
-            - name: Upload API Report
+            - name: Upload API Results
               if: always()
               uses: actions/upload-artifact@v4
               with:
-                  name: api-report
+                  name: api-results
                   path: |
                       playwright-report/
                       test-results/
@@ -128,11 +125,11 @@ jobs:
             - name: Run UI Tests
               run: npx playwright test --project=${{ matrix.browser }}
 
-            - name: Upload Report
+            - name: Upload UI Results
               if: always()
               uses: actions/upload-artifact@v4
               with:
-                  name: report-${{ matrix.browser }}
+                  name: ui-${{ matrix.browser }}-results
                   path: |
                       playwright-report/
                       test-results/
@@ -165,14 +162,32 @@ jobs:
             - name: Download API Results
               uses: actions/download-artifact@v4
               with:
-                  pattern: api-report
-                  path: allure-results
+                  pattern: api-results
+                  path: artifacts
+                  merge-multiple: true
 
             - name: Download UI Results
               uses: actions/download-artifact@v4
               with:
-                  pattern: report-*
-                  path: allure-results
+                  pattern: ui-*-results
+                  path: artifacts
+                  merge-multiple: true
+
+            - name: Prepare Allure Results
+              run: |
+
+                  mkdir -p allure-results
+
+                  find artifacts -type f -path "*/allure-results/*" -exec cp {} allure-results/ \;
+
+            - name: Validate Allure Results
+              run: |
+
+                  echo "========== ALLURE RESULTS =========="
+
+                  ls -la allure-results
+
+                  echo "===================================="
 
             - name: Setup Java
               uses: actions/setup-java@v4
@@ -185,6 +200,7 @@ jobs:
 
             - name: Generate Allure Report
               run: |
+
                   allure generate allure-results --clean -o allure-report
 
             - name: Upload Allure Report
@@ -210,9 +226,19 @@ jobs:
         steps:
             - name: Publish Summary
               run: |
+
                   echo "## Playwright Automation Pipeline" >> $GITHUB_STEP_SUMMARY
+
                   echo "" >> $GITHUB_STEP_SUMMARY
+
                   echo "API Tests executed." >> $GITHUB_STEP_SUMMARY
+
                   echo "UI Tests executed in parallel." >> $GITHUB_STEP_SUMMARY
+
                   echo "" >> $GITHUB_STEP_SUMMARY
+
+                  echo "Allure Report generated." >> $GITHUB_STEP_SUMMARY
+
+                  echo "" >> $GITHUB_STEP_SUMMARY
+
                   echo "Environment: QA" >> $GITHUB_STEP_SUMMARY

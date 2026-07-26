@@ -1,171 +1,6 @@
 [
     {
-        "uid": "93060e2cf13527f",
-        "name": "@regression User can login successfully",
-        "time": {
-            "start": 1785100000157,
-            "stop": 1785100005302,
-            "duration": 5145
-        },
-        "status": "passed",
-        "severity": "normal"
-    },
-    {
-        "uid": "d973286db3e0bf30",
-        "name": "get started link",
-        "time": {
-            "start": 1785100009559,
-            "stop": 1785100013800,
-            "duration": 4241
-        },
-        "status": "passed",
-        "severity": "normal"
-    },
-    {
-        "uid": "232c5be4a7ce3664",
-        "name": "has title",
-        "time": {
-            "start": 1785099997952,
-            "stop": 1785099999107,
-            "duration": 1155
-        },
-        "status": "passed",
-        "severity": "normal"
-    },
-    {
-        "uid": "9f78cebb8e275274",
-        "name": "User cannot login with invalid password",
-        "time": {
-            "start": 1785100012579,
-            "stop": 1785100014332,
-            "duration": 1753
-        },
-        "status": "passed",
-        "severity": "normal"
-    },
-    {
-        "uid": "2f41e89a0ccd755d",
-        "name": "@regression Should reject login with invalid credentials",
-        "time": {
-            "start": 1785100014200,
-            "stop": 1785100014249,
-            "duration": 49
-        },
-        "status": "passed",
-        "severity": "normal"
-    },
-    {
-        "uid": "8eca04d468532054",
-        "name": "has title",
-        "time": {
-            "start": 1785099999921,
-            "stop": 1785100004654,
-            "duration": 4733
-        },
-        "status": "passed",
-        "severity": "normal"
-    },
-    {
-        "uid": "2945597fc1c4d407",
-        "name": "@regression Should delete user successfully",
-        "time": {
-            "start": 1785100014680,
-            "stop": 1785100014696,
-            "duration": 16
-        },
-        "status": "passed",
-        "severity": "normal"
-    },
-    {
-        "uid": "e244cf01a24e09af",
-        "name": "Should retrieve user profile",
-        "time": {
-            "start": 1785100014790,
-            "stop": 1785100014808,
-            "duration": 18
-        },
-        "status": "passed",
-        "severity": "normal"
-    },
-    {
-        "uid": "cfbdd5a1edbb3da6",
-        "name": "has title",
-        "time": {
-            "start": 1785100009562,
-            "stop": 1785100012249,
-            "duration": 2687
-        },
-        "status": "passed",
-        "severity": "normal"
-    },
-    {
-        "uid": "3f1c333abd555d10",
-        "name": "@smoke Should login successfully with valid credentials",
-        "time": {
-            "start": 1785100013953,
-            "stop": 1785100014112,
-            "duration": 159
-        },
-        "status": "passed",
-        "severity": "normal"
-    },
-    {
-        "uid": "4ea549799f86f441",
-        "name": "@regression User can login successfully",
-        "time": {
-            "start": 1785100011955,
-            "stop": 1785100014316,
-            "duration": 2361
-        },
-        "status": "passed",
-        "severity": "normal"
-    },
-    {
-        "uid": "fbf26012c0009ba",
-        "name": "@regression Should retrieve user by id successfully",
-        "time": {
-            "start": 1785100014559,
-            "stop": 1785100014594,
-            "duration": 35
-        },
-        "status": "passed",
-        "severity": "normal"
-    },
-    {
-        "uid": "efc06cecbe988491",
-        "name": "@smoke Should access profile with valid token",
-        "time": {
-            "start": 1785100014306,
-            "stop": 1785100014362,
-            "duration": 56
-        },
-        "status": "passed",
-        "severity": "normal"
-    },
-    {
-        "uid": "ec9967fd3521df65",
-        "name": "@regression Should return 404 when user does not exist",
-        "time": {
-            "start": 1785100014727,
-            "stop": 1785100014758,
-            "duration": 31
-        },
-        "status": "passed",
-        "severity": "normal"
-    },
-    {
-        "uid": "a933036f9989c39d",
-        "name": "@regression Should create user successfully",
-        "time": {
-            "start": 1785100014481,
-            "stop": 1785100014531,
-            "duration": 50
-        },
-        "status": "passed",
-        "severity": "normal"
-    },
-    {
-        "uid": "ea4d65b73d4c0385",
+        "uid": "ff172141cd009b1a",
         "name": "get started link",
         "time": {
             "start": 1785099997990,
@@ -176,29 +11,51 @@
         "severity": "normal"
     },
     {
-        "uid": "4ceede61c986f06e",
-        "name": "@regression Should retrieve users successfully",
+        "uid": "3c6270061fd02b2a",
+        "name": "has title",
         "time": {
-            "start": 1785100014833,
-            "stop": 1785100014846,
-            "duration": 13
+            "start": 1785099997952,
+            "stop": 1785099999107,
+            "duration": 1155
         },
         "status": "passed",
         "severity": "normal"
     },
     {
-        "uid": "7a75a9bd04a05ca7",
-        "name": "User cannot login with invalid password",
+        "uid": "5d56931b0a6ad216",
+        "name": "@regression User can login successfully",
         "time": {
-            "start": 1785100000359,
-            "stop": 1785100006404,
-            "duration": 6045
+            "start": 1785099997941,
+            "stop": 1785099998752,
+            "duration": 811
         },
         "status": "passed",
         "severity": "normal"
     },
     {
-        "uid": "7d110bed598698ba",
+        "uid": "39107bea156db36f",
+        "name": "@regression Should return 404 when user does not exist",
+        "time": {
+            "start": 1785100014727,
+            "stop": 1785100014758,
+            "duration": 31
+        },
+        "status": "passed",
+        "severity": "normal"
+    },
+    {
+        "uid": "e23bdcfe62ee96ba",
+        "name": "@regression User can login successfully",
+        "time": {
+            "start": 1785100000157,
+            "stop": 1785100005302,
+            "duration": 5145
+        },
+        "status": "passed",
+        "severity": "normal"
+    },
+    {
+        "uid": "8832b8da17c4f3e2",
         "name": "get started link",
         "time": {
             "start": 1785100000003,
@@ -209,18 +66,106 @@
         "severity": "normal"
     },
     {
-        "uid": "14a868dc272db5aa",
-        "name": "@regression Should reject profile access without token",
+        "uid": "41a52602ff3dfc55",
+        "name": "@regression Should delete user successfully",
         "time": {
-            "start": 1785100014400,
-            "stop": 1785100014427,
-            "duration": 27
+            "start": 1785100014680,
+            "stop": 1785100014696,
+            "duration": 16
         },
         "status": "passed",
         "severity": "normal"
     },
     {
-        "uid": "c0017c7e3d10217e",
+        "uid": "199e68b6a3973080",
+        "name": "@smoke User cannot login with invalid password",
+        "time": {
+            "start": 1785100763772,
+            "stop": 1785100764244,
+            "duration": 472
+        },
+        "status": "passed",
+        "severity": "normal"
+    },
+    {
+        "uid": "9fd241d5d48d2fe8",
+        "name": "@regression Should retrieve user by id successfully",
+        "time": {
+            "start": 1785100014559,
+            "stop": 1785100014594,
+            "duration": 35
+        },
+        "status": "passed",
+        "severity": "normal"
+    },
+    {
+        "uid": "e10e746fdd1a5ddf",
+        "name": "get started link",
+        "time": {
+            "start": 1785100009559,
+            "stop": 1785100013800,
+            "duration": 4241
+        },
+        "status": "passed",
+        "severity": "normal"
+    },
+    {
+        "uid": "a66cd14d0f73e5a2",
+        "name": "has title",
+        "time": {
+            "start": 1785100009562,
+            "stop": 1785100012249,
+            "duration": 2687
+        },
+        "status": "passed",
+        "severity": "normal"
+    },
+    {
+        "uid": "6ada4f8295b5f69d",
+        "name": "Should retrieve user profile",
+        "time": {
+            "start": 1785100014790,
+            "stop": 1785100014808,
+            "duration": 18
+        },
+        "status": "passed",
+        "severity": "normal"
+    },
+    {
+        "uid": "3b90980629c75d64",
+        "name": "@smoke User cannot login with invalid password",
+        "time": {
+            "start": 1785100763802,
+            "stop": 1785100765054,
+            "duration": 1252
+        },
+        "status": "passed",
+        "severity": "normal"
+    },
+    {
+        "uid": "381523a0c7b9ea4f",
+        "name": "@regression User can login successfully",
+        "time": {
+            "start": 1785100011955,
+            "stop": 1785100014316,
+            "duration": 2361
+        },
+        "status": "passed",
+        "severity": "normal"
+    },
+    {
+        "uid": "af4f851bef7a69c3",
+        "name": "@regression Should reject login with invalid credentials",
+        "time": {
+            "start": 1785100014200,
+            "stop": 1785100014249,
+            "duration": 49
+        },
+        "status": "passed",
+        "severity": "normal"
+    },
+    {
+        "uid": "9e3d7c8ee09e7bd4",
         "name": "@regression Should update user successfully",
         "time": {
             "start": 1785100014616,
@@ -231,7 +176,95 @@
         "severity": "normal"
     },
     {
-        "uid": "c8f7f274052973d4",
+        "uid": "eae0a9a410d43c0e",
+        "name": "has title",
+        "time": {
+            "start": 1785099999921,
+            "stop": 1785100004654,
+            "duration": 4733
+        },
+        "status": "passed",
+        "severity": "normal"
+    },
+    {
+        "uid": "963dee7981dce2d8",
+        "name": "@regression Should reject profile access without token",
+        "time": {
+            "start": 1785100014400,
+            "stop": 1785100014427,
+            "duration": 27
+        },
+        "status": "passed",
+        "severity": "normal"
+    },
+    {
+        "uid": "fd82ea51cf6b4e29",
+        "name": "@regression Should retrieve users successfully",
+        "time": {
+            "start": 1785100014833,
+            "stop": 1785100014846,
+            "duration": 13
+        },
+        "status": "passed",
+        "severity": "normal"
+    },
+    {
+        "uid": "8cc1fdffa22c3545",
+        "name": "@smoke Should access profile with valid token",
+        "time": {
+            "start": 1785100764220,
+            "stop": 1785100764285,
+            "duration": 65
+        },
+        "status": "passed",
+        "severity": "normal"
+    },
+    {
+        "uid": "cd036d01a45edde0",
+        "name": "User cannot login with invalid password",
+        "time": {
+            "start": 1785100000359,
+            "stop": 1785100006404,
+            "duration": 6045
+        },
+        "status": "passed",
+        "severity": "normal"
+    },
+    {
+        "uid": "260d739fb81146a",
+        "name": "@regression Should create user successfully",
+        "time": {
+            "start": 1785100014481,
+            "stop": 1785100014531,
+            "duration": 50
+        },
+        "status": "passed",
+        "severity": "normal"
+    },
+    {
+        "uid": "f41ed6e86785577f",
+        "name": "User cannot login with invalid password",
+        "time": {
+            "start": 1785100012579,
+            "stop": 1785100014332,
+            "duration": 1753
+        },
+        "status": "passed",
+        "severity": "normal"
+    },
+    {
+        "uid": "b6d1ab4fa2f8b670",
+        "name": "@smoke User cannot login with invalid password",
+        "time": {
+            "start": 1785100763784,
+            "stop": 1785100765936,
+            "duration": 2152
+        },
+        "status": "passed",
+        "severity": "normal"
+    },
+    {
+        "uid": "6234444cd0e53b0d",
         "name": "User cannot login with invalid password",
         "time": {
             "start": 1785099997995,
@@ -242,12 +275,12 @@
         "severity": "normal"
     },
     {
-        "uid": "c26a60dd5eec8d29",
-        "name": "@regression User can login successfully",
+        "uid": "b7f05c7dde41d615",
+        "name": "@smoke Should login successfully with valid credentials",
         "time": {
-            "start": 1785099997941,
-            "stop": 1785099998752,
-            "duration": 811
+            "start": 1785100763918,
+            "stop": 1785100764108,
+            "duration": 190
         },
         "status": "passed",
         "severity": "normal"

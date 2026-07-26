@@ -1,0 +1,222 @@
+{
+    "uid": "d242f138d2894638",
+    "name": "@smoke Should login successfully with valid credentials",
+    "fullName": "api/auth/auth.spec.ts:20:5",
+    "historyId": "05342bd7363c78d20a3d56c51d435e1a:259864bbb84e0941359ea9e4c0db04ac",
+    "time": { "start": 1785100013953, "stop": 1785100014112, "duration": 159 },
+    "status": "passed",
+    "flaky": false,
+    "newFailed": false,
+    "newBroken": false,
+    "newPassed": false,
+    "retriesCount": 0,
+    "retriesStatusChange": false,
+    "beforeStages": [],
+    "testStage": {
+        "status": "passed",
+        "steps": [
+            {
+                "name": "Before Hooks",
+                "time": {
+                    "start": 1785100014003,
+                    "stop": 1785100014102,
+                    "duration": 99
+                },
+                "status": "passed",
+                "steps": [
+                    {
+                        "name": "Fixture \"api\"",
+                        "time": {
+                            "start": 1785100014025,
+                            "stop": 1785100014102,
+                            "duration": 77
+                        },
+                        "status": "passed",
+                        "steps": [
+                            {
+                                "name": "Create request context",
+                                "time": {
+                                    "start": 1785100014039,
+                                    "stop": 1785100014044,
+                                    "duration": 5
+                                },
+                                "status": "passed",
+                                "steps": [],
+                                "attachments": [],
+                                "parameters": [],
+                                "attachmentStep": false,
+                                "hasContent": false,
+                                "stepsCount": 0,
+                                "shouldDisplayMessage": false,
+                                "attachmentsCount": 0
+                            },
+                            {
+                                "name": "POST \"/test/reset\"",
+                                "time": {
+                                    "start": 1785100014049,
+                                    "stop": 1785100014100,
+                                    "duration": 51
+                                },
+                                "status": "passed",
+                                "steps": [],
+                                "attachments": [],
+                                "parameters": [],
+                                "attachmentStep": false,
+                                "hasContent": false,
+                                "stepsCount": 0,
+                                "shouldDisplayMessage": false,
+                                "attachmentsCount": 0
+                            }
+                        ],
+                        "attachments": [],
+                        "parameters": [],
+                        "attachmentStep": false,
+                        "hasContent": true,
+                        "stepsCount": 2,
+                        "shouldDisplayMessage": false,
+                        "attachmentsCount": 0
+                    }
+                ],
+                "attachments": [],
+                "parameters": [],
+                "attachmentStep": false,
+                "hasContent": true,
+                "stepsCount": 3,
+                "shouldDisplayMessage": false,
+                "attachmentsCount": 0
+            },
+            {
+                "name": "POST \"/login\"",
+                "time": {
+                    "start": 1785100014105,
+                    "stop": 1785100014109,
+                    "duration": 4
+                },
+                "status": "passed",
+                "steps": [],
+                "attachments": [],
+                "parameters": [],
+                "attachmentStep": false,
+                "hasContent": false,
+                "stepsCount": 0,
+                "shouldDisplayMessage": false,
+                "attachmentsCount": 0
+            },
+            {
+                "name": "Expect \"toBe\"",
+                "time": {
+                    "start": 1785100014117,
+                    "stop": 1785100014113,
+                    "duration": -4
+                },
+                "status": "passed",
+                "steps": [],
+                "attachments": [],
+                "parameters": [],
+                "attachmentStep": false,
+                "hasContent": false,
+                "stepsCount": 0,
+                "shouldDisplayMessage": false,
+                "attachmentsCount": 0
+            },
+            {
+                "name": "Expect \"toBeTruthy\"",
+                "time": {
+                    "start": 1785100014175,
+                    "stop": 1785100014171,
+                    "duration": -4
+                },
+                "status": "passed",
+                "steps": [],
+                "attachments": [],
+                "parameters": [],
+                "attachmentStep": false,
+                "hasContent": false,
+                "stepsCount": 0,
+                "shouldDisplayMessage": false,
+                "attachmentsCount": 0
+            },
+            {
+                "name": "After Hooks",
+                "time": {
+                    "start": 1785100014176,
+                    "stop": 1785100014191,
+                    "duration": 15
+                },
+                "status": "passed",
+                "steps": [
+                    {
+                        "name": "Fixture \"api\"",
+                        "time": {
+                            "start": 1785100014177,
+                            "stop": 1785100014182,
+                            "duration": 5
+                        },
+                        "status": "passed",
+                        "steps": [],
+                        "attachments": [],
+                        "parameters": [],
+                        "attachmentStep": false,
+                        "hasContent": false,
+                        "stepsCount": 0,
+                        "shouldDisplayMessage": false,
+                        "attachmentsCount": 0
+                    }
+                ],
+                "attachments": [],
+                "parameters": [],
+                "attachmentStep": false,
+                "hasContent": true,
+                "stepsCount": 1,
+                "shouldDisplayMessage": false,
+                "attachmentsCount": 0
+            }
+        ],
+        "attachments": [
+            {
+                "uid": "ce95be975e5fadca",
+                "name": "stdout",
+                "source": "ce95be975e5fadca.txt",
+                "type": "text/plain",
+                "size": 120
+            }
+        ],
+        "parameters": [],
+        "attachmentStep": false,
+        "hasContent": true,
+        "stepsCount": 9,
+        "shouldDisplayMessage": false,
+        "attachmentsCount": 1
+    },
+    "afterStages": [],
+    "labels": [
+        { "name": "language", "value": "javascript" },
+        { "name": "framework", "value": "playwright" },
+        {
+            "name": "package",
+            "value": "playwright-xe-framework.api.auth.auth.spec.ts"
+        },
+        {
+            "name": "_fallbackTestCaseId",
+            "value": "0da4b6a385a1ee0422af0b5d0d8cd4e3"
+        },
+        {
+            "name": "titlePath",
+            "value": " > api > api\\auth\\auth.spec.ts > Authentication API"
+        },
+        { "name": "tag", "value": "smoke" },
+        { "name": "host", "value": "DeskWA" },
+        { "name": "thread", "value": "pid-19544-worker-2" },
+        { "name": "parentSuite", "value": "api" },
+        { "name": "suite", "value": "api\\auth\\auth.spec.ts" },
+        { "name": "subSuite", "value": "Authentication API" },
+        { "name": "resultFormat", "value": "allure2" }
+    ],
+    "parameters": [{ "name": "Project", "value": "api" }],
+    "links": [],
+    "hidden": true,
+    "retry": true,
+    "extra": { "categories": [], "tags": ["smoke"] },
+    "source": "d242f138d2894638.json",
+    "parameterValues": ["api"]
+}

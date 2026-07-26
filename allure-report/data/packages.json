@@ -10,7 +10,7 @@
                     "children": [
                         {
                             "name": "@regression User can login successfully",
-                            "uid": "c26a60dd5eec8d29",
+                            "uid": "5d56931b0a6ad216",
                             "parentUid": "f410c22f4776fa8b9264bddcb20237fe",
                             "status": "passed",
                             "time": {
@@ -29,7 +29,7 @@
                         },
                         {
                             "name": "User cannot login with invalid password",
-                            "uid": "c8f7f274052973d4",
+                            "uid": "6234444cd0e53b0d",
                             "parentUid": "f410c22f4776fa8b9264bddcb20237fe",
                             "status": "passed",
                             "time": {
@@ -48,7 +48,7 @@
                         },
                         {
                             "name": "@regression User can login successfully",
-                            "uid": "93060e2cf13527f",
+                            "uid": "e23bdcfe62ee96ba",
                             "parentUid": "f410c22f4776fa8b9264bddcb20237fe",
                             "status": "passed",
                             "time": {
@@ -67,7 +67,7 @@
                         },
                         {
                             "name": "User cannot login with invalid password",
-                            "uid": "7a75a9bd04a05ca7",
+                            "uid": "cd036d01a45edde0",
                             "parentUid": "f410c22f4776fa8b9264bddcb20237fe",
                             "status": "passed",
                             "time": {
@@ -86,7 +86,7 @@
                         },
                         {
                             "name": "@regression User can login successfully",
-                            "uid": "4ea549799f86f441",
+                            "uid": "381523a0c7b9ea4f",
                             "parentUid": "f410c22f4776fa8b9264bddcb20237fe",
                             "status": "passed",
                             "time": {
@@ -105,7 +105,7 @@
                         },
                         {
                             "name": "User cannot login with invalid password",
-                            "uid": "9f78cebb8e275274",
+                            "uid": "f41ed6e86785577f",
                             "parentUid": "f410c22f4776fa8b9264bddcb20237fe",
                             "status": "passed",
                             "time": {
@@ -121,6 +121,63 @@
                             "retriesStatusChange": false,
                             "parameters": ["webkit"],
                             "tags": []
+                        },
+                        {
+                            "name": "@smoke User cannot login with invalid password",
+                            "uid": "199e68b6a3973080",
+                            "parentUid": "f410c22f4776fa8b9264bddcb20237fe",
+                            "status": "passed",
+                            "time": {
+                                "start": 1785100763772,
+                                "stop": 1785100764244,
+                                "duration": 472
+                            },
+                            "flaky": false,
+                            "newFailed": false,
+                            "newPassed": false,
+                            "newBroken": false,
+                            "retriesCount": 0,
+                            "retriesStatusChange": false,
+                            "parameters": ["chromium"],
+                            "tags": ["smoke"]
+                        },
+                        {
+                            "name": "@smoke User cannot login with invalid password",
+                            "uid": "b6d1ab4fa2f8b670",
+                            "parentUid": "f410c22f4776fa8b9264bddcb20237fe",
+                            "status": "passed",
+                            "time": {
+                                "start": 1785100763784,
+                                "stop": 1785100765936,
+                                "duration": 2152
+                            },
+                            "flaky": false,
+                            "newFailed": false,
+                            "newPassed": false,
+                            "newBroken": false,
+                            "retriesCount": 0,
+                            "retriesStatusChange": false,
+                            "parameters": ["firefox"],
+                            "tags": ["smoke"]
+                        },
+                        {
+                            "name": "@smoke User cannot login with invalid password",
+                            "uid": "3b90980629c75d64",
+                            "parentUid": "f410c22f4776fa8b9264bddcb20237fe",
+                            "status": "passed",
+                            "time": {
+                                "start": 1785100763802,
+                                "stop": 1785100765054,
+                                "duration": 1252
+                            },
+                            "flaky": false,
+                            "newFailed": false,
+                            "newPassed": false,
+                            "newBroken": false,
+                            "retriesCount": 0,
+                            "retriesStatusChange": false,
+                            "parameters": ["webkit"],
+                            "tags": ["smoke"]
                         }
                     ],
                     "uid": "ui.login.spec.ts"
@@ -130,7 +187,7 @@
                     "children": [
                         {
                             "name": "has title",
-                            "uid": "232c5be4a7ce3664",
+                            "uid": "3c6270061fd02b2a",
                             "parentUid": "5055713d53543a846b9188920d832067",
                             "status": "passed",
                             "time": {
@@ -149,7 +206,7 @@
                         },
                         {
                             "name": "get started link",
-                            "uid": "ea4d65b73d4c0385",
+                            "uid": "ff172141cd009b1a",
                             "parentUid": "5055713d53543a846b9188920d832067",
                             "status": "passed",
                             "time": {
@@ -168,7 +225,7 @@
                         },
                         {
                             "name": "has title",
-                            "uid": "8eca04d468532054",
+                            "uid": "eae0a9a410d43c0e",
                             "parentUid": "5055713d53543a846b9188920d832067",
                             "status": "passed",
                             "time": {
@@ -187,7 +244,7 @@
                         },
                         {
                             "name": "get started link",
-                            "uid": "7d110bed598698ba",
+                            "uid": "8832b8da17c4f3e2",
                             "parentUid": "5055713d53543a846b9188920d832067",
                             "status": "passed",
                             "time": {
@@ -206,7 +263,7 @@
                         },
                         {
                             "name": "get started link",
-                            "uid": "d973286db3e0bf30",
+                            "uid": "e10e746fdd1a5ddf",
                             "parentUid": "5055713d53543a846b9188920d832067",
                             "status": "passed",
                             "time": {
@@ -225,7 +282,7 @@
                         },
                         {
                             "name": "has title",
-                            "uid": "cfbdd5a1edbb3da6",
+                            "uid": "a66cd14d0f73e5a2",
                             "parentUid": "5055713d53543a846b9188920d832067",
                             "status": "passed",
                             "time": {
@@ -255,27 +312,8 @@
                                     "name": "auth.spec.ts",
                                     "children": [
                                         {
-                                            "name": "@smoke Should login successfully with valid credentials",
-                                            "uid": "3f1c333abd555d10",
-                                            "parentUid": "2c6c24d289308a4351985ef1d4f3a312",
-                                            "status": "passed",
-                                            "time": {
-                                                "start": 1785100013953,
-                                                "stop": 1785100014112,
-                                                "duration": 159
-                                            },
-                                            "flaky": false,
-                                            "newFailed": false,
-                                            "newPassed": false,
-                                            "newBroken": false,
-                                            "retriesCount": 5,
-                                            "retriesStatusChange": false,
-                                            "parameters": ["api"],
-                                            "tags": ["smoke"]
-                                        },
-                                        {
                                             "name": "@regression Should reject login with invalid credentials",
-                                            "uid": "2f41e89a0ccd755d",
+                                            "uid": "af4f851bef7a69c3",
                                             "parentUid": "2c6c24d289308a4351985ef1d4f3a312",
                                             "status": "passed",
                                             "time": {
@@ -291,6 +329,25 @@
                                             "retriesStatusChange": false,
                                             "parameters": ["api"],
                                             "tags": ["regression"]
+                                        },
+                                        {
+                                            "name": "@smoke Should login successfully with valid credentials",
+                                            "uid": "b7f05c7dde41d615",
+                                            "parentUid": "2c6c24d289308a4351985ef1d4f3a312",
+                                            "status": "passed",
+                                            "time": {
+                                                "start": 1785100763918,
+                                                "stop": 1785100764108,
+                                                "duration": 190
+                                            },
+                                            "flaky": false,
+                                            "newFailed": false,
+                                            "newPassed": false,
+                                            "newBroken": false,
+                                            "retriesCount": 7,
+                                            "retriesStatusChange": false,
+                                            "parameters": ["api"],
+                                            "tags": ["smoke"]
                                         }
                                     ],
                                     "uid": "auth.spec.ts"
@@ -299,27 +356,8 @@
                                     "name": "profile.spec.ts",
                                     "children": [
                                         {
-                                            "name": "@smoke Should access profile with valid token",
-                                            "uid": "efc06cecbe988491",
-                                            "parentUid": "329066091342717aba269474589ee53c",
-                                            "status": "passed",
-                                            "time": {
-                                                "start": 1785100014306,
-                                                "stop": 1785100014362,
-                                                "duration": 56
-                                            },
-                                            "flaky": false,
-                                            "newFailed": false,
-                                            "newPassed": false,
-                                            "newBroken": false,
-                                            "retriesCount": 5,
-                                            "retriesStatusChange": false,
-                                            "parameters": ["api"],
-                                            "tags": ["smoke"]
-                                        },
-                                        {
                                             "name": "@regression Should reject profile access without token",
-                                            "uid": "14a868dc272db5aa",
+                                            "uid": "963dee7981dce2d8",
                                             "parentUid": "329066091342717aba269474589ee53c",
                                             "status": "passed",
                                             "time": {
@@ -335,6 +373,25 @@
                                             "retriesStatusChange": false,
                                             "parameters": ["api"],
                                             "tags": ["regression"]
+                                        },
+                                        {
+                                            "name": "@smoke Should access profile with valid token",
+                                            "uid": "8cc1fdffa22c3545",
+                                            "parentUid": "329066091342717aba269474589ee53c",
+                                            "status": "passed",
+                                            "time": {
+                                                "start": 1785100764220,
+                                                "stop": 1785100764285,
+                                                "duration": 65
+                                            },
+                                            "flaky": false,
+                                            "newFailed": false,
+                                            "newPassed": false,
+                                            "newBroken": false,
+                                            "retriesCount": 7,
+                                            "retriesStatusChange": false,
+                                            "parameters": ["api"],
+                                            "tags": ["smoke"]
                                         }
                                     ],
                                     "uid": "profile.spec.ts"
@@ -347,7 +404,7 @@
                             "children": [
                                 {
                                     "name": "@regression Should create user successfully",
-                                    "uid": "a933036f9989c39d",
+                                    "uid": "260d739fb81146a",
                                     "parentUid": "5a7d82d0dbf064c604baf901e3d03cfe",
                                     "status": "passed",
                                     "time": {
@@ -366,7 +423,7 @@
                                 },
                                 {
                                     "name": "@regression Should retrieve user by id successfully",
-                                    "uid": "fbf26012c0009ba",
+                                    "uid": "9fd241d5d48d2fe8",
                                     "parentUid": "5a7d82d0dbf064c604baf901e3d03cfe",
                                     "status": "passed",
                                     "time": {
@@ -385,7 +442,7 @@
                                 },
                                 {
                                     "name": "@regression Should update user successfully",
-                                    "uid": "c0017c7e3d10217e",
+                                    "uid": "9e3d7c8ee09e7bd4",
                                     "parentUid": "5a7d82d0dbf064c604baf901e3d03cfe",
                                     "status": "passed",
                                     "time": {
@@ -404,7 +461,7 @@
                                 },
                                 {
                                     "name": "@regression Should delete user successfully",
-                                    "uid": "2945597fc1c4d407",
+                                    "uid": "41a52602ff3dfc55",
                                     "parentUid": "5a7d82d0dbf064c604baf901e3d03cfe",
                                     "status": "passed",
                                     "time": {
@@ -429,7 +486,7 @@
                             "children": [
                                 {
                                     "name": "@regression Should return 404 when user does not exist",
-                                    "uid": "ec9967fd3521df65",
+                                    "uid": "39107bea156db36f",
                                     "parentUid": "69e97fc27c09105a751eee9e19de470f",
                                     "status": "passed",
                                     "time": {
@@ -454,7 +511,7 @@
                             "children": [
                                 {
                                     "name": "Should retrieve user profile",
-                                    "uid": "e244cf01a24e09af",
+                                    "uid": "6ada4f8295b5f69d",
                                     "parentUid": "6a82a420a46710bd21ea4124ad0d3b75",
                                     "status": "passed",
                                     "time": {
@@ -479,7 +536,7 @@
                             "children": [
                                 {
                                     "name": "@regression Should retrieve users successfully",
-                                    "uid": "4ceede61c986f06e",
+                                    "uid": "fd82ea51cf6b4e29",
                                     "parentUid": "45f6758da1b1537c8d02f9016a230d6f",
                                     "status": "passed",
                                     "time": {
