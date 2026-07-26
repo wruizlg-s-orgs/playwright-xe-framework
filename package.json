@@ -23,6 +23,7 @@
         "allure:metadata": "node helpers/allureMetadata.js",
         "allure:generate": "allure generate allure-results --clean -o allure-report",
         "allure:open": "allure open allure-report",
+        "allure:history": "node helpers/allureHistory.cjs",
         "lint": "eslint .",
         "lint:fix": "eslint . --fix",
         "format": "prettier --write .",
