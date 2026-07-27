@@ -1,7 +1,7 @@
 name: Playwright Tests
 
 permissions:
-    contents: read
+    contents: write
 
 on:
     push:
@@ -46,8 +46,10 @@ jobs:
 
             - name: Setup Node
               uses: actions/setup-node@v4
+
               with:
                   node-version: 22
+
                   cache: npm
 
             - name: Install dependencies
@@ -66,7 +68,9 @@ jobs:
               run: npx playwright test --project=api
 
             - name: Upload API Allure Results
+
               if: always()
+
               uses: actions/upload-artifact@v4
 
               with:
@@ -120,9 +124,11 @@ jobs:
               run: npx playwright install --with-deps
 
             - name: Run UI Tests
+
               run: npx playwright test --project=${{ matrix.browser }}
 
             - name: Upload UI Allure Results
+
               if: always()
 
               uses: actions/upload-artifact@v4
@@ -133,6 +139,7 @@ jobs:
                   path: allure-results/
 
             - name: Upload Failure Evidence
+
               if: failure()
 
               uses: actions/upload-artifact@v4
@@ -143,12 +150,13 @@ jobs:
                   path: test-results/
 
     ###############################################################
-    # ALLURE REPORT
+    # GENERATE ALLURE REPORT
     ###############################################################
 
     allure-report:
         needs:
             - api-tests
+
             - ui-tests
 
         if: always()
@@ -157,12 +165,32 @@ jobs:
 
         steps:
             - name: Checkout repository
+
               uses: actions/checkout@v4
 
+            - name: Setup Node
+
+              uses: actions/setup-node@v4
+
+              with:
+                  node-version: 22
+
+                  cache: npm
+
+            - name: Install dependencies
+
+              run: npm ci
+
+            ###############################################################
+            # DOWNLOAD RESULTS
+            ###############################################################
+
             - name: Prepare Allure Directory
+
               run: mkdir -p allure-results
 
             - name: Download API Results
+
               uses: actions/download-artifact@v4
 
               with:
@@ -173,6 +201,7 @@ jobs:
                   merge-multiple: true
 
             - name: Download UI Results
+
               uses: actions/download-artifact@v4
 
               with:
@@ -183,10 +212,34 @@ jobs:
                   merge-multiple: true
 
             ###############################################################
+            # RESTORE HISTORY
+            ###############################################################
+
+            - name: Restore Allure History
+
+              run: |
+
+
+                  mkdir -p allure-results/history
+
+
+                  git fetch origin gh-pages || true
+
+
+                  git checkout origin/gh-pages -- history || true
+
+
+                  if [ -d history ]; then
+
+                    cp -r history/* allure-results/history/
+
+                  fi
+
+            ###############################################################
             # METADATA
             ###############################################################
 
-            - name: Create Environment Metadata
+            - name: Create Allure Metadata
 
               run: |
 
@@ -214,7 +267,8 @@ jobs:
                     "type": "github",
                     "buildOrder": ${{ github.run_number }},
                     "buildName": "${{ github.workflow }}",
-                    "buildUrl": "https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+                    "buildUrl": "https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}",
+                    "reportName": "Playwright Automation Report"
                   }
 
                   EOF
@@ -239,19 +293,20 @@ jobs:
               run: |
 
 
-                  echo "RESULT FILES"
+                  echo "RESULT COUNT"
+
 
                   find allure-results -name "*-result.json" | wc -l
 
 
-                  echo ""
 
-                  echo "ALLURE FILES"
+                  echo "HISTORY"
 
-                  ls -la allure-results
+
+                  ls -la allure-results/history || true
 
             ###############################################################
-            # GENERATE
+            # GENERATE REPORT
             ###############################################################
 
             - name: Setup Java
@@ -267,7 +322,7 @@ jobs:
 
               run: npm install -g allure-commandline
 
-            - name: Generate Report
+            - name: Generate Allure Report
 
               run: |
 
@@ -276,7 +331,7 @@ jobs:
                   --clean \
                   -o allure-report
 
-            - name: Upload Allure Report
+            - name: Upload Allure Artifact
 
               uses: actions/upload-artifact@v4
 
@@ -286,14 +341,60 @@ jobs:
                   path: allure-report/
 
     ###############################################################
+    # PUBLISH GH-PAGES
+    ###############################################################
+
+    publish-allure:
+        needs:
+            - allure-report
+
+        if: always()
+
+        runs-on: ubuntu-latest
+
+        permissions:
+            contents: write
+
+        steps:
+            - name: Checkout repository
+
+              uses: actions/checkout@v4
+
+            - name: Download Allure Report
+
+              uses: actions/download-artifact@v4
+
+              with:
+                  name: allure-report
+
+                  path: allure-report
+
+            - name: Deploy Allure Report to GitHub Pages
+
+              uses: peaceiris/actions-gh-pages@v4
+
+              with:
+                  github_token: ${{ secrets.GITHUB_TOKEN }}
+
+                  publish_dir: ./allure-report
+
+                  publish_branch: gh-pages
+
+                  force_orphan: false
+
+    ###############################################################
     # SUMMARY
     ###############################################################
 
     summary:
         needs:
             - api-tests
+
             - ui-tests
+
             - allure-report
+
+            - publish-allure
 
         if: always()
 
@@ -307,12 +408,26 @@ jobs:
 
                   echo "## Playwright Automation Pipeline" >> $GITHUB_STEP_SUMMARY
 
+
                   echo "" >> $GITHUB_STEP_SUMMARY
+
 
                   echo "✅ API Tests executed." >> $GITHUB_STEP_SUMMARY
 
+
                   echo "✅ UI Tests executed in parallel." >> $GITHUB_STEP_SUMMARY
+
 
                   echo "" >> $GITHUB_STEP_SUMMARY
 
+
                   echo "Environment: QA" >> $GITHUB_STEP_SUMMARY
+
+
+                  echo "" >> $GITHUB_STEP_SUMMARY
+
+
+                  echo "Allure Report:" >> $GITHUB_STEP_SUMMARY
+
+
+                  echo "https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/" >> $GITHUB_STEP_SUMMARY
