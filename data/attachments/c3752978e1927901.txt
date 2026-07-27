@@ -1,0 +1,6 @@
+[HTTP ERROR] POST /login
+STATUS: 401 | TIME: 3ms
+BODY:
+{
+  "message": "Invalid credentials"
+}
