@@ -5,7 +5,6 @@ import eslintPluginPrettier from 'eslint-plugin-prettier';
 import eslintConfigPrettier from 'eslint-config-prettier';
 
 export default [
-
     {
         ignores: [
             'node_modules/**',
@@ -21,6 +20,10 @@ export default [
     js.configs.recommended,
 
     ...tseslint.configs.recommended,
+
+    // ============================================
+    // TypeScript
+    // ============================================
 
     {
         files: ['**/*.ts'],
@@ -50,11 +53,16 @@ export default [
         },
     },
 
+    // ============================================
+    // JavaScript (ES Modules)
+    // Helpers, Scripts, Config, Mock, etc.
+    // ============================================
+
     {
-        files: ['app/**/*.js'],
+        files: ['**/*.js', '**/*.mjs'],
 
         languageOptions: {
-            sourceType: 'commonjs',
+            sourceType: 'module',
 
             globals: {
                 ...globals.node,
@@ -66,9 +74,11 @@ export default [
         },
 
         rules: {
-            '@typescript-eslint/no-require-imports': 'off',
+            'no-console': 'off',
 
             'prettier/prettier': 'error',
+
+            '@typescript-eslint/no-require-imports': 'off',
         },
     },
 
