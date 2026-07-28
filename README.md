@@ -955,7 +955,8 @@ Professional experience:
 - QA Automation Strategy
 - Quality Engineering
 - API Testing
-- Web Automation
+- Performance Testing
+- Web/mobile Automation
 - CI/CD Pipelines
 - Test Framework Architecture
 - Agile Testing
