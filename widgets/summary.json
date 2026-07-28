@@ -1,1 +1,1 @@
-{"reportName":"Playwright Automation Report","testRuns":[],"statistic":{"failed":0,"broken":0,"skipped":0,"passed":23,"unknown":0,"total":23},"time":{"start":1785246909203,"stop":1785248600483,"duration":1691280,"minDuration":11,"maxDuration":8740,"sumDuration":29761}}
+{"reportName":"Playwright Automation Report","testRuns":[],"statistic":{"failed":0,"broken":0,"skipped":0,"passed":23,"unknown":0,"total":23},"time":{"start":1785250290005,"stop":1785250311485,"duration":21480,"minDuration":11,"maxDuration":9095,"sumDuration":31014}}
