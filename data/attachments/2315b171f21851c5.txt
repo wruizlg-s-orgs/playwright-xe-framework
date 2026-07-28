@@ -1,5 +1,5 @@
 [REQUEST] POST /test/reset
-[RESPONSE] STATUS: 204 | TIME: 3ms
+[RESPONSE] STATUS: 204 | TIME: 4ms
 [REQUEST] POST /api/users
 [RESPONSE] STATUS: 201 | TIME: 3ms
 [REQUEST] GET /api/users/3
